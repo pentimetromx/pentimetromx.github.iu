@@ -553,6 +553,11 @@ function hideElements26() {     // OCULTA BOTONES y MUESTRA DESCRIPCION
     descripcionOlga.style.display = 'flex';
 
   }, 500);
+  var audio = document.getElementById('silvi');
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
+
 }  
 function hideElements27() {    //  OCULTA DESCRIPCION Y MUESTRA FOTOS
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -1065,7 +1070,6 @@ function hideElements60() {          // OCULTA BOTONES MUESTRA DESCRIPCION
   audio.currentTime = 0;
   audio.volume = 0.3;
   audio.play();
-
 }
 function hideElements61() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
