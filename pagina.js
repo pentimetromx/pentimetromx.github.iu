@@ -978,8 +978,7 @@ function hideElements55() {       // OCULTA ESCUDOS MUESTRA BOTONES
   }, 800); // 800ms = 0.3s
 } 
 function hideElements56() {          // OCULTA BOTONES MUESTRA DESCRIPCION
-
-  var audio = document.getElementById('audio');
+  var audio = document.getElementById('cata');
   audio.currentTime = 0;
   audio.volume = 0.3;
   audio.play();
@@ -990,7 +989,7 @@ function hideElements56() {          // OCULTA BOTONES MUESTRA DESCRIPCION
   setTimeout(function() {
     img.classList.remove('pixelate');
 
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
+    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');       
     for (var i = 0; i < elementsToHide.length; i++) {
         elementsToHide[i].style.display = 'none';
     }
@@ -1062,6 +1061,11 @@ function hideElements60() {          // OCULTA BOTONES MUESTRA DESCRIPCION
     slidVisible.style.display ='flex';
     
   }, 500);
+  var audio = document.getElementById('dani');
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
+
 }
 function hideElements61() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
@@ -2132,7 +2136,7 @@ function comprobarPassword() {   // MUESTRA LA INTERFAZ DE CONTRASEÑA
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
-    var elementsToHide = document.querySelectorAll('#password-overlay');
+    var elementsToHide = document.querySelectorAll('#password-overlay'); 
     for (var i = 0; i < elementsToHide.length; i++) {
       elementsToHide[i].style.display = 'none';
     }
