@@ -560,7 +560,7 @@ function hideElements26() {     // OCULTA BOTONES y MUESTRA DESCRIPCION
 
 }  
 function hideElements27() {    //  OCULTA DESCRIPCION Y MUESTRA FOTOS
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
+  var elementsToHide = document.querySelectorAll('.botones, .video-v');  
   for (var i = 0; i < elementsToHide.length; i++) { 
       elementsToHide[i].style.display = 'none';
   }
