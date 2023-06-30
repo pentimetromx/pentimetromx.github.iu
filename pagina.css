@@ -57,8 +57,8 @@
   } 
   @media (max-width: 767px) {
     .button-containerVid {
-      top: 50%; /* Mueve el contenedor hacia el centro vertical */
-      transform: translate(-50%, -50%);
+      top: 10%; /* Mueve el contenedor hacia el centro vertical */
+      transform: translate(-50%);
       display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */
       flex-direction: row; /* Asegura que los botones estén en línea horizontal */
     }
@@ -75,7 +75,7 @@
   position: fixed;
   left: 50%;
   top: 10%;
-  transform: translate(-50%, -50%);    
+  transform: translate(-50%);    
 }
 
 .button-container button {
