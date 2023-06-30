@@ -56,7 +56,7 @@
   overflow-y: hidden;
   } 
   @media (max-width: 767px) {
-    .button-containerVid {
+    .button-containerVid, .button-container {
       top: 10%; /* Mueve el contenedor hacia el centro vertical */
       transform: translate(-50%);
       display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */
@@ -71,12 +71,12 @@
     transform: translate(-50%, -50%);    
   }*/
 
-.button-container {             
+/*.button-container {             
   position: fixed;
   left: 50%;
   top: 10%;
   transform: translate(-50%);    
-}
+}*/
 
 .button-container button {
   width: 300px;
