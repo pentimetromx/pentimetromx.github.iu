@@ -55,56 +55,32 @@
   margin-top: 233px;
   overflow-y: hidden;
   } 
-  /*.button-container{
-  display: flex;               
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; 
-  top: 97px; 
-  margin-right: 100px;
+  .button-containerVid {             
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);    
   }
-  .button-container button{  
-    width: 300px;
-    height: 57px;
-    font-size: 16px;  
-    background-color: blue;  
-    color: yellow;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center; 
-    } */
-    
-    .button-container {             
-      /*position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;*/
 
-      position: fixed;
-      left: 50%;
-      top: 20%;
-      transform: translate(-50%, -50%);
-    
-    }
-    
-    .button-container button {
-      width: 300px;
-      height: 57px;
-      font-size: 16px;
-      background-color: blue;
-      color: yellow;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-    }
+.button-container {             
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);    
+}
+
+.button-container button {
+  width: 300px;
+  height: 57px;
+  font-size: 16px;
+  background-color: blue;
+  color: yellow;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
 
   .contVideos {
   display: flex;
@@ -439,7 +415,7 @@ font-style: oblique;
 .imagen-sara {
   width: 300px;
   height: 200px;
-}
+}            
 .button-container {  /* CONT/BOTON/IMAGENES */  
   position: fixed;
   left: 50%;
@@ -467,7 +443,6 @@ font-style: oblique;
   left: 50%;
   top: 9%;
   transform: translate(-50%, -50%);
-
 }
 .button-containerVid button{  /* BOTONES VIDEOS */
   margin-top: 137px;
