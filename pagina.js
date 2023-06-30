@@ -837,8 +837,11 @@ function hideElements45() {    //  OCULTA BOTONES  MUESTRA DESCRIPCION SARA
     }  
     var descripcionOlga = document.getElementById('descripcion-moni');
     descripcionOlga.style.display = 'flex';
-
   }, 500); 
+  var audio = document.getElementById('moni');
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();  
 }
 function hideElements46() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
@@ -1815,7 +1818,7 @@ function hideElements114() {    // BOTONES / DESCRIPCION
   setTimeout(function() {
     img.classList.remove('pixelate');
 
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
+    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i'); 
     for (var i = 0; i < elementsToHide.length; i++) {
         elementsToHide[i].style.display = 'none';
     }
@@ -1827,7 +1830,10 @@ function hideElements114() {    // BOTONES / DESCRIPCION
     descripcionOlga.style.display = 'flex';
 
   }, 500);
-
+  var audio = document.getElementById('manola');
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
 }
 function hideElements115() {    //  DSCRIPCION / FOTOS
   var elementsToHide = document.querySelectorAll('.descripciones');
