@@ -38,9 +38,15 @@
   }
 
   .fullscreenButton {
-  margin-left: 0;
+  /*margin-left: 0;
   margin-right: 5px;        
-  width: 70px;  
+  width: 70px;*/ 
+  
+  background-color:orangered;
+  color:whitesmoke;
+  border-radius: 6px;
+  width: 257px;
+  height: 60px;
   }
   .video-v { /*PADRE DE VIDEOS */
   display:flex;
@@ -457,6 +463,11 @@ font-style: oblique;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 9%;
+  transform: translate(-50%, -50%);
+
 }
 .button-containerVid button{  /* BOTONES VIDEOS */
   margin-top: 137px;
@@ -617,21 +628,28 @@ font-style: oblique;
   margin-left: 13px;
 }
 
-.contBotones button{
+
+
+.contVideosWrapper {
+  overflow-y: auto;
+  max-height: 700px; /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
+  overflow-x: hidden;
+  margin-top: 93px;
+}
+.contVideos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: -1px; /* Ajusta el espacio entre los contenedores de video según sea necesario */
+  margin-top: 27px;
+}
+.fullscreenButton {
   background-color:orangered;
   color:whitesmoke;
   border-radius: 6px;
-  width: 240px;
-  height: 60px;
-  margin-right: 40px;
-  margin-top: 10px;
-}
-.contVideos {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: 10px;
-}
+  width: 190px;
+  height: 30px;
+  }
+
 .video-container {
   margin-right: 22px;
 }
