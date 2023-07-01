@@ -41,23 +41,24 @@
   margin-bottom: 20px;  
   }
   .fullscreenButton {
-  background-color:orangered;
+  background-color:orangered;    
   color:whitesmoke;
   border-radius: 6px;
   width: 257px;
   height: 60px;
   }
   .contVideosWrapper {
-  overflow-y: auto;
-  max-height: calc(100% - 127px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
-  position: fixed;
-  bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
-  left: 0;
-  right: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
-}
+    overflow-y: auto;
+    max-height: calc(100% - 97px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
+    position: fixed;
+    bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
+    left: 0;
+    right: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
+    z-index: 1; /* Aseguramos que el contenedor esté por debajo de los botones */
+  }
   /*.video-v {      
   display:flex;
   flex-direction: column;
@@ -409,27 +410,6 @@ font-style: oblique;
   margin-top: 13px;
   margin-right: 15px;
 }
-.button-containerVid{  /* HIJO BOTONES VIDEOS */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  left: 50%;
-  top: 9%;
-  transform: translate(-50%, -50%);
-}
-.button-containerVid button{  /* BOTONES VIDEOS */        
-  margin-top: 137px;
-  width: 300px;
-  height: 57px;
-  margin-right: 27px;
-  font-size: 16px;
-  background-color: blue; 
-  color: yellow;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
 .video-v {   /* PADRE VIDEOS */
   display:flex;
   flex-direction: column;
@@ -580,28 +560,37 @@ font-style: oblique;
   background-color:orangered;
   color:whitesmoke;
   border-radius: 6px;
-  width: 190px;
+  width: 190px;  
   height: 40px;
   margin-bottom: 7px;
 }
-
-/*.contVideosWrapper {
-  overflow-y: auto;
-  max-height: 700px;
-  overflow-x: hidden;
-  margin-top: 93px;
-}*/
-/*.contVideosWrapper {
-  overflow-y: auto;
-  max-height: 700px;
-  margin-top: 93px;
-  margin-bottom: 17px;
+.button-containerVid{  /* HIJO BOTONES VIDEOS */
   display: flex;
-  flex-direction: column-reverse;
-}*/
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 9%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* Ajustamos el z-index para que los botones aparezcan encima del contenedor */
+}
+.button-containerVid button{  /* BOTONES VIDEOS */        
+  margin-top: 137px;
+  width: 300px;
+  height: 57px;
+  margin-right: 27px;
+  font-size: 16px;
+  background-color: blue; 
+  color: yellow;  
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative; /* Añadimos position: relative para que el z-index funcione correctamente */
+  z-index: 3; /* Ajustamos el z-index para que los botones aparezcan encima del contenedor */
+}
 .contVideosWrapper {
   overflow-y: auto;
-  max-height: calc(100% - 127px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
+  max-height: calc(100% - 137px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
   position: fixed;
   bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
   left: 0;
@@ -609,6 +598,7 @@ font-style: oblique;
   margin: 0;
   display: flex;
   flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
+  z-index: 1; /* Aseguramos que el contenedor esté por debajo de los botones */
 }
 .contVideos {
   display: grid;
@@ -622,7 +612,6 @@ font-style: oblique;
 .video-container video{
   width: 190px;
 }
-
 .slider {
   background-color: gray;
   width: 100%;
@@ -630,26 +619,21 @@ font-style: oblique;
   overflow: hidden;
   margin-top: 2px;
 }
-
 .slide {
   display: inline-block;
   white-space: nowrap;
   animation: slide 5s linear infinite;
   text-align: center; 
 }
-
 .slider .slide {
   animation: slide 25s linear infinite; /* Aplica la animación "slide" al texto del slider con una duración de 15 segundos, un movimiento lineal y repetición infinita */
 }
-
 .slider .slide:nth-child(1) {
   animation-name: slide-right;
 }
-
 .slider.reverse .slide:nth-child(1) {
   animation-name: slide-left;
 }
-
 @keyframes slide-right {
   0% {
     transform: translateX(-100%);
@@ -658,7 +642,6 @@ font-style: oblique;
     transform: translateX(100%);              
   }
 }
-
 @keyframes slide-left {
   0% {
     transform: translateX(100%);
@@ -671,7 +654,6 @@ font-style: oblique;
 .image {
   transition: transform 0.3s;
 }
-
 .image:hover {
   transform: scale(1.3);
 }
