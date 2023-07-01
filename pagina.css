@@ -56,18 +56,26 @@
   overflow-y: hidden;
   } 
 
-  .button-containerVid, .button-container {
+  .button-containerVid{
     top: 10%; /* Mueve el contenedor hacia el centro vertical */
     transform: translate(-50%);
     display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */   
     flex-direction: row; /* Asegura que los botones estén en línea horizontal */
   }
-  .button-container {
-    top: 10%; /* Mueve el contenedor hacia el centro vertical */
-    transform: translate(-50%);
-    display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */   
-    flex-direction: row; /* Asegura que los botones estén en línea horizontal */
-  }
+  
+
+
+.button-container {
+  top: -50px; /* Adjust this value as needed */
+  flex-direction: row;
+}
+
+.btn {
+  flex: 1;
+  text-align: center;
+}
+
+
 
   .contVideos {
   display: flex;

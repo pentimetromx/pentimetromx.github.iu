@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./pagina.css">        
 
     </head>
-    <body onload="enlargeImages();">     
+    <body onload="enlargeImages();">       
                
 
         <div class="slider">
@@ -24,7 +24,7 @@
             </div>
         </div>
 
-        <h1 class="etiqueta">Una historia magica y real 1940</h1>   
+        <h1 class="etiqueta">Una historia magica y real 2048</h1>   
     
         <div class="container-Ini">
             <button id="buttonToScale" class="button" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements()">PINEDA</button>
@@ -631,14 +631,14 @@
                 </div>
             </div width='500px'>   
             
-            <div id="video-tina" class="video-v" style="display: none;">   
+            <div id="video-tina" class="video-v" style="display: none;">     
 
                 <div id="boton-tina-v" class="button-containerVid">  
                     <button class="btn" onclick="hideElements10()">Ver Las Fotos de Cristina Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
-                    <div class="contVideos">
+                    <div class="contVideos">  
                         <div class="video-container">
                             <button class="fullscreenButton" onclick="toggleFullscreenAndPlay('video13')"><span>&#9658;</span> REPRODUCIR VIDEO 1</button>
                             <video id="video13" class="video-item1" src="./assets/ma y tina.mp4"></video> 
@@ -1102,9 +1102,9 @@
                             <video id="video102" class="video-item1" src="./assets/yopcalla.mp4"></video>
                         </div>
                         <div class="video-container">
-                            <button class="fullscreenButton" onclick="toggleFullscreenAndPlay('video102')"><span>&#9658;</span> REPRODUCIR VIDEO 7</button>
-                            <video id="video102" class="video-item1" src="./assets/bomba y yo-II.mp4"></video>
-                        </div>
+                            <button class="fullscreenButton" onclick="toggleFullscreenAndPlay('video1003')"><span>&#9658;</span> REPRODUCIR VIDEO 7</button>
+                            <video id="video1003" class="video-item1" src="./assets/bomba y yo-II.mp4"></video>
+                        </div>   
                     </div>       
                 </div>
             </div width='500px'>
@@ -1954,3 +1954,9 @@
 </html>
 
 
+.button-container {
+    top: 10%; /* Mueve el contenedor hacia el centro vertical */
+    transform: translate(-50%);
+    display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */   
+    flex-direction: row; /* Asegura que los botones estén en línea horizontal */
+  }
