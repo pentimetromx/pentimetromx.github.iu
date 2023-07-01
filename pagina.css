@@ -59,6 +59,19 @@
     flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
     z-index: 1; /* Aseguramos que el contenedor esté por debajo de los botones */
   }
+  .contenedor-secundario{
+    overflow-y: auto;
+    max-height: calc(100% - 97px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
+    position: fixed;
+    bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
+    left: 0;
+    right: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
+    z-index: 1; /* Aseguramos que el contenedor esté por debajo de los botones */
+
+  }
   /*.video-v {      
   display:flex;
   flex-direction: column;
@@ -294,7 +307,7 @@ font-style: oblique;
 }
 
 .impEntrada {
-  height: 20px;width: 117px;  
+  height: 20px;width: 117px;
   background-color: gray;
 }
 /*//////////////////////////////////////////////////////////////////////////////////////////*/ 
