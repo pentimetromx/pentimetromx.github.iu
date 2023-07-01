@@ -36,12 +36,10 @@
     position: relative;
     z-index: 1;
   }
-
   .video-item1 {
   height:110px;
   margin-bottom: 20px;  
   }
-
   .fullscreenButton {
   background-color:orangered;
   color:whitesmoke;
@@ -49,6 +47,17 @@
   width: 257px;
   height: 60px;
   }
+  .contVideosWrapper {
+  overflow-y: auto;
+  max-height: calc(100% - 127px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
+  position: fixed;
+  bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
+  left: 0;
+  right: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
+}
   /*.video-v {      
   display:flex;
   flex-direction: column;
@@ -63,12 +72,12 @@
   justify-content: flex-start;  
   margin-top: 10px;
   }*/
-  .contBotones {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: 10px;
-  }
+.contBotones {
+display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+margin-top: 10px;
+}
   .contBotones button {
   background-color:orangered;
   color:whitesmoke;
@@ -103,23 +112,18 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-  }
-  
-  
+  } 
   .image-container1 img {
     width: 100%;
     height: auto;
     display: block;
   }
-  
   .image-container1 img:first-child {
     margin-left: 10px;
   }
-  
   .image-container1 img:last-child {   
     margin-right: 10px;
   }
-
   #imagenes-mama {
     height: 100vh; /* Establece la altura al 100% del alto visible en la pantalla del dispositivo */    
     height: 100%; /* Establece la altura al 100% del contenedor padre (#imagenes-mama) */
@@ -160,9 +164,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 99999;
-  }
-  
-
+  } 
 }
 
   
@@ -574,21 +576,6 @@ font-style: oblique;
   margin-top: 10px;
   margin-left: 13px;
 }
-
-
-
-.contVideosWrapper {
-  overflow-y: auto;
-  max-height: 700px; /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
-  overflow-x: hidden;
-  margin-top: 93px;
-}
-.contVideos {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: -1px; /* Ajusta el espacio entre los contenedores de video según sea necesario */
-  margin-top: 27px;
-}
 .fullscreenButton {
   background-color:orangered;
   color:whitesmoke;
@@ -596,8 +583,39 @@ font-style: oblique;
   width: 190px;
   height: 40px;
   margin-bottom: 7px;
-  }
+}
 
+/*.contVideosWrapper {
+  overflow-y: auto;
+  max-height: 700px;
+  overflow-x: hidden;
+  margin-top: 93px;
+}*/
+/*.contVideosWrapper {
+  overflow-y: auto;
+  max-height: 700px;
+  margin-top: 93px;
+  margin-bottom: 17px;
+  display: flex;
+  flex-direction: column-reverse;
+}*/
+.contVideosWrapper {
+  overflow-y: auto;
+  max-height: calc(100% - 127px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
+  position: fixed;
+  bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
+  left: 0;
+  right: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
+}
+.contVideos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: -1px; /* Ajusta el espacio entre los contenedores de video según sea necesario */
+  margin-top: 27px;
+}
 .video-container {
   margin-right: 22px;
 }
