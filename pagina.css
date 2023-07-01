@@ -57,20 +57,16 @@
   } 
 
   .button-containerVid {
-    position: relative; /* o position: static; según lo que necesites */
-    left: auto;
-    top: auto;
-    transform: none;
-    margin-top: -77px; 
-  }
+    position: absolute; /* Usa "absolute" para que la posición sea relativa al contenedor padre */
+    top: 0; /* Ubica el contenedor en la parte superior de su contenedor padre */
+    left: 50%; /* Ubica el contenedor horizontalmente en el centro */
+    transform: translateX(-50%);   }
 
   .button-container {
-    position: relative; /* o position: static; según lo que necesites */
-    left: auto;
-    top: auto;
-    transform: none;
-    margin-top: -77px; 
-  }
+    position: absolute; /* Usa "absolute" para que la posición sea relativa al contenedor padre */
+    top: 0; /* Ubica el contenedor en la parte superior de su contenedor padre */
+    left: 50%; /* Ubica el contenedor horizontalmente en el centro */
+    transform: translateX(-50%);   }
 
   .contVideos {
   display: flex;
