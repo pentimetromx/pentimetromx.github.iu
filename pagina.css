@@ -55,41 +55,19 @@
   margin-top: 233px;
   overflow-y: hidden;
   } 
-  @media (max-width: 767px) {
-    .button-containerVid, .button-container {
-      top: 10%; /* Mueve el contenedor hacia el centro vertical */
-      transform: translate(-50%);
-      display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */
-      flex-direction: row; /* Asegura que los botones estén en línea horizontal */
-    }
+
+  .button-containerVid, .button-container {
+    top: 10%; /* Mueve el contenedor hacia el centro vertical */
+    transform: translate(-50%);
+    display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */   
+    flex-direction: row; /* Asegura que los botones estén en línea horizontal */
   }
-  
-  /*.button-containerVid {             
-    position: fixed;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%, -50%);    
-  }*/
-
-/*.button-container {             
-  position: fixed;
-  left: 50%;
-  top: 10%;
-  transform: translate(-50%);    
-}*/
-
-/*.button-container button {
-  width: 300px;
-  height: 57px;
-  font-size: 16px;
-  background-color: blue;
-  color: yellow;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}*/
+  .button-container {
+    top: 10%; /* Mueve el contenedor hacia el centro vertical */
+    transform: translate(-50%);
+    display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */   
+    flex-direction: row; /* Asegura que los botones estén en línea horizontal */
+  }
 
   .contVideos {
   display: flex;
