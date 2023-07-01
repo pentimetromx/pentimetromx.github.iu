@@ -57,11 +57,13 @@
   } 
 
   .button-containerVid {
-    display: flex;
-    justify-content: center; /* Centrar el contenedor horizontalmente */
-    align-items: flex-start; /* Alinear el contenedor hacia la parte superior */
-    /* Agrega cualquier otro estilo necesario */
+    position: relative; /* o position: static; según lo que necesites */
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-top: 20px; 
   }
+  
   .button-container {
     display: flex;
     justify-content: center; /* Centrar el contenedor horizontalmente */
@@ -390,7 +392,7 @@ font-style: oblique;
 .button:hover,
 .button:focus{
   background: #00ff00;
-  box-shadow: 0 0 100px #00ff00, 0 0 40px #ff0000, 0 0 80px #ffff00;     
+  box-shadow: 0 0 100px #00ff00, 0 0 40px #ff0000, 0 0 80px #ffff00;       
   color: blue;
 }
 
