@@ -34,7 +34,7 @@
   }
   .video-item1 {
   height:110px;
-  margin-bottom: 20px;
+  margin-bottom: 20px;  
   }
 
   .fullscreenButton {
@@ -51,16 +51,22 @@
   .video-v { /*PADRE DE VIDEOS */       
   display:flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; 
   margin-top: 233px;
   overflow-y: hidden;
   } 
 
-  .button-containerVid{
-    top: 5%; /* Mueve el contenedor hacia el centro vertical */
-    transform: translate(-50%);
-    display: flex; /* Utiliza flexbox para alinear los botones uno al lado del otro */   
-    flex-direction: row; /* Asegura que los botones estén en línea horizontal */
+  .button-containerVid {
+    display: flex;
+    justify-content: center; /* Centrar el contenedor horizontalmente */
+    align-items: flex-start; /* Alinear el contenedor hacia la parte superior */
+    /* Agrega cualquier otro estilo necesario */
+  }
+  .button-container {
+    display: flex;
+    justify-content: center; /* Centrar el contenedor horizontalmente */
+    align-items: flex-start; /* Alinear el contenedor hacia la parte superior */
+    /* Agrega cualquier otro estilo necesario */
   }
 
   .contVideos {
@@ -425,7 +431,7 @@ font-style: oblique;
   top: 9%;
   transform: translate(-50%, -50%);
 }
-.button-containerVid button{  /* BOTONES VIDEOS */
+.button-containerVid button{  /* BOTONES VIDEOS */        
   margin-top: 137px;
   width: 300px;
   height: 57px;

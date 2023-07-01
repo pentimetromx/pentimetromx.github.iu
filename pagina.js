@@ -2170,7 +2170,7 @@ function validatePassword() {   //  BOTON PARA COMPROBAR LA CONTRASEÑA
     hideElements60()
     
   } else {
-    var menserror = document.getElementById('error-message')
+    var menserror = document.getElementById('error-message')  
     menserror.style.display='block'
     document.getElementById("password-input").value = "";    
   }
