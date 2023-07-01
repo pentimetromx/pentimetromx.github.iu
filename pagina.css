@@ -3,7 +3,7 @@
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 /* SECCION PARA DISPOSITIVOS */ 
 
-@media screen and (max-width: 450px)
+@media screen and (max-width: 650px)
 {
   /* Estilos específicos para dispositivos móviles con ancho máximo de 600px */     
   .slider-text {
