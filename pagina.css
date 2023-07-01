@@ -61,14 +61,15 @@
     left: auto;
     top: auto;
     transform: none;
-    margin-top: 20px; 
+    margin-top: -77px; 
   }
-  
+
   .button-container {
-    display: flex;
-    justify-content: center; /* Centrar el contenedor horizontalmente */
-    align-items: flex-start; /* Alinear el contenedor hacia la parte superior */
-    /* Agrega cualquier otro estilo necesario */
+    position: relative; /* o position: static; según lo que necesites */
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-top: -77px; 
   }
 
   .contVideos {
