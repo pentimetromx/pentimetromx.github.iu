@@ -49,7 +49,7 @@
   }
   .contVideosWrapper {
     overflow-y: auto;
-    max-height: calc(100% - 97px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
+    max-height: calc(100% - 127px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
     position: fixed;
     bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
     left: 0;
@@ -158,9 +158,6 @@
     transform: translate(-50%, -50%);    
     z-index: 99999;
   } 
-  .Estilos{
-    margin-top: 77px;
-  } 
   .button-containerVid {
     /*position: absolute;
     top: -50px;
@@ -173,12 +170,8 @@
     z-index: 9999;*/
     /*position: absolute*/
     display: flex;
-    margin-top: 7px;
-
-    
-
+    margin-top: 7px;   
   }
-  
 }
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<    BLUR PARA LASIMAGENES      <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
