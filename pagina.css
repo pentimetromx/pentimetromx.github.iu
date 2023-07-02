@@ -47,18 +47,18 @@
   width: 257px;
   height: 60px;
   }
-.contVideosWrapper {
-  overflow-y: auto;
-  max-height: calc(100% - 97px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
-  position: fixed;
-  bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
-  left: 0;
-  right: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
-  z-index: 1; /* Aseguramos que el contenedor esté por debajo de los botones */
-}
+  .contVideosWrapper {
+    overflow-y: auto;
+    max-height: calc(100% - 97px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
+    position: fixed;
+    bottom: 0; /* Ajusta el contenedor para que inicie desde la parte inferior de la pantalla */
+    left: 0;
+    right: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Cambiamos a column para que los elementos se apilen desde la parte inferior hacia arriba */
+    z-index: 1; /* Aseguramos que el contenedor esté por debajo de los botones */
+  }
   .contenedor-secundario{
     overflow-y: auto;
     max-height: calc(100% - 97px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
@@ -72,12 +72,12 @@
     z-index: 1; /* Aseguramos que el contenedor esté por debajo de los botones */
 
   }
-.contBotones {
-display: flex;
-align-items: flex-start;
-justify-content: flex-start;
-margin-top: 10px;
-}
+  .contBotones {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 10px;
+  }
   .contBotones button {
   background-color:orangered;
   color:whitesmoke;
@@ -173,7 +173,7 @@ margin-top: 10px;
     z-index: 9999;
   }
   
-
+}
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<    BLUR PARA LASIMAGENES      <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
