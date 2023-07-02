@@ -162,16 +162,16 @@ margin-top: 10px;
     margin-top: 77px;
   } 
   .button-containerVid {
-    position: fixed;
-    top: calc(0px - 50px); /* Cambia el valor a "calc(0px - 50px)" o simplemente "-50px" */
+    position: absolute;
+    top: -50px; /* Mueve el contenedor hacia arriba en 50px */
     left: 50%;
     transform: translateX(-50%);
     padding: 10px;
     width: 100%;
     max-width: 500px;
     box-sizing: border-box;
-    z-index: 9999; } 
-}
+    z-index: 9999;
+  }
   
 
 
