@@ -204,6 +204,11 @@ var videoOlga = document.getElementById('video-mama');
 videoOlga.style.display = 'flex';    
 }
 function hideElements3() {
+  var audio = document.getElementById('mama');   
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
+
   var img = document.getElementById('mi-boton0');
   img.classList.add('pixelate');
   
@@ -236,6 +241,11 @@ var videoOlga = document.getElementById('imagenes-mama');
 videoOlga.style.display = 'flex';
 } 
 function hideElements5() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
+  var audio = document.getElementById('mama');   
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
+
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
   for (var i = 0; i < elementsToHide.length; i++) { 
