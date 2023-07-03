@@ -2178,18 +2178,14 @@ function validatePassword() {   //  BOTON PARA COMPROBAR LA CONTRASEÑA
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<PULSOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-let styleTag;
-
+/*let styleTag;
 function togglePulsos() {
     if (!styleTag) {
-        // Si no hay estilos, iniciamos la animación
         iniciarPulsos();
     } else {
-        // Si ya hay estilos, detenemos la animación
         detenerPulsos();
     }
 }
-
 function iniciarPulsos() {
     styleTag = document.createElement("style");
     styleTag.innerHTML = `
@@ -2214,6 +2210,88 @@ function iniciarPulsos() {
             }
             85.7% {
                 background-color: orangered;
+            }
+            100% {
+                background-color: blue; 
+            }
+        }
+
+        .botonInicial {
+            animation: cambiaColor 6s infinite;
+        }
+
+        .botonInicial:first-child {
+            animation-delay: 0s;
+        }
+
+        .botonInicial:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .botonInicial:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        .botonInicial:nth-child(4) {
+            animation-delay: 1.2s;
+        }
+
+        .botonInicial:nth-child(5) {
+            animation-delay:1.62s;
+        }
+
+        .botonInicial:nth-child(6) {
+            animation-delay: 2s;
+        }
+
+        .botonInicial:nth-child(7) {
+            animation-delay: 2.4s;
+        }
+    `;
+
+    document.head.appendChild(styleTag);
+    document.getElementById("iniciarAnimacion").setAttribute("disabled", "disabled");
+}
+function detenerPulsos() {
+    if (styleTag) {
+        document.head.removeChild(styleTag);
+        styleTag = null; 
+    }
+    document.getElementById("iniciarAnimacion").removeAttribute("disabled");
+}*/
+
+let styleTag;
+function togglePulsos() {
+    if (!styleTag) {
+        iniciarPulsos();
+    } else {
+        detenerPulsos();
+    }
+}
+function iniciarPulsos() {
+    styleTag = document.createElement("style");
+    styleTag.innerHTML = `
+        @keyframes cambiaColor {
+            0% {
+                background-color:rgb(0,250,0);
+            }
+            14.3% {
+                background-color:rgb(250,250,0);
+            }
+            28.5% {
+                background-color:rgb(0,150,0);
+            }
+            42.8% {
+                background-color:rgb(150,150,0);
+            }
+            57.1% {
+                background-color: rgb(0,77,0);
+            }
+            71.4% {
+                background-color:rgb(250,0,0);
+            }
+            85.7% {
+                background-color:rgb(0,250,0);
             }
             100% {
                 background-color: blue; /* Regresamos al color original para repetir el ciclo */
@@ -2262,17 +2340,12 @@ function iniciarPulsos() {
     `;
 
     document.head.appendChild(styleTag);
-
-    // Deshabilitar el botón "Iniciar pulso" para evitar iniciar otra animación
     document.getElementById("iniciarAnimacion").setAttribute("disabled", "disabled");
 }
-
 function detenerPulsos() {
     if (styleTag) {
         document.head.removeChild(styleTag);
-        styleTag = null; // Restablecer styleTag a null
+        styleTag = null; 
     }
-
-    // Habilitar el botón "Iniciar pulso" para permitir iniciar otra animación
     document.getElementById("iniciarAnimacion").removeAttribute("disabled");
 }
