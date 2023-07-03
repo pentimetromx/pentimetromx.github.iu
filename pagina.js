@@ -985,8 +985,8 @@ function hideElements55() {       // OCULTA ESCUDOS MUESTRA BOTONES
     setTimeout(startImageTransition2, 200);
   }, 800); // 800ms = 0.3s
 } 
-function hideElements56() {          // OCULTA BOTONES MUESTRA DESCRIPCION
-  var audio = document.getElementById('cata');
+function hideElements56() {          // OCULTA BOTONES MUESTRA DESCRIPCION  
+  var audio = document.getElementById('cata');   
   audio.currentTime = 0;
   audio.volume = 0.3;
   audio.play();
@@ -1011,7 +1011,7 @@ function hideElements56() {          // OCULTA BOTONES MUESTRA DESCRIPCION
   }, 500);
 
 }
-function hideElements57() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
+function hideElements57() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS 
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
   for (var i = 0; i < elementsToHide.length; i++) { 
       elementsToHide[i].style.display = 'none';
@@ -1024,6 +1024,11 @@ var videoOlga = document.getElementById('video-cata');
 videoOlga.style.display = 'flex';
 } 
 function hideElements58() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
+  var audio = document.getElementById('cata');   
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
+
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
   for (var i = 0; i < elementsToHide.length; i++) { 
       elementsToHide[i].style.display = 'none';
@@ -1099,6 +1104,11 @@ var videoOlga = document.getElementById('imagenes-dani');
 videoOlga.style.display = 'flex';
 } 
 function hideElements63() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
+  var audio = document.getElementById('dani');   
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
+
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
   for (var i = 0; i < elementsToHide.length; i++) { 
@@ -2176,89 +2186,7 @@ function validatePassword() {   //  BOTON PARA COMPROBAR LA CONTRASEÑA
   }
 }
 
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<PULSOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-/*let styleTag;
-function togglePulsos() {
-    if (!styleTag) {
-        iniciarPulsos();
-    } else {
-        detenerPulsos();
-    }
-}
-function iniciarPulsos() {
-    styleTag = document.createElement("style");
-    styleTag.innerHTML = `
-        @keyframes cambiaColor {
-            0% {
-                background-color: blue;
-            }
-            14.3% {
-                background-color: red;
-            }
-            28.5% {
-                background-color: yellow;
-            }
-            42.8% {
-                background-color: deeppink;
-            }
-            57.1% {
-                background-color: rgb(0, 250, 0);
-            }
-            71.4% {
-                background-color: darkblue;
-            }
-            85.7% {
-                background-color: orangered;
-            }
-            100% {
-                background-color: blue; 
-            }
-        }
-
-        .botonInicial {
-            animation: cambiaColor 6s infinite;
-        }
-
-        .botonInicial:first-child {
-            animation-delay: 0s;
-        }
-
-        .botonInicial:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-
-        .botonInicial:nth-child(3) {
-            animation-delay: 0.8s;
-        }
-
-        .botonInicial:nth-child(4) {
-            animation-delay: 1.2s;
-        }
-
-        .botonInicial:nth-child(5) {
-            animation-delay:1.62s;
-        }
-
-        .botonInicial:nth-child(6) {
-            animation-delay: 2s;
-        }
-
-        .botonInicial:nth-child(7) {
-            animation-delay: 2.4s;
-        }
-    `;
-
-    document.head.appendChild(styleTag);
-    document.getElementById("iniciarAnimacion").setAttribute("disabled", "disabled");
-}
-function detenerPulsos() {
-    if (styleTag) {
-        document.head.removeChild(styleTag);
-        styleTag = null; 
-    }
-    document.getElementById("iniciarAnimacion").removeAttribute("disabled");
-}*/
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<PULSOS DE COLORES A BOTONES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 let styleTag;
 function togglePulsos() {
@@ -2349,3 +2277,25 @@ function detenerPulsos() {
     }
     document.getElementById("iniciarAnimacion").removeAttribute("disabled");
 }
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<BOTONES DE VIDEO DETIENEN AUDIO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+  // Obtener todos los botones con la clase "fullscreenButton"
+  var botones = document.querySelectorAll('.fullscreenButton');
+
+  // Definir la función que detiene y reinicia la reproducción de los elementos de audio
+  function detenerReproducirAudios() {
+    // Obtener todos los elementos de audio en la página
+    var audios = document.getElementsByTagName('audio');
+
+    // Recorrer todos los elementos de audio y detener su reproducción
+    for (var i = 0; i < audios.length; i++) {
+      audios[i].pause();
+      audios[i].currentTime = 0;
+    }
+  }
+
+  // Asignar un event listener a cada botón
+  botones.forEach(function (boton) {
+    boton.addEventListener('click', detenerReproducirAudios);
+  });
