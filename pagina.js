@@ -905,6 +905,11 @@ function hideElements49() {        // OCULTA FOTOS MUESTRA VIDEOS
   videoOlga.style.display = 'flex';
 }
 function hideElements50() {          // OCULTA BOTONES MUESTRA DESCRIPCION
+  var audio = document.getElementById('nena');   
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
+
   var img = document.getElementById('mi-boton3');
   img.classList.add('pixelate');
   
@@ -957,6 +962,11 @@ function hideElements52() {
   videoNena.style.display = "flex";
 }
 function hideElements53() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
+  var audio = document.getElementById('nena');   
+  audio.currentTime = 0;
+  audio.volume = 0.3;
+  audio.play();
+
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
   for (var i = 0; i < elementsToHide.length; i++) { 
