@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./pagina.css">        
 
     </head>
-    <body onload="enlargeImages();">      
+    <body onload="enlargeImages(), togglePulsos();">      
                
 
         <div class="slider">
@@ -27,13 +27,13 @@
         <h1 class="etiqueta">Una historia magica y real 2226</h1>      
     
         <div class="container-Ini">
-            <button id="buttonToScale" class="button" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements()">PINEDA</button>
-            <button id="buttonToScale1" class="button" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements12()">DUARTE - CARVAJAL</button>
-            <button id="buttonToScale2" class="button" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements25()">LONDOÑO</button>
-            <button id="buttonToScale3" class="button" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements28()" >TORO - PINEDA</button>
-            <button id="buttonToScale4" class="button" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements44()">MUÑOZ</button>
-            <button id="buttonToScale5" class="button" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements55()">MIRA - LONDOÑO</button>
-            <button id="buttonToScale6" class="button" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements103()">PINEDA - GARCIA</button>
+            <button id="iniciarAnimacion" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="togglePulsos()">PINEDA</button>
+            <button id="buttonToScale1" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements12()">DUARTE - CARVAJAL</button>
+            <button id="buttonToScale2" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements25()">LONDOÑO</button>
+            <button id="buttonToScale3" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements28()" >TORO - PINEDA</button>
+            <button id="buttonToScale4" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements44()">MUÑOZ</button>
+            <button id="buttonToScale5" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements55()">MIRA - LONDOÑO</button>
+            <button id="buttonToScale6" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements103()">PINEDA - GARCIA</button>
         </div><br>
 
         <div class="container-Ini">
@@ -1971,11 +1971,6 @@
                 <audio id="moni" src="./assets/Julio Iglesias  Me olvidé de vivir.mp3"></audio>  
 
             </div>
-
-          <script src="./pagina.js"></script>   
-        
+          <script src="./pagina.js"></script>  
     </body>
-
-    <div class="contVideosWrapper">
-
 </html>

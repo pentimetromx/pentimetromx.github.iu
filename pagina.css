@@ -216,7 +216,7 @@
 
 body {
   font-family: 'Audiowide', cursive;  
-  background-image: url(./assets/degradadoMulicolor1.jfif);        
+  background-image: url(./assets/degradadoMulicolor1.jfif);           
   background-repeat: no-repeat;
   background-size: cover;
   width: -100vw;
@@ -782,3 +782,5 @@ font-style: oblique;
   .button.scale {
     transform: scale(20);
   }
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+

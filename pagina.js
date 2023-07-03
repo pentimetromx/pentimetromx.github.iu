@@ -2176,3 +2176,103 @@ function validatePassword() {   //  BOTON PARA COMPROBAR LA CONTRASEÑA
   }
 }
 
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<PULSOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+let styleTag;
+
+function togglePulsos() {
+    if (!styleTag) {
+        // Si no hay estilos, iniciamos la animación
+        iniciarPulsos();
+    } else {
+        // Si ya hay estilos, detenemos la animación
+        detenerPulsos();
+    }
+}
+
+function iniciarPulsos() {
+    styleTag = document.createElement("style");
+    styleTag.innerHTML = `
+        @keyframes cambiaColor {
+            0% {
+                background-color: blue;
+            }
+            14.3% {
+                background-color: red;
+            }
+            28.5% {
+                background-color: yellow;
+            }
+            42.8% {
+                background-color: deeppink;
+            }
+            57.1% {
+                background-color: rgb(0, 250, 0);
+            }
+            71.4% {
+                background-color: darkblue;
+            }
+            85.7% {
+                background-color: orangered;
+            }
+            100% {
+                background-color: blue; /* Regresamos al color original para repetir el ciclo */
+            }
+        }
+
+        /* Agregamos animation-delay para todos los botones */
+        .botonInicial {
+            animation: cambiaColor 6s infinite;
+        }
+
+        /* Añadimos una pausa de 0.5s para el primer botón */
+        .botonInicial:first-child {
+            animation-delay: 0s;
+        }
+
+        /* Añadimos una pausa de 1s para el segundo botón */
+        .botonInicial:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        /* Añadimos una pausa de 2s para el tercer botón */
+        .botonInicial:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        /* Añadimos una pausa de 3s para el cuarto botón */
+        .botonInicial:nth-child(4) {
+            animation-delay: 1.2s;
+        }
+
+        /* Añadimos una pausa de 4s para el quinto botón */
+        .botonInicial:nth-child(5) {
+            animation-delay:1.62s;
+        }
+
+        /* Añadimos una pausa de 20s para el sexto botón */
+        .botonInicial:nth-child(6) {
+            animation-delay: 2s;
+        }
+
+        /* Añadimos una pausa de 5s para el séptimo botón */
+        .botonInicial:nth-child(7) {
+            animation-delay: 2.4s;
+        }
+    `;
+
+    document.head.appendChild(styleTag);
+
+    // Deshabilitar el botón "Iniciar pulso" para evitar iniciar otra animación
+    document.getElementById("iniciarAnimacion").setAttribute("disabled", "disabled");
+}
+
+function detenerPulsos() {
+    if (styleTag) {
+        document.head.removeChild(styleTag);
+        styleTag = null; // Restablecer styleTag a null
+    }
+
+    // Habilitar el botón "Iniciar pulso" para permitir iniciar otra animación
+    document.getElementById("iniciarAnimacion").removeAttribute("disabled");
+}
