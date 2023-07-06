@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./pagina.css">        
 
     </head>
-    <body onload="enlargeImages(), togglePulsos();">      
+    <body onload="enlargeImages(), togglePulsos();">       
                
 
         <div class="slider">
@@ -57,142 +57,162 @@
         </div>
           <!---<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<BOTONES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
 
-        <div id="botones-pinedas" class="botones" style="margin-top: -47px; display: none;">    
+        <!---<div id="botones-pinedas" class="botones" style="margin-top: -47px; display: none;">    
             <div id="contenedor-pinedas" class="image-container1">
                 <div class="image-container2">
                     <img src="./assets/abuelos.png" alt="ImagenS" id="mi-boton1" class="img">     
                 </div>
-                <div class="image-container2">
-                    <img src="./assets/mamam.png" alt="ImagenS" id="mi-boton0" class="img" onclick="hideElements3()">   
+                <div class="image-container2">  
+                    <img src="./assets/mamam.png" alt="ImagenS" id="mi-boton0" class="img" onclick="hideBotDescrip('descripcion-olga')">   
                 </div>
                 <div class="image-container2">
-                    <img src="./assets/tinan.png" alt="ImagenS" id="button-tina" class="img" onclick="hideElements7()"> 
+                    <img src="./assets/tinan.png" alt="ImagenS" id="button-tina" class="img" onclick="hideBotDescrip('descripcion-tina')"> 
                 </div>
                 <div class="image-container2">
-                    <img src="./assets/nenan.png" alt="ImagenS" id="mi-boton3" class="img" onclick="hideElements50()">
+                    <img src="./assets/nenan.jpeg" alt="ImagenS" id="mi-boton3" class="img" onclick="hideBotDescrip('descripcion-nena')">
                 </div>
             </div><br>
             <div class="contBotBotonera">
                 <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button> 
             </div>
+        </div width='500px'>--->
+
+        <div id="botones-pinedas" class="botones" style="margin-top: -47px; display: none;">    
+            <div id="contenedor-pinedas" class="image-container1">
+              <div class="image-container2">
+                <img src="./assets/abuelos.png" alt="ImagenS" id="mi-boton1" class="img">     
+              </div>
+              <div class="image-container2">  
+                <img src="./assets/mamam.png" alt="ImagenS" id="mi-boton0" class="img" onclick="hideBotDescrip('descripcion-olga', 'mi-boton0')">   
+              </div>
+              <div class="image-container2">
+                <img src="./assets/tinan.png" alt="ImagenS" id="button-tina" class="img" onclick="hideBotDescrip('descripcion-tina', 'button-tina')"> 
+              </div>
+              <div class="image-container2">
+                <img src="./assets/nenan.jpeg" alt="ImagenS" id="mi-boton3" class="img" onclick="hideBotDescrip('descripcion-nena', 'mi-boton3')">
+              </div>
+            </div><br>
+            <div class="contBotBotonera">
+              <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button> 
+            </div>
+        </div>
+
+        <div id="botones-duarte" class="botones" style="margin-top: -47px; display: none;">  
+            <div id="conteneDuarte" class="image-container1">
+                <div class="image-container2">
+                    <img src="./assets/manyla.png" alt="ImagenS" id="mi-botMany" class="img" onclick="hideBotDescrip('descripcion-many', 'mi-botMany')">  
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/bombalena.png" alt="ImagenS" id="mi-botBomba" class="img" onclick="hideBotDescrip('descripcion-bomba', 'mi-botBomba')">   
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/ney.png" alt="ImagenS" id="mi-botNey" class="img" onclick="hideBotDescrip('descripcion-ney', 'mi-botNey')" > 
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/sebas1.png" alt="ImagenS" id="mi-botSebas" class="img" onclick="hideBotDescrip('descripcion-sebas', 'mi-botSebas')">
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/maria isabel.png" alt="ImagenS" id="mi-botChava" class="img" onclick="hideBotDescrip('descripcion-isabel', 'mi-botChava')">
+                </div>
+            </div><br>
+            <div class="contBotBotonera">
+                <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
+            </div>
         </div width='500px'>
 
-            <div id="botones-duarte" class="botones" style="margin-top: -47px; display: none;">
-                <div id="conteneDuarte" class="image-container1">
-                    <div class="image-container2">
-                        <img src="./assets/manyla.png" alt="ImagenS" id="mi-botMany" class="img" onclick="hideElements13()">  
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/bombalena.png" alt="ImagenS" id="mi-botBomba" class="img" onclick="hideElements20()">   
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/ney.png" alt="ImagenS" id="mi-botNey" class="img" onclick="hideElements22()"> 
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/sebas1.png" alt="ImagenS" id="mi-botSebas" class="img" onclick="hideElements75()">
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/maria isabel.png" alt="ImagenS" id="mi-botChava" class="img"onclick="hideElements80()">
-                    </div>
-                </div><br>
-                <div class="contBotBotonera">
-                    <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
+        <div id="botones-londoño"  class="botones" style="margin-top: -47px; display: none;"> 
+            <div id="conteneLondoño" class="image-container1">
+                <div class="image-container2">
+                    <img src="./assets/SILVINA.png" alt="ImagenS" id="mi-botSilvi" class="img" style="height: 250px; width: 250px;" onclick="hideBotDescrip('descripcion-silvi', 'mi-botSilvi')">  
                 </div>
-            </div width='500px'>
-
-            <div id="botones-londoño"  class="botones" style="margin-top: -47px; display: none;">
-                <div id="conteneLondoño" class="image-container1">
-                    <div class="image-container2">
-                        <img src="./assets/SILVINA.png" alt="ImagenS" id="mi-botSilvi" class="img" style="height: 250px; width: 250px;" onclick="hideElements26()">  
-                    </div>
-                </div><br>
-                <div class="contBotBotonera">
-                    <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
-                </div>
-            </div width='500px'>
-
-            <div id="botones-toro" class="botones" style="margin-top: -17px; display: none;">
-                <div id="botToro" class="image-container1">
-                  <div class="image-container2">
-                    <img src="./assets/SARA.png" alt="ImagenS" id="mi-botSara" class="imgn" onclick="hideElements37()">
-                  </div>
-                  <div class="image-container2">
-                    <img src="./assets/MACA.png" alt="ImagenS" id="mi-botMaca" class="imgn" onclick="hideElements29()">
-                  </div>
-                  <div class="image-container2">
-                    <img src="./assets/JULI.png" alt="ImagenS" id="mi-botJuli" class="imgn" onclick="hideElements31()">
-                  </div>
-                  <div class="image-container2">
-                    <img src="./assets/DANIELA.png" alt="ImagenS" id="mi-botDaniela" class="imgn" onclick="hideElements39()">
-                  </div>
-                </div><br>
-                <div class="contBotBotonera">
-                    <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
-                </div>
+            </div><br>
+            <div class="contBotBotonera">
+                <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
             </div>
-            
-            <div id="botones-muñoz" class="botones" style="margin-top: -47px; display: none;">
-                <div id="bot-muñoz" class="image-container1">
-                    <div class="image-container2">
-                        <img src="./assets/MANOLA.png" alt="ImagenS" id="butManola" class="img" onclick="hideElements114()">   
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/Luis Muñoz.png" alt="ImagenS" id="butMuñoz" class="img"> 
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/MONA.png" alt="ImagenS" id="butMoni" class="img" onclick="hideElements45()">   
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/ORLE.png" alt="ImagenS" id="butOrle" class="img"> 
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/isabel1.jpg" alt="ImagenS" id="butIsabel" class="img">
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/nena.jpg" alt="ImagenS" id="butNena" class="img">  
-                    </div>
-                </div><br>
-                <div class="contBotBotonera">
-                    <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
-                </div>
-            </div width='500px'> 
-            
-            <div id="botones-mira" class="botones" style="margin-top: -47px; display: none;">  
-                <div id="bot-mira" class="image-container1">
-                    <div class="image-container2">
-                        <img src="./assets/CATA.png" alt="ImagenS" id="button-cata" class="img" onclick="hideElements56()">  
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/DANIEL.png" alt="ImagenS" id="button-dani" class="img" onclick="comprobarPassword()">   
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/YOPP.png" alt="ImagenS" id="button-juan" class="img" onclick="hideElements65()"> 
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/MARION.png" alt="ImagenS" id="button-mario" class="img" onclick="hideElements70()">
-                    </div>
-                </div><br>
-                <div class="contBotBotonera">
-                    <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
-                </div>
-            </div width='500px'>  
+        </div width='500px'>
 
-            <div id="botones-garcia" class="botones" style="display: none;margin-top: -67px;">
-                <div id="bot-garcia" class="image-container1">
-                    <div class="image-container2">
-                        <img src="./assets/MARICA.png" alt="ImagenS" id="button-maritza" class="img" onclick="hideElements104()">  
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/ANDRES.png" alt="ImagenS" id="button-andres" class="img" onclick="hideElements105()">   
-                    </div>
-                    <div class="image-container2">
-                        <img src="./assets/JUANFER.png" alt="ImagenS" id="button-fer" class="img" onclick="hideElements108()"> 
-                    </div>
-                </div><br>
-                <div class="contBotBotonera">
-                    <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
+        <div id="botones-toro" class="botones" style="margin-top: -17px; display: none;">
+            <div id="botToro" class="image-container1">
+                <div class="image-container2">
+                <img src="./assets/SARA.png" alt="ImagenS" id="mi-botSara" class="imgn" onclick="hideBotDescrip('descripcion-sara', 'mi-botSara')">
                 </div>
-            </div width='500px'>
+                <div class="image-container2">
+                <img src="./assets/MACA.png" alt="ImagenS" id="mi-botMaca" class="imgn" onclick="hideBotDescrip('descripcion-maca', 'mi-botMaca')">
+                </div>
+                <div class="image-container2">
+                <img src="./assets/JULI.png" alt="ImagenS" id="mi-botJuli" class="imgn" onclick="hideBotDescrip('descripcion-juli', 'mi-botJuli')">
+                </div>
+                <div class="image-container2">
+                <img src="./assets/DANIELA.png" alt="ImagenS" id="mi-botDaniela" class="imgn" onclick="hideBotDescrip('descripcion-daniela', 'mi-botDaniela')">
+                </div>
+            </div><br>
+            <div class="contBotBotonera">
+                <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
+            </div>
+        </div>
+            
+        <div id="botones-muñoz" class="botones" style="margin-top: -47px; display: none;">
+            <div id="bot-muñoz" class="image-container1">
+                <div class="image-container2">
+                    <img src="./assets/MANOLA.png" alt="ImagenS" id="butManola" class="img" onclick="hideBotDescrip('descripcion-manola', 'butManola')">   
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/Luis Muñoz.png" alt="ImagenS" id="butMuñoz" class="img"> 
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/MONA.png" alt="ImagenS" id="butMoni" class="img" onclick="hideBotDescrip('descripcion-moni', 'butMoni')">   
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/ORLE.png" alt="ImagenS" id="butOrle" class="img"> 
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/isabel1.jpg" alt="ImagenS" id="butIsabel" class="img">
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/nena.jpg" alt="ImagenS" id="butNena" class="img">  
+                </div>
+            </div><br>
+            <div class="contBotBotonera">
+                <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
+            </div>
+        </div width='500px'> 
+            
+        <div id="botones-mira" class="botones" style="margin-top: -47px; display: none;">  
+            <div id="bot-mira" class="image-container1">
+                <div class="image-container2">
+                    <img src="./assets/CATA.png" alt="ImagenS" id="button-cata" class="img" onclick="hideBotDescrip('descripcion-cata', 'button-cata')" >  
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/DANIEL.png" alt="ImagenS" id="button-dani" class="img" onclick="comprobarPassword()">   
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/YOPP.png" alt="ImagenS" id="button-juan" class="img" onclick="hideBotDescrip('descripcion-yop', 'button-juan')"> 
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/MARION.png" alt="ImagenS" id="button-mario" class="img" onclick="hideBotDescrip('descripcion-mario', 'button-mario')">
+                </div>
+            </div><br>
+            <div class="contBotBotonera">
+                <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
+            </div>
+        </div width='500px'>  
+
+        <div id="botones-garcia" class="botones" style="display: none;margin-top: -67px;">
+            <div id="bot-garcia" class="image-container1">
+                <div class="image-container2">
+                    <img src="./assets/MARICA.png" alt="ImagenS" id="button-maritza" class="img" onclick="hideBotDescrip('descripcion-maritza', 'button-maritza')">  
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/ANDRES.png" alt="ImagenS" id="button-andres" class="img" onclick="hideBotDescrip('descripcion-andres', 'button-andres')" >   
+                </div>
+                <div class="image-container2">
+                    <img src="./assets/JUANFER.png" alt="ImagenS" id="button-fer" class="img" onclick="hideBotDescrip('descripcion-fer', 'button-fer')"> 
+                </div>
+            </div><br>
+            <div class="contBotBotonera">
+                <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Volver a inicio</button>
+            </div>
+        </div width='500px'>
 
         <!---<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DESCRIPCION<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
 
@@ -201,7 +221,7 @@
                 <img src="./assets/mama.jpg" class="imagenDecripcion" alt="Image" id="imagen-mama" onclick="hideElements4()"> 
 
                 <div id="descripcion" class="descripciones">
-                    Maria Olga Pineda Alvarez es la menor de 4 hermanos (Marta, Juan, Cristina, Olga).<br>
+                    Maria Olga Pineda Alvarez es la menor de 4 hermanos (Marta, Juan, Cristina, Olga).<br>   
                     Olga es hija de : Juan de dios Pineda Arango Y Ana de la Luz Alvarez Velasquez. <br>                 
                     Es la mamá de :<a href="#" onclick="hideElements13()">Ana Maria ,</a> <a href="#" onclick="hideElements20()">Olga Elena ,</a>
                     <a href="#" onclick="hideElements22()">Fredy Hernando ,</a> <a href="#" onclick="hideElements70()">John Mario ,</a>
@@ -211,13 +231,14 @@
                     Nació en el barrio aranjuez un 15 de junio del año 1943.
                 </div>
                 <div id="boton-olga" class="boton-"> 
-                    <button class="btnI" onclick="hideElements2()">Videos de Olga</button> 
-                    <button class="btnI" onclick="hideElements4()">Fotos de Olga</button>   
-                    <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>    
+                    <button class="btnI" onclick="hideDescripVideos('video-mama')">Videos de Olga</button> 
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-mama')">Fotos de Olga</button>   
+                    <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>     
                 </div> <br>
+                <audio id="mama" src="./assets/La Luna Me Engaño  Antonio Gonzalez.mp3"></audio>  
             </div>
 
-            <div id="descripcion-tina" class="descripcion">  
+            <div id="descripcion-tina" class="descripcion">    
             
                 <img src="./assets/tina.jpg" class="imagenDecripcion" alt="Image" id="imagen-tina" onclick="hideElements9()">
 
@@ -228,12 +249,12 @@
                     Nació en el barrio aranjuez.
                 </div>
                 <div id="boton-tina" class="boton-">  
-                    <button class="btnI" onclick="hideElements8()">Videos de tina</button><br>  
-                    <button class="btnI" onclick="hideElements9()">Fotos de tina</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-tina')">Videos de tina</button><br>  
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-tina')">Fotos de tina</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
             </div>
-            <div id="descripcion-silvi" class="descripcion">      
+            <div id="descripcion-silvi" class="descripcion">       
                 
                 <img src="./assets/Silvi.png" class="imagenDecripcion" alt="Image" id="imagen-silvi" onclick="hideElements27()">          
   
@@ -245,15 +266,16 @@
                     Realizó estudios de belleza en la escuela Mariela            
                 </div>
                 <div id="boton-silvi" class="boton-">
-                    <button class="btnI" onclick="hideElements94()">Videos de Silvia </button><br>   
-                    <button class="btnI" onclick="hideElements27()">Fotos de Sivia</button> 
-                    <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>  
+                    <button class="btnI" onclick="hideDescripVideos('video-silvi')">Videos de Silvia </button><br>   
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-silvi')">Fotos de Sivia</button> 
+                    <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button> 
+                    <audio id="silvi" src="./assets/Ghost.mp3"></audio>
                 </div> <br>
             </div>         
 
             <div id="descripcion-nena" class="descripcion">      
                 
-                <img src="./assets/nena.jpg" class="imagenDecripcion" alt="Image" id="imagen-nena" onclick="hideElements51()">          
+                <img src="./assets/nenan.jpeg" class="imagenDecripcion" alt="Image" id="imagen-nena" onclick="hideElements51()">          
 
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
                     Martha Elena (nena) es la mayor de los cuatro hermanos Pineda (Olga, Juan, Cristina, Nena)<br>
@@ -263,9 +285,10 @@
                     Nació el 21 de abril de 1940
                 </div>
                 <div id="boton-nena" class="boton-">
-                    <button class="btnI" onclick="hideElements52()">Videos de Nena </button><br>   
-                    <button class="btnI" onclick="hideElements51()">Fotos de Nena</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-nena')">Videos de Nena </button><br>   
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-nena')">Fotos de Nena</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
+                    <audio id="nena" src="./assets/Volver.mp3"></audio>  
                 </div> <br>
             </div>
             <div id="descripcion-moni" class="descripcion"> 
@@ -279,9 +302,11 @@
                     Nació el 19 de abril de 1963
                 </div>
                 <div id="boton-moni" class="boton-">
-                    <button class="btnI" onclick="hideElements46()">Videos de Monica </button><br>   
-                    <button class="btnI" onclick="hideElements47()">Fotos de Monica</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-moni')">Videos de Monica </button><br>   
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-moni')">Fotos de Monica</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>  
+                <audio id="moni" src="./assets/Julio Iglesias  Me olvidé de vivir.mp3"></audio>  
+
                 </div> <br>  
             </div>  
             <div id="descripcion-daniela" class="descripcion">             
@@ -293,8 +318,8 @@
                     Nieta de OLga Pineda, sobrina de Olga Elena, Mario y Juan  
                 </div>
                 <div id="boton-daniela" class="boton-">
-                    <button class="btnI" onclick="hideElements85()">Videos de Daniela </button><br>   
-                    <button class="btnI" onclick="hideElements43()">Fotos de Daniela</button>
+                    <button class="btnI" onclick="hideDescripVideos('video-daniela')">Videos de Daniela </button><br>   
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-daniela')">Fotos de Daniela</button>
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>  
                 </div> <br>
 
@@ -308,8 +333,8 @@
                     Nieta de OLga Pineda, sobrina de Olga Elena, Mario y Juan  
                 </div>
                 <div id="boton-sara" class="boton-">
-                    <button class="btnI" onclick="hideElements88()">Videos de Sara </button>
-                    <button class="btnI" onclick="hideElements38()">Fotos de Sara</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-sara')">Videos de Sara </button>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-sara')">Fotos de Sara</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button> 
                 </div> <br>
             </div>
@@ -325,13 +350,11 @@
                     Nieta de OLga Pineda, sobrina de Olga Elena, Mario y Juan 
                 </div>
                 <div id="boton-juli" class="boton-">
-                    <button class="btnI" onclick='hideElements36()'>Videos de Juliana </button><br>
-                    <button class="btnI" onclick="hideElements33()">Fotos de Juliana</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-juli')">Videos de Juliana </button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-juli')">Fotos de Juliana</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
-                </div> <br>
-    
+                </div> <br>    
             </div> 
-
             <div id="descripcion-maca" class="descripcion">
                 <img src="./assets/macario1.jpg" class="imagenDecripcion" alt="Image" id="imagen-maca" onclick="hideElements30()"> 
                 <div id="descripcion" class="descripciones">
@@ -341,8 +364,8 @@
                     Macario es abuelo de Simón y Jacobo además de otro nieto que viene encamino  
                 </div>
                 <div id="boton-maca" class="boton-">
-                    <button class="btnI" onclick="hideElements40()">Videos de Macario </button><br>
-                    <button class="btnI" onclick="hideElements30()">Fotos de Macario</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-maca')">Videos de Macario </button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-maca')">Fotos de Macario</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button> 
                 </div> <br>
 
@@ -356,8 +379,8 @@
                     Isabel ...
                 </div>
                 <div id="boton-isabel" class="boton-">
-                    <button class="btnI" onclick="hideElements81()">Videos de Maria Isabel </button><br>
-                    <button class="btnI" onclick="hideElements84()">Fotos de Isabel</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-isabel')">Videos de Maria Isabel </button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-isabel')">Fotos de Isabel</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
             </div>
@@ -370,8 +393,8 @@
                     Nació el 3 de junio de 1993 
                 </div>
                 <div id="boton-sebas" class="boton-"> 
-                    <button class="btnI" onclick="hideElements76()">Videos de Sebastian </button><br>  
-                    <button class="btnI" onclick="hideElements77()">Fotos de Sebastian</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-sebas')">Videos de Sebastian </button><br>  
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-sebas')">Fotos de Sebastian</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button> 
                 </div> <br>
             </div>  
@@ -387,8 +410,8 @@
                     No era muy rumbero como el resto de los hemanos, había que pagarle solo para bailar. 
                 </div>
                 <div id="boton-ney" class="boton-">
-                    <button class="btnI" onclick="hideElements91()">Videos de Fredy Hernando</button>
-                    <button class="btnI" onclick="hideElements23()">Fotos de Fredy</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-ney')">Videos de Fredy Hernando</button>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-ney')">Fotos de Fredy</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
             </div>  
@@ -405,8 +428,8 @@
                     Nació en el barrio aranjuez.
                 </div>
                 <div id="boton-bomba" class="boton-">        
-                    <button class="btnI" onclick="hideElements18()">Videos de Olga Elena</button><br>
-                    <button class="btnI" onclick="hideElements19()">Fotos de Olga</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-bomba')">Videos de Olga Elena</button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-bomba')">Fotos de Olga</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
             </div> 
@@ -421,8 +444,8 @@
                     Nació en el barrio aranjuez.
                 </div>
                 <div id="boton-many" class="boton-">
-                    <button class="btnI" onclick="hideElements14()">Videos de Ana Maria</button><br>
-                    <button class="btnI" onclick="hideElements15()">Fotos de Ana</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-many')">Videos de Ana Maria</button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-many')">Fotos de Ana</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
             </div> 
@@ -431,8 +454,8 @@
 
                 <div class="contManola">
                     <div id="boton-manola" class="botDescManola">
-                        <button class="btn7" onclick="hideElements116()">Videos de Magola </button><br>  
-                        <button class="btn7" onclick="hideElements115()">Fotos de Magola</button> 
+                        <button class="btn7" onclick="hideDescripVideos('video-manola')">Videos de Magola </button><br>  
+                        <button class="btn7" onclick="hideDescripFotos('imagenes-manola')">Fotos de Magola</button> 
                         <button class="btn7" onclick="vuelveaInicio()">Volver a inicio</button>  
                     </div> <br>             
                     <!---<img class="imagenDecripcion" alt="" id="imagen-manola" style="background-image: url('./assets/manola1.jpg'); background-size: cover; background-repeat: no-repeat;height:207px;" onclick="hideElements115()">  --->
@@ -444,6 +467,7 @@
                     Es la Abuela de : Humberto, Adriana, Juan Arturo, Jhon, Bibiana, Abelardo, Libardo, Magdalena, Osvaldo, Karina, Wendy, Sara, Laura Bibiana, Reynaldo, Ruben, Cristina, Scharick, Luis David, Luis, Juan, Jorge, Diana, Jonathan, Geraldine, Suzana, Manuela, Santiago<br>
                     Magola es la bisabuela de : Rafael Humberto, Sebastián, Adrian José, David Fernando, Abelardo, Franyer, Maria José, Luis Angel, Juanita, Nicolas, Cristofer,  Luisana, Douglas, Verónica, Gonzalo Manuel, Jimena Antonela, Wilcar, Wilmary, José Angel, Maria Isabel, Luis David, Josué, Dickson, Dilan, Juan Andrés, Emiliana, Santiago, Isabela, Yordelis, Delio   
                 </div>
+                <audio id="manola" src="./assets/Casita Vieja.mp3"></audio>
             </div>     
  
             <div id="descripcion-cata" class="descripcion">              
@@ -456,9 +480,10 @@
                     Realizò sus estudios en el Tecnológico Antioqueño<br>
                 </div>
                 <div id="boton-cata" class="boton-">
-                    <button class="btnI" onclick="hideElements57()">Videos de Cata </button><br>
-                    <button class="btnI" onclick="hideElements58()">Fotos de Cata</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-cata')">Videos de Cata </button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-cata')">Fotos de Cata</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button> 
+                    <audio id="cata" src="./assets/Electro House Mix.mp3"></audio>
                 </div> <br>
 
             </div>  
@@ -473,9 +498,10 @@
                     Aficionado a las motos
                 </div>
                 <div id="boton-dani" class="boton-">
-                    <button class="btnI" onclick="hideElements61()">Videos de Daniel </button><br>
-                    <button class="btnI" onclick="hideElements62()">Fotos de Daniel</button> 
-                    <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>  
+                    <button class="btnI" onclick="hideDescripVideos('video-dani')">Videos de Daniel </button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-dani')">Fotos de Daniel</button> 
+                    <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button> 
+                    <audio id="dani" src="./assets/Sweet Child O Mine.mp3"></audio>  
                 </div> <br>
 
             </div>  
@@ -489,8 +515,8 @@
                     Nació el 31 de mayo de 1966 <br>
                 </div>
                 <div id="boton-yop" class="boton-">
-                    <button class="btnI" onclick="hideElements66()">Videos de Juan </button><br>
-                    <button class="btnI" onclick="hideElements67()">Fotos de Juan</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-juan')">Videos de Juan </button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-juan')">Fotos de Juan</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
             </div>  
@@ -505,8 +531,8 @@
                     Actualmente vive y labora en la ciudad de Dubay (EUA)        
                 </div>
                 <div id="boton-mario" class="boton-">
-                    <button class="btnI" onclick="hideElements71()">Videos de Mario </button><br> 
-                    <button class="btnI" onclick="hideElements74()">Fotos de Mario</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-mario')">Videos de Mario </button><br> 
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-mario')">Fotos de Mario</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
 
@@ -520,8 +546,8 @@
                     Juan es un profesional del volante de carga pesada  
                 </div>
                 <div id="boton-isabel" class="boton-">
-                    <button class="btnI" onclick="hideElements109()">Videos de Juan Fernando </button><br>  
-                    <button class="btnI" onclick="hideElements100()">Fotos de Juan Fernando</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-fer')">Videos de Juan Fernando </button><br>  
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-fer')">Fotos de Juan Fernando</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>          
             </div>
@@ -534,8 +560,8 @@
                     Se dedica al arte de la estética femenina    
                 </div>
                 <div id="boton-maritza" class="boton-">
-                    <button class="btnI" onclick="hideElements99()">Videos de Maritza </button><br>  
-                    <button class="btnI" onclick="hideElements113()">Fotos de Maritza</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-maritza')">Videos de Maritza </button><br>  
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-maritza')">Fotos de Maritza</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
             </div>     
@@ -548,8 +574,8 @@
                     Un activo lider social  
                 </div>
                 <div id="boton-andres" class="boton-">
-                    <button class="btnI" onclick="hideElements106()">Videos de Andrés </button><br>
-                    <button class="btnI" onclick="hideElements112()">Fotos de Andrés</button> 
+                    <button class="btnI" onclick="hideDescripVideos('video-andres')">Videos de Andrés </button><br>
+                    <button class="btnI" onclick="hideDescripFotos('imagenes-andres')">Fotos de Andrés</button> 
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>               
             </div> 
@@ -1286,7 +1312,7 @@
                 </div> 
                 <div class="contVideosWrapper">
                     <div class="contVideos">
-                        <div class="video-container">
+                        <div class="video-container"> 
                             <button class="fullscreenButton" onclick="toggleFullscreenAndPlay('video137')"><span>&#9658;</span> REPRODUCIR VIDEO 1</button>
                         </div>
                         <div class="video-container">
@@ -1661,7 +1687,6 @@
                         <img src="./assets/las tres.jpg">
                         <img src="./assets/las tres1.jpg">
                         <img src="./assets/las tres2.png">
-                        <img src="./assets/nena.jpg">
                         <img src="./assets/nena9.png">
                         <img src="./assets/nena-fer-bomba.png"> 
                         <img src="./assets/nena8.png">
@@ -1967,16 +1992,6 @@
 
             </svg>
 
-            <div id="audio-container">
-                <audio id="cata" src="./assets/Electro House Mix.mp3"></audio>
-                <audio id="dani" src="./assets/Sweet Child O Mine.mp3"></audio>  
-                <audio id="silvi" src="./assets/Ghost.mp3"></audio>
-                <audio id="manola" src="./assets/Casita Vieja.mp3"></audio>
-                <audio id="moni" src="./assets/Julio Iglesias  Me olvidé de vivir.mp3"></audio>  
-                <audio id="mama" src="./assets/La Luna Me Engaño  Antonio Gonzalez.mp3"></audio>  
-                <audio id="nena" src="./assets/Volver.mp3"></audio>  
-
-            </div>
           <script src="./pagina.js"></script>  
     </body>
 </html>

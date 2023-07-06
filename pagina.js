@@ -8,8 +8,6 @@ const etiquetaInicial = document.getElementsByClassName('etiqueta')
  const botonesMuñoz = document.getElementById('botones-muñoz')
  const botonesMira = document.getElementById('botones-mira')
  const botonesGarcia = document.getElementById('botones-garcia')  
- const botonSilvi = document.getElementById('mi-botSilvi')          
- const botonSilvia = document.getElementById('botSilvia')
 
 
  const descripciones = document.getElementById('descripciones')
@@ -35,25 +33,8 @@ const etiquetaInicial = document.getElementsByClassName('etiqueta')
  const descripcionFer = document.getElementById('descripcion-fer')
  const descripcionMaritza = document.getElementById('descripcion-maritza')
  const descripcionAndres = document.getElementById('descripcion-andres')
- const descripcionManola = document.getElementById('descripcion-manola')
-
-
-
-
-    
-
+ const descripcionManola = document.getElementById('descripcion-manola') 
  
- const arrayDescripciones = [
-  document.getElementById('descripcion-olga'),
-  document.getElementById('descripcion-tina'),
-  document.getElementById('descripcion-many'),
-  document.getElementById('descripcion-bomba')
-];
-           
- const bloqueTina = document.getElementById('bloque-tina')
- const bloqueOlga = document.getElementById('descripcion-olga')
- const contenedor = document.getElementById('contenedor')
-
  const videosContenedor = document.getElementById('video-v')
  const videoMama = document.getElementById('video-mama')
  const videoTina = document.getElementById('video-tina')
@@ -77,13 +58,6 @@ const etiquetaInicial = document.getElementsByClassName('etiqueta')
  const videoMaritza = document.getElementById('video-maritza')
  const videoAndres = document.getElementById('video-andres')
  const videoManola = document.getElementById('video-manola')
-
-
- const botonera = document.getElementsByClassName('botones')
- const botonOlga = document.getElementById('boton-olga') 
- const botonOlga1 = document.getElementById('boton-olga-v')
- const botonTina1 = document.getElementById('boton-tina-v')
- const botonMany1 = document.getElementById('boton-many-v')
 
  const imagenesContenedor = document.getElementById('imagenes') 
  const imagenesTina = document.getElementById('imagenes-tina')
@@ -111,8 +85,6 @@ const etiquetaInicial = document.getElementsByClassName('etiqueta')
  const imagenesAndres = document.getElementById('imagenes-andres')
  const imagenesManola = document.getElementById('imagenes-manola')
 
- const buttons = document.querySelectorAll('.button-neon')
- 
  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
  //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -165,10 +137,6 @@ function increaseSize6() {   // AUMENTO BOTONES INICIALES
     buttonToScale.classList.remove('scale');
   }, 300); // 700ms = 0.7s
 }
-
-
-
-
 function hideElements() {
   increaseSize();
 
@@ -182,27 +150,71 @@ function hideElements() {
     setTimeout(startImageTransition, 200);
   }, 800); // 800ms = 0.3s
 }
-
-function hideElements1() {     // OCULTA BOTONES y MUESTRA DESCRIPCION TINA 
-  var elementsToHide2 = document.querySelectorAll('.boton')
-    for (var i = 0; i < elementsToHide2.length; i++) {
-        elementsToHide2[i].style.display = 'none';
-    }
-    descripciones.style.display='flex'
-    descripcionTina.style.display='none'
-}  
-function hideElements2() {   //  OCULTA DESCRIPCION Y MUESTRA VIDEOS                  
+function hideDescripVideos(elementId) {          // DESCRIPCION / VIDEOS
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
   for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
+    elementsToHide[i].style.display = 'none';
   }
-var contenedoresPadre = document.getElementsByClassName('descripcion');   
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
+  var contenedoresPadre = document.getElementsByClassName('descripcion');
+  for (var i = 0; i < contenedoresPadre.length; i++) {
+    contenedoresPadre[i].style.display = 'none';
+  }
+  var videoOlga = document.getElementById(elementId);
+  videoOlga.style.display = 'flex';
 }
-var videoOlga = document.getElementById('video-mama');
-videoOlga.style.display = 'flex';    
+function hideDescripFotos(elementId) {           // DESCRIPCION / FOTOS     
+  var elementsToHide = document.querySelectorAll('.botones, .video-v');
+  for (var i = 0; i < elementsToHide.length; i++) { 
+    elementsToHide[i].style.display = 'none';
+  }
+  var contenedoresPadre = document.getElementsByClassName('descripcion');
+  for (var i = 0; i < contenedoresPadre.length; i++) {
+    contenedoresPadre[i].style.display = 'none';
+  }
+  var videoOlga = document.getElementById(elementId);
+  videoOlga.style.display = 'flex';
 }
+function hideBotDescrip(elementId, buttonId) {   // BOTONES / DESCRIPCION 
+  var img = document.getElementById(buttonId);
+  img.classList.add('pixelate');
+
+  setTimeout(function() {
+    img.classList.remove('pixelate');
+
+    var elementsToHide = document.querySelectorAll('.botones');
+    for (var i = 0; i < elementsToHide.length; i++) { 
+      elementsToHide[i].style.display = 'none';
+    }
+    var descript = document.getElementById(elementId);
+    descript.style.display = 'flex';  
+  }, 500);
+
+  var descript = document.getElementById(elementId);
+  var audio = descript.querySelector("audio");   
+  audio.currentTime = 0;
+  audio.volume = 0.5;
+  audio.play();
+}
+function comprobarPassword() {   // MUESTRA LA INTERFAZ DE CONTRASEÑA
+  var passwordInput = document.getElementById('password-input');
+  var elementsToShow = document.querySelectorAll('#password-overlay');
+  for (var i = 0; i < elementsToShow.length; i++) {
+    elementsToShow[i].style.display = 'flex';
+  }
+  passwordInput.focus();
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    var elementsToHide = document.querySelectorAll('#password-overlay'); 
+    for (var i = 0; i < elementsToHide.length; i++) {
+      elementsToHide[i].style.display = 'none';
+    }
+    document.getElementById("password-input").value = "";
+  }
+}
+);
+
 function hideElements3() {
   var audio = document.getElementById('mama');   
   audio.currentTime = 0;
@@ -228,18 +240,6 @@ function hideElements3() {
 
   }, 500);
 }
-function hideElements4() {    //  OCULTA DESCRIPCION Y MUESTRA FOTOS
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-mama');
-videoOlga.style.display = 'flex';
-} 
 function hideElements5() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var audio = document.getElementById('mama');   
   audio.currentTime = 0;
@@ -272,26 +272,6 @@ function hideElements6() {        // OCULTA FOTOS MUESTRA VIDEOS
   var videoOlga = document.getElementById('video-mama');
   videoOlga.style.display = 'flex';
 } 
-function hideElements7() {
-  var img = document.getElementById('button-tina');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-tina');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-}
 function hideElements8() {   
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
   for (var i = 0; i < elementsToHide.length; i++) {
@@ -452,26 +432,7 @@ var videoOlga = document.getElementById('imagenes-bomba');
 videoOlga.style.display = 'flex';
 
 }
-function hideElements20() {
-  var img = document.getElementById('mi-botBomba');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-bomba');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-}function hideElements21() {
+function hideElements21() {
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
   for (var i = 0; i < elementsToHide.length; i++) { 
@@ -483,27 +444,6 @@ function hideElements20() {
   }
   var videoOlga = document.getElementById('imagenes-bomba');
   videoOlga.style.display = 'flex';
-
-}
-function hideElements22() {
-  var img = document.getElementById('mi-botNey');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-ney');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
 
 }
 function hideElements23() {     
@@ -518,7 +458,7 @@ for (var i = 0; i < contenedoresPadre.length; i++) {
 var videoOlga = document.getElementById('imagenes-ney');
 videoOlga.style.display = 'flex';
 } 
-function hideElements24() {        // OCULTA FOTOS MUESTRA VIDEOS BOMBA
+function hideElements24() {        // FOTOS / VIDEOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
   for (var i = 0; i < elementsToHide.length; i++) { 
@@ -544,43 +484,7 @@ function hideElements25() {
     setTimeout(startImageTransition3, 200);
   }, 800); // 800ms = 0.3s
 } 
-function hideElements26() {     // OCULTA BOTONES y MUESTRA DESCRIPCION
-  var img = document.getElementById('mi-botSilvi');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
 
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-silvi');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-  var audio = document.getElementById('silvi');
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-
-}  
-function hideElements27() {    //  OCULTA DESCRIPCION Y MUESTRA FOTOS
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');  
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-silvi');
-videoOlga.style.display = 'flex';
-} 
 function hideElements28() {
   increaseSize3();
 
@@ -594,85 +498,6 @@ function hideElements28() {
     setTimeout(startImageTransition5, 200);
   }, 800); // 800ms = 0.3s
 }
-function hideElements29() {     // OCULTA BOTONES y MUESTRA DESCRIPCION
-  var img = document.getElementById('mi-botMaca');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-maca');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements30() {    //  OCULTA DESCRIPCION Y MUESTRA FOTOS
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-maca');
-videoOlga.style.display = 'flex';
-} 
-function hideElements31() {    //  OCULTA BOTONES  MUESTRA DESCRIPCION
-  var img = document.getElementById('mi-botJuli');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-juli');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500); 
-} 
-function hideElements32() {    //  OCULTA DESCRIPCION Y MUESTRA FOTOS
-  var elementsToHide = document.querySelectorAll('.descripcion, .botones');
-  for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-  }
-  imagenesContenedor.style.display='flex'
-  imagenesSara.style.display='flex'
-  imagenesMama.style.display='none'
-  imagenesMany.style.display='none'
-  imagenesTina.style.display='none'
-
-  imagenesSilvi.style.display='none'
-
-} 
-function hideElements33() {    //  DESCRIPCION / FOTOS JULIANA
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-juli');
-videoOlga.style.display = 'flex';
-} 
 function hideElements34() {        // OCULTA FOTOS MUESTRA VIDEOS 
   var elementsToHide = document.querySelectorAll('.imagenes');
   var elementsToHide = document.querySelectorAll('.descripciones');
@@ -701,97 +526,6 @@ function hideElements35() {        // OCULTA VIDEOS Y MUESTRA FOTOS
   var videoOlga = document.getElementById('imagenes-juli');
   videoOlga.style.display = 'flex';
 } 
-function hideElements36() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-juli');
-videoOlga.style.display = 'flex';
-} 
-function hideElements37() {    //  OCULTA BOTONES  MUESTRA DESCRIPCION SARA
-  var img = document.getElementById('mi-botSara');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-sara');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500); 
-
-}
-function hideElements38() {    //  DESCRIPCION / FOTOS SARA
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-sara');
-videoOlga.style.display = 'flex';
-} 
-function hideElements39() {    //  OCULTA BOTONES  MUESTRA DESCRIPCION 
-  var img = document.getElementById('mi-botDaniela');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-daniela');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500); 
-}
-function hideElements40() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-maca');
-videoOlga.style.display = 'flex';
-
-} 
-function hideElements41() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-maca');
-  videoOlga.style.display = 'flex';
-} 
 function hideElements42() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -805,18 +539,6 @@ function hideElements42() {        // OCULTA VIDEOS Y MUESTRA FOTOS
   var videoOlga = document.getElementById('imagenes-maca');
   videoOlga.style.display = 'flex';
 } 
-function hideElements43() {    //  DESCRIPCION /  FOTOS DANIELA
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-daniela');
-videoOlga.style.display = 'flex';
-} 
 function hideElements44() { 
   increaseSize4();
 
@@ -829,54 +551,6 @@ function hideElements44() {
     botonesMuñoz.style.display = 'flex';
     setTimeout(startImageTransition6, 200);
   }, 800); // 800ms = 0.3s
-} 
-function hideElements45() {    //  OCULTA BOTONES  MUESTRA DESCRIPCION SARA
-  var img = document.getElementById('butMoni');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-moni');
-    descripcionOlga.style.display = 'flex';
-  }, 500); 
-  var audio = document.getElementById('moni');
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();  
-}
-function hideElements46() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-moni');
-videoOlga.style.display = 'flex';
-} 
-function hideElements47() {    //  OCULTA DESCRIPCION Y MUESTRA FOTOS
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-moni');
-videoOlga.style.display = 'flex';
-
 } 
 function hideElements48() {
   var elementsToHide = document.querySelectorAll('.descripciones');
@@ -904,44 +578,6 @@ function hideElements49() {        // OCULTA FOTOS MUESTRA VIDEOS
   var videoOlga = document.getElementById('video-moni');
   videoOlga.style.display = 'flex';
 }
-function hideElements50() {          // OCULTA BOTONES MUESTRA DESCRIPCION
-  var audio = document.getElementById('nena');   
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-
-  var img = document.getElementById('mi-boton3');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-nena');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements51() {    //  OCULTA DESCRIPCION Y MUESTRA FOTOS NENA
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-nena');
-videoOlga.style.display = 'flex';
-} 
 function hideElements52() {
   var elementsToHide = document.querySelectorAll('.descripcion, .botones, .imagenes-i');
   for (var i = 0; i < elementsToHide.length; i++) {
@@ -1005,44 +641,6 @@ function hideElements55() {       // OCULTA ESCUDOS MUESTRA BOTONES
     setTimeout(startImageTransition2, 200);
   }, 800); // 800ms = 0.3s
 } 
-function hideElements56() {          // OCULTA BOTONES MUESTRA DESCRIPCION  
-  var audio = document.getElementById('cata');   
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-
-  var img = document.getElementById('button-cata');
-  img.classList.add('pixelate');            
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');       
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-cata');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements57() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-cata');
-videoOlga.style.display = 'flex';
-} 
 function hideElements58() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var audio = document.getElementById('cata');   
   audio.currentTime = 0;
@@ -1073,56 +671,6 @@ function hideElements59() {        // OCULTA FOTOS MUESTRA VIDEOS
   var videoOlga = document.getElementById('video-cata');
   videoOlga.style.display = 'flex';
 }
-function hideElements60() {          // OCULTA BOTONES MUESTRA DESCRIPCION
-  var img = document.getElementById('button-dani');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-dani');
-    descripcionOlga.style.display = 'flex';
-    var slidVisible = document.getElementsByClassName('slide');
-    slidVisible.style.display ='flex';
-    
-  }, 500);
-  var audio = document.getElementById('dani');
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-}
-function hideElements61() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-dani');
-videoOlga.style.display = 'flex';
-} 
-function hideElements62() {    //  OCULTA DESCRIPCION MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-dani');
-videoOlga.style.display = 'flex';
-} 
 function hideElements63() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var audio = document.getElementById('dani');   
   audio.currentTime = 0;
@@ -1154,51 +702,6 @@ function hideElements64() {        // OCULTA FOTOS MUESTRA VIDEOS
   var videoOlga = document.getElementById('video-dani');
   videoOlga.style.display = 'flex';
 }
-function hideElements65() {          // OCULTA BOTONES MUESTRA DESCRIPCION
-  var img = document.getElementById('button-juan');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-yop');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements66() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-juan');
-videoOlga.style.display = 'flex';
-} 
-function hideElements67() {    //  OCULTA DESCRIPCION MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-juan');
-  videoOlga.style.display = 'flex';
-} 
 function hideElements68() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -1225,39 +728,6 @@ function hideElements69() {        // OCULTA FOTOS MUESTRA VIDEOS
   var videoOlga = document.getElementById('video-juan');
   videoOlga.style.display = 'flex';
 }
-function hideElements70() {          // OCULTA BOTONES MUESTRA DESCRIPCION
-  var img = document.getElementById('button-mario');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-mario');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements71() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-mario');
-videoOlga.style.display = 'flex';
-} 
 function hideElements72() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -1283,64 +753,6 @@ function hideElements73() {        // OCULTA FOTOS Y MUESTRA VIDEOS
   }
   var videoOlga = document.getElementById('video-mario');
   videoOlga.style.display = 'flex';
-} 
-function hideElements74() {    //  OCULTA DESCRIPCION MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-mario');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements75() {          // OCULTA BOTONES MUESTRA DESCRIPCION
-  var img = document.getElementById('mi-botSebas');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-sebas');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements76() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-sebas');
-videoOlga.style.display = 'flex';
-} 
-function hideElements77() {    //  OCULTA DESCRIPCION MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-sebas');
-videoOlga.style.display = 'flex';
-
 } 
 function hideElements78() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
@@ -1368,39 +780,6 @@ function hideElements79() {        // OCULTA FOTOS Y MUESTRA VIDEOS
   var videoOlga = document.getElementById('video-sebas');
   videoOlga.style.display = 'flex';
 
-} 
-function hideElements80() {          // OCULTA BOTONES MUESTRA DESCRIPCION
-  var img = document.getElementById('mi-botChava');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-isabel');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements81() {    //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-isabel');
-videoOlga.style.display = 'flex';
 } 
 function hideElements82() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
@@ -1430,31 +809,6 @@ function hideElements83() {        // OCULTA FOTOS Y MUESTRA VIDEOS
   videoOlga.style.display = 'flex';
 
 } 
-function hideElements84() {    //  OCULTA DESCRIPCION MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-isabel');
-videoOlga.style.display = 'flex';
-
-} 
-function hideElements85() {   // DESCRIPCION / VIDEOS DANIELA
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-daniela');
-videoOlga.style.display = 'flex';
-} 
 function hideElements86() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -1481,18 +835,6 @@ function hideElements87() {        // OCULTA FOTOS Y MUESTRA VIDEOS
   var videoOlga = document.getElementById('video-daniela');
   videoOlga.style.display = 'flex';
 } 
-function hideElements88() {   //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-sara');
-videoOlga.style.display = 'flex';
-} 
 function hideElements89() {        // OCULTA VIDEOS Y MUESTRA FOTOS SARA 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -1518,19 +860,7 @@ function hideElements90() {        // OCULTA FOTOS Y MUESTRA VIDEOS
   }
   var videoOlga = document.getElementById('video-sara');
   videoOlga.style.display = 'flex';
-} 
-function hideElements91() {   //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
 }
-var videoOlga = document.getElementById('video-ney');
-videoOlga.style.display = 'flex';
-} 
 function hideElements92() {        // OCULTA FOTOS Y MUESTRA VIDEOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
@@ -1558,32 +888,6 @@ function hideElements93() {        // OCULTA VIDEOS Y MUESTRA FOTOS SARA
   var videoOlga = document.getElementById('imagenes-ney');
   videoOlga.style.display = 'flex';
 } 
-function hideElements94() {   //  OCULTA DESCRIPCION Y MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-silvi');
-videoOlga.style.display = 'flex';
-} 
-function hideElements95() {        // OCULTA VIDEOS Y MUESTRA FOTOS SILVI
-  var elementsToHide = document.querySelectorAll('.videos');
-  for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-  }
-  videosContenedor.style.display='none'
-  imagenesContenedor.style.display='flex' 
-  imagenesSilvi.style.display='flex'
-  imagenesMario.style.display='none'
-  imagenesMany.style.display='none'
-  imagenesTina.style.display='none'
-  imagenesMama.style.display='none'
-
-} 
 function hideElements96() {        // OCULTA VIDEOS Y MUESTRA FOTOS SILVI 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -1610,31 +914,6 @@ function hideElements97() {        // OCULTA FOTOS Y MUESTRA VIDEOS
   var videoOlga = document.getElementById('video-silvi');
   videoOlga.style.display = 'flex';
 } 
-function hideElements98() {          // BOTONES / DESCRIPCION
-  var elementsToHide = document.querySelectorAll('.botones');
-  for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-  } 
-  descripciones.style.display='flex'
-  descripcionSebas.style.display='none'
-  descripcionOlga.style.display='none'
-  descripcionTina.style.display='none'
-  descripcionMany.style.display='none'
-  descripcionFer.style.display='flex'
-
-}
-function hideElements99() {   //  DESCRIPCION / VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-maritza');
-videoOlga.style.display = 'flex';
-} 
 function hideElements100() {    //  DSCRIPCION / FOTOS
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');   
@@ -1649,8 +928,7 @@ function hideElements100() {    //  DSCRIPCION / FOTOS
   videoOlga.style.display = 'flex';
 
 } 
-
-function hideElements101() {        // VIDEOS / FOTOS
+function hideElements101() {     // VIDEOS / FOTOS
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
   for (var i = 0; i < elementsToHide.length; i++) { 
@@ -1663,7 +941,7 @@ function hideElements101() {        // VIDEOS / FOTOS
   var videoOlga = document.getElementById('imagenes-maritza');
   videoOlga.style.display = 'flex';
 } 
-function hideElements102() {        // FOTOS / VIDEOS 
+function hideElements102() {     // FOTOS / VIDEOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
   for (var i = 0; i < elementsToHide.length; i++) { 
@@ -1689,59 +967,6 @@ function hideElements103() {    //  ESCUDOS / BOTONES
     setTimeout(startImageTransition1, 200);
   }, 800); // 800ms = 0.3s
 }
-function hideElements104() {          // BOTONES / DESCRIPCION
-  var img = document.getElementById('button-maritza');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-maritza');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-}
-function hideElements105() {     // BOTONES / DESCRIPCION
-  var img = document.getElementById('button-andres');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-andres');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements106() {    //  DESCRIPCION / VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-andres');
-videoOlga.style.display = 'flex';
-} 
 function hideElements107() {    // VIDEOS / FOTOS
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -1754,39 +979,6 @@ function hideElements107() {    // VIDEOS / FOTOS
   }
   var videoOlga = document.getElementById('imagenes-andres');
   videoOlga.style.display = 'flex';
-} 
-function hideElements108() {    // BOTONES / DESCRIPCION
-  var img = document.getElementById('button-fer');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-fer');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-
-}
-function hideElements109() {    //  DESCRIPCION / VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-fer');
-videoOlga.style.display = 'flex';
 } 
 function hideElements110() {    // VIDEOS / FOTOS
   var elementsToHide = document.querySelectorAll('.descripciones');
@@ -1814,57 +1006,6 @@ function hideElements111() {    // FOTOS / VIDEOS
   var videoOlga = document.getElementById('video-fer');
   videoOlga.style.display = 'flex';
 }
-function hideElements112() {    //  DSCRIPCION / FOTOS
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-andres');
-  videoOlga.style.display = 'flex';
-
-} 
-function hideElements113() {    //  DSCRIPCION / FOTOS
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');            
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-
-  var videoOlga = document.getElementById('imagenes-maritza');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements114() {    // BOTONES / DESCRIPCION
-  var img = document.getElementById('butManola');
-  img.classList.add('pixelate');
-  
-  setTimeout(function() {
-    img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones, .imagenes-i'); 
-    for (var i = 0; i < elementsToHide.length; i++) {
-        elementsToHide[i].style.display = 'none';
-    }
-    var contenedoresPadre = document.getElementsByClassName('descripcion');
-    for (var i = 0; i < contenedoresPadre.length; i++) {
-      contenedoresPadre[i].style.display = 'none';
-    }  
-    var descripcionOlga = document.getElementById('descripcion-manola');
-    descripcionOlga.style.display = 'flex';
-
-  }, 500);
-  var audio = document.getElementById('manola');
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-}
 function hideElements115() {    //  DSCRIPCION / FOTOS
   var elementsToHide = document.querySelectorAll('.descripciones');
   for (var i = 0; i < elementsToHide.length; i++) {
@@ -1879,18 +1020,6 @@ for (var i = 0; i < contenedoresPadre.length; i++) {
   contenedoresPadre[i].style.display = 'none';
 }
 var videoOlga = document.getElementById('imagenes-manola');
-videoOlga.style.display = 'flex';
-} 
-function hideElements116() {    //  DESCRIPCION / VIDEOS
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-manola');
 videoOlga.style.display = 'flex';
 } 
 function hideElements117() {    // FOTOS / VIDEOS 
@@ -1920,7 +1049,6 @@ function hideElements118() {    // VIDEOS / FOTOS
   videoOlga.style.display = 'flex';
 
 } 
-
 function vuelveaInicio() {
   // Obtener todos los elementos de audio en la página
   var audios = document.getElementsByTagName('audio');
@@ -1957,7 +1085,6 @@ function hideElements119() {    // FOTOS / VIDEOS
   var videoOlga = document.getElementById('video-andres');
   videoOlga.style.display = 'flex';
 }
-
 function hideElements120() {
   var elementsToHide = document.getElementsByClassName("descripcion");
   for (var i = 0; i < elementsToHide.length; i++) {
@@ -2197,7 +1324,7 @@ function validatePassword() {   //  BOTON PARA COMPROBAR LA CONTRASEÑA
     passwordContainer.style.display = 'none';                     
     document.getElementById("password-input").value = "";
 
-    hideElements60()
+    hideBotDescrip(elementId)
     
   } else {
     var menserror = document.getElementById('error-message')  
