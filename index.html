@@ -183,8 +183,7 @@
                     <img src="./assets/CATA.png" alt="ImagenS" id="button-cata" class="img" onclick="hideBotDescrip('descripcion-cata', 'button-cata')" >  
                 </div>
                 <div class="image-container2">
-                    <img src="./assets/DANIEL.png" alt="ImagenS" id="button-dani" class="img" onclick="comprobarPassword()">   
-                </div>
+                    <img src="./assets/DANIEL.png" alt="ImagenS" id="button-dani" class="img" onclick="hideBotDescrip('descripcion-dani', 'button-dani')">                   </div>
                 <div class="image-container2">
                     <img src="./assets/YOPP.png" alt="ImagenS" id="button-juan" class="img" onclick="hideBotDescrip('descripcion-yop', 'button-juan')"> 
                 </div>
@@ -221,14 +220,14 @@
                 <img src="./assets/mama.jpg" class="imagenDecripcion" alt="Image" id="imagen-mama" onclick="hideElements4()"> 
 
                 <div id="descripcion" class="descripciones">
-                    Maria Olga Pineda Alvarez es la menor de 4 hermanos (Marta, Juan, Cristina, Olga).<br>   
+                    Maria Olga Pineda Alvarez es la menor de 4 hermanos (Marta, Juan, Cristina, Olga).<br>      
                     Olga es hija de : Juan de dios Pineda Arango Y Ana de la Luz Alvarez Velasquez. <br>                 
                     Es la mamá de :<a href="#" onclick="hideElements13()">Ana Maria ,</a> <a href="#" onclick="hideElements20()">Olga Elena ,</a>
                     <a href="#" onclick="hideElements22()">Fredy Hernando ,</a> <a href="#" onclick="hideElements70()">John Mario ,</a>
                     <a href="#" onclick="hideElements65()">Juan Osvaldo</a><br>
                     Sus nietos son : Sara, Daniela, Juliana, Sebastian, Daniel, Catalina.<br>
                     Sus Bisnietos : Jacobo, Simon, Maria isabel.<br>
-                    Nació en el barrio aranjuez un 15 de junio del año 1943.
+                    Nació en el barrio aranjuez un 15 de junio del año 1943.  
                 </div>
                 <div id="boton-olga" class="boton-"> 
                     <button class="btnI" onclick="hideDescripVideos('video-mama')">Videos de Olga</button> 
@@ -254,7 +253,7 @@
                     <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>
                 </div> <br>
             </div>
-            <div id="descripcion-silvi" class="descripcion">       
+            <div id="descripcion-silvi" class="descripcion">        
                 
                 <img src="./assets/Silvi.png" class="imagenDecripcion" alt="Image" id="imagen-silvi" onclick="hideElements27()">          
   
@@ -587,7 +586,7 @@
             <div id="video-mama" class="video-v" style="display: none;">                    
 
                 <div id="boton-olga-v" class="button-containerVid">       
-                    <button class="btn" onclick="hideElements5()">Ver Las Fotos de Olga Aqui</button>              
+                    <button class="btn" onclick="hideVidImagen('imagenes-mama')">Ver Las Fotos de Olga Aqui</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a inicio</button>  
                 </div> 
                 <div class="contVideosWrapper">
@@ -631,7 +630,7 @@
             <div id="video-nena" class="video-v" style="display: none;">     
 
                 <div id="boton-nena-v" class="button-containerVid">
-                    <button class="btn" onclick="hideElements53()">Ver Las Fotos de Nena Aqui</button>     
+                    <button class="btn" onclick="hideVidImagen('imagenes-nena')">Ver Las Fotos de Nena Aqui</button>     
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>  
                 </div>
                 <div class="contVideosWrapper">
@@ -663,7 +662,7 @@
             <div id="video-tina" class="video-v" style="display: none;">     
 
                 <div id="boton-tina-v" class="button-containerVid">  
-                    <button class="btn" onclick="hideElements10()">Ver Las Fotos de Cristina Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-tina')">Ver Las Fotos de Cristina Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -702,7 +701,7 @@
 
             <div id="video-daniela" class="video-v" style="display: none;">
                 <div id="boton-daniela-v" class="button-containerVid">
-                    <button class="btn" onclick="hideElements86()">Ver Las Fotos de Daniela Aqui</button>        
+                    <button class="btn" onclick="hideVidImagen('imagenes-daniela')">Ver Las Fotos de Daniela Aqui</button>        
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -737,7 +736,7 @@
 
             <div id="video-sara" class="video-v" style="display: none;">
                 <div id="boton-sara-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements89()">Ver Las Fotos de Sara Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-sara')">Ver Las Fotos de Sara Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>   
                 </div>
                 <div class="contVideosWrapper">
@@ -772,7 +771,7 @@
 
             <div id="video-juli" class="video-v" style="display: none;">
                 <div id="boton-juli-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements35()">Ver Las Fotos de Juliana Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-juli')">Ver Las Fotos de Juliana Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>           
                 <div class="contVideosWrapper">
@@ -811,7 +810,7 @@
 
             <div id="video-maca" class="video-v" style="display: none;">
                 <div id="boton-maca-v" class="button-containerVid">   
-                    <button class="btn" onclick="hideElements42()">Ver Las Fotos de Macario Aqui</button> 
+                    <button class="btn" onclick="hideVidImagen('imagenes-maca')">Ver Las Fotos de Macario Aqui</button> 
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -846,7 +845,7 @@
 
             <div id="video-isabel" class="video-v" style="display: none;">
                 <div id="boton-isabel-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements82()">Ver Las Fotos de Maria isabel Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-isabel')">Ver Las Fotos de Maria isabel Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -877,7 +876,7 @@
 
             <div id="video-sebas" class="video-v" style="display: none;"> 
                 <div id="boton-sebas-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements78()">Ver Las Fotos de Sebastian Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-sebas')">Ver Las Fotos de Sebastian Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -908,7 +907,7 @@
             <div id="video-ney" class="video-v" style="display: none;" >
 
                 <div id="boton-ney-v" class="button-containerVid">  
-                    <button class="btn" onclick="hideElements93()">Ver Las Fotos de Fredy Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-ney')">Ver Las Fotos de Fredy Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -938,7 +937,7 @@
             <div id="video-many" class="video-v" style="display: none;">  
 
                 <div id="boton-many-v" class="button-containerVid">
-                    <button class="btn" onclick="hideElements17()">Ver Las Fotos de Ana Maria Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-many')">Ver Las Fotos de Ana Maria Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -971,7 +970,7 @@
             </div width='500px'>
             <div id="video-bomba" class="video-v" style="display: none;">
                 <div id="boton-bomba-v" class="button-containerVid">  
-                    <button class="btn" onclick="hideElements21()">Ver Las Fotos de Olga Elena Aqui</button>        
+                    <button class="btn" onclick="hideVidImagen('imagenes-bomba')">Ver Las Fotos de Olga Elena Aqui</button>        
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -1005,7 +1004,7 @@
             </div width='500px'> 
             <div id="video-moni" class="video-v" style="display: none;" >                 
                 <div id="boton-moni-v" class="button-containerVid">  
-                    <button class="btn" onclick="hideElements48()">Ver Las Fotos de Moni Aqui</button>     
+                    <button class="btn" onclick="hideVidImagen('imagenes-moni')">Ver Las Fotos de Moni Aqui</button>     
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>    
                 </div> 
                 <div class="contVideosWrapper">
@@ -1043,7 +1042,7 @@
             </div width='500px'> 
             <div id="video-cata" class="video-v" style="display: none;">
                 <div id="boton-cata-v" class="button-containerVid">
-                    <button class="btn" onclick="hideElements58()">Ver Las Fotos de Cata Aqui</button>    
+                    <button class="btn" onclick="hideVidImagen('imagenes-cata')">Ver Las Fotos de Cata Aqui</button>    
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -1072,7 +1071,7 @@
             </div width='500px'>
             <div id="video-dani" class="video-v" style="display: none;">
                 <div id="boton-dani-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements63()">Ver Las Fotos de Daniel Aqui</button>  
+                    <button class="btn" onclick="hideVidImagen('imagenes-dani')">Ver Las Fotos de Daniel Aqui</button>  
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -1102,7 +1101,7 @@
             </div width='500px'>
             <div id="video-juan" class="video-v" style="display: none;">
                 <div id="boton-juan-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements68()">Ver Las Fotos de Juan Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-juan')">Ver Las Fotos de Juan Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -1140,7 +1139,7 @@
             </div width='500px'>
             <div id="video-mario" class="video-v" style="display: none;">   
                 <div id="boton-mario-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements72()">Ver Las Fotos de Mario Aqui</button>    
+                    <button class="btn" onclick="hideVidImagen('imagenes-mario')">Ver Las Fotos de Mario Aqui</button>    
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button> 
                 </div>
                 <div class="contVideosWrapper">
@@ -1194,7 +1193,7 @@
             </div width='500px'> 
             <div id="video-fer" class="video-v" style="display: none;">
                 <div id="boton-fer-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements110()">Ver Las Fotos de Juan Aqui</button> 
+                    <button class="btn" onclick="hideVidImagen('imagenes-fer')">Ver Las Fotos de Juan Aqui</button> 
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>  
                 </div>
                 <div>
@@ -1223,7 +1222,7 @@
             </div width='500px'>  
             <div id="video-maritza" class="video-v" style="display: none;">    
                 <div id="boton-maritza-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements101()">Ver Las Fotos de Maritza Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-maritza')">Ver Las Fotos de Maritza Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>  
                 </div>
                 <div class="contVideosWrapper">
@@ -1251,7 +1250,7 @@
             </div width='500px'>     
             <div id="video-andres" class="video-v" style="display: none;">
                 <div id="boton-andres-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements107()">Ver Las Fotos de Andrés Aqui</button>    
+                    <button class="btn" onclick="hideVidImagen('imagenes-andres')">Ver Las Fotos de Andrés Aqui</button>    
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>  
                 </div>
                 <div class="contVideosWrapper">
@@ -1279,7 +1278,7 @@
             </div width='500px'>  
             <div id="video-manola" class="video-v" style="display: none;">
                 <div id="boton-manola-v" class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements118()">Ver Las Fotos de Manola Aqui</button>     
+                    <button class="btn" onclick="hideVidImagen('imagenes-manola')">Ver Las Fotos de Manola Aqui</button>     
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>  
                 </div> 
                 <div class="contVideosWrapper">
@@ -1307,7 +1306,7 @@
             </div width='500px'>             
             <div id="video-silvi" class="video-v" style="display: none;">  
                 <div id="boton-silvi-v" class="button-containerVid">
-                    <button class="btn" onclick="hideElements96()">Ver Las Fotos de Silvia Aqui</button>
+                    <button class="btn" onclick="hideVidImagen('imagenes-silvi')">Ver Las Fotos de Silvia Aqui</button>
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>  
                 </div> 
                 <div class="contVideosWrapper">
@@ -1339,7 +1338,7 @@
            
             <div id="imagenes-mama" class="imagenes-i" style="display: none;">    
                 <div class="button-containerVid">
-                    <button class="btn" onclick='hideElements6()'>Videos de Olga</button>              
+                    <button class="btn" onclick="hideVidImagen('video-mama')">Videos de Olga</button>               
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>     
                 </div>
                 <div class="contVideosWrapper">

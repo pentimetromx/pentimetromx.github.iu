@@ -150,7 +150,30 @@ function hideElements() {
     setTimeout(startImageTransition, 200);
   }, 800); // 800ms = 0.3s
 }
-function hideDescripVideos(elementId) {          // DESCRIPCION / VIDEOS
+function vuelveaInicio() {
+  // Obtener todos los elementos de audio en la página
+  var audios = document.getElementsByTagName('audio');
+
+  // Recorrer todos los elementos de audio y detener su reproducción
+  for (var i = 0; i < audios.length; i++) {
+    audios[i].pause();
+    audios[i].currentTime = 0;
+  }
+
+  var elementsToHide = document.querySelectorAll('.video-v, .botones, .imagenes-i, .descripcion');   
+  for (var i = 0; i < elementsToHide.length; i++) {
+      elementsToHide[i].style.display = 'none';
+  }
+ 
+  var elementsToShow = document.querySelectorAll(".image, .button, .etiqueta, .container-Ini");  
+  for (var i = 0; i < elementsToShow.length; i++) {
+    elementsToShow[i].style.display = "flex";
+  } 
+
+    enlargeImages()    
+    setTimeout(startImageTransition, 600);           
+}
+function hideDescripVideos(elementId) {    // DESCRIPCION / VIDEOS
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
   for (var i = 0; i < elementsToHide.length; i++) { 
     elementsToHide[i].style.display = 'none';
@@ -162,7 +185,7 @@ function hideDescripVideos(elementId) {          // DESCRIPCION / VIDEOS
   var videoOlga = document.getElementById(elementId);
   videoOlga.style.display = 'flex';
 }
-function hideDescripFotos(elementId) {           // DESCRIPCION / FOTOS     
+function hideDescripFotos(elementId) {     // DESCRIPCION / FOTOS     
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
   for (var i = 0; i < elementsToHide.length; i++) { 
     elementsToHide[i].style.display = 'none';
@@ -195,27 +218,50 @@ function hideBotDescrip(elementId, buttonId) {   // BOTONES / DESCRIPCION
   audio.volume = 0.5;
   audio.play();
 }
-function comprobarPassword() {   // MUESTRA LA INTERFAZ DE CONTRASEÑA
-  var passwordInput = document.getElementById('password-input');
-  var elementsToShow = document.querySelectorAll('#password-overlay');
-  for (var i = 0; i < elementsToShow.length; i++) {
-    elementsToShow[i].style.display = 'flex';
+function hideVidImagen(elementId) {   // VIDEOS / FOTOS
+  var elementsToHide = document.querySelectorAll('.botones, .video-v');
+  for (var i = 0; i < elementsToHide.length; i++) { 
+    elementsToHide[i].style.display = 'none';
   }
-  passwordInput.focus();
-}
-
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    var elementsToHide = document.querySelectorAll('#password-overlay'); 
-    for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-    }
-    document.getElementById("password-input").value = "";
+  var contenedoresPadre = document.getElementsByClassName('descripcion');
+  for (var i = 0; i < contenedoresPadre.length; i++) {
+    contenedoresPadre[i].style.display = 'none';
   }
-}
-);
+  var contImagen = document.getElementById(elementId);
+  contImagen.style.display = 'flex';
 
-function hideElements3() {
+} 
+function hideVidImagen(elementId) {   // FOTOS / VIDEOS
+  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');  
+  for (var i = 0; i < elementsToHide.length; i++) { 
+    elementsToHide[i].style.display = 'none';
+  }
+  var contenedoresPadre = document.getElementsByClassName('descripcion');
+  for (var i = 0; i < contenedoresPadre.length; i++) {
+    contenedoresPadre[i].style.display = 'none';
+  }
+  var contiVideo = document.getElementById(elementId);
+  contiVideo.style.display = 'flex';
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function hideElements3() {          // DESCRIPCION / DESCRIPCION
   var audio = document.getElementById('mama');   
   audio.currentTime = 0;
   audio.volume = 0.3;
@@ -240,90 +286,7 @@ function hideElements3() {
 
   }, 500);
 }
-function hideElements5() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var audio = document.getElementById('mama');   
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-mama');
-  videoOlga.style.display = 'flex';
-
-} 
-function hideElements6() {        // OCULTA FOTOS MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-mama');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements8() {   
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoTina = document.getElementById('video-tina');
-videoTina.style.display = 'flex';
-
-} 
-function hideElements9() { 
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-tina');
-videoOlga.style.display = 'flex';
-} 
-function hideElements10() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-tina');
-  videoOlga.style.display = 'flex';
-}  
-function hideElements11() {        // OCULTA FOTOS MUESTRA VIDEOS
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-tina');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements12() { 
+function hideElements12() {        // PRINCIPALES / DUARTE  
   increaseSize1();
 
   setTimeout(function() {
@@ -336,7 +299,7 @@ function hideElements12() {
     setTimeout(startImageTransition4, 200);
   }, 800); // 800ms = 0.3s
 } 
-function hideElements13() {    
+function hideElements13() {        // DESCRIPCION / DESCRIPCION  
   var img = document.getElementById('mi-botMany');
   img.classList.add('pixelate');
   
@@ -357,121 +320,7 @@ function hideElements13() {
   }, 500);
 
 }  
-function hideElements14() {    
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-many');
-videoOlga.style.display = 'flex';
-} 
-function hideElements15() {     
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-many');
-videoOlga.style.display = 'flex';
-} 
-function hideElements16() {        // OCULTA FOTOS MUESTRA VIDEOS MANY
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-many');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements17() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-many');
-  videoOlga.style.display = 'flex';
-}
-function hideElements18() {
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('video-bomba');
-videoOlga.style.display = 'flex';
-}
-function hideElements19() {
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-bomba');
-videoOlga.style.display = 'flex';
-
-}
-function hideElements21() {
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-bomba');
-  videoOlga.style.display = 'flex';
-
-}
-function hideElements23() {     
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-ney');
-videoOlga.style.display = 'flex';
-} 
-function hideElements24() {        // FOTOS / VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-bomba');
-  videoOlga.style.display = 'flex';
-}
-function hideElements25() { 
+function hideElements25() {       // PRINCIPALES / DUARTE
   increaseSize2();
 
   setTimeout(function() {
@@ -481,11 +330,10 @@ function hideElements25() {
       elementsToHide[i].style.display = 'none';
     }
     botonesLondoño.style.display = 'flex';
-    setTimeout(startImageTransition3, 200);
+    setTimeout(startImageTransition3, 200);                      
   }, 800); // 800ms = 0.3s
 } 
-
-function hideElements28() {
+function hideElements28() {       // PRINCIPALES / TORO
   increaseSize3();
 
   setTimeout(function() {
@@ -498,48 +346,7 @@ function hideElements28() {
     setTimeout(startImageTransition5, 200);
   }, 800); // 800ms = 0.3s
 }
-function hideElements34() {        // OCULTA FOTOS MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.imagenes');
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-juli');
-  videoOlga.style.display = 'flex';
-}
-function hideElements35() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.video-v');
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-juli');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements42() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-maca');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements44() { 
+function hideElements44() {        // PRINCIPALES / MUÑOZ
   increaseSize4();
 
   setTimeout(function() {
@@ -552,83 +359,7 @@ function hideElements44() {
     setTimeout(startImageTransition6, 200);
   }, 800); // 800ms = 0.3s
 } 
-function hideElements48() {
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-moni');
-  videoOlga.style.display = 'flex';
-}           
-function hideElements49() {        // OCULTA FOTOS MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-moni');
-  videoOlga.style.display = 'flex';
-}
-function hideElements52() {
-  var elementsToHide = document.querySelectorAll('.descripcion, .botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) {
-    elementsToHide[i].style.display = 'none';
-  }
-  
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-
-  var videoContainers = document.getElementsByClassName("video-v");
-  for (var i = 0; i < videoContainers.length; i++) {
-    videoContainers[i].style.display = "none";
-  }
-  
-  var videoNena = document.getElementById("video-nena");
-  videoNena.style.display = "flex";
-}
-function hideElements53() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var audio = document.getElementById('nena');   
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-nena');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements54() {        // OCULTA FOTOS MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-nena');
-  videoOlga.style.display = 'flex';
-}
-function hideElements55() {       // OCULTA ESCUDOS MUESTRA BOTONES
+function hideElements55() {       //  ESCUDOS / MIRA
   increaseSize5();
 
   setTimeout(function() {
@@ -640,279 +371,6 @@ function hideElements55() {       // OCULTA ESCUDOS MUESTRA BOTONES
     botonesMira.style.display = 'flex';
     setTimeout(startImageTransition2, 200);
   }, 800); // 800ms = 0.3s
-} 
-function hideElements58() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var audio = document.getElementById('cata');   
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-var contenedoresPadre = document.getElementsByClassName('descripcion');
-for (var i = 0; i < contenedoresPadre.length; i++) {
-  contenedoresPadre[i].style.display = 'none';
-}
-var videoOlga = document.getElementById('imagenes-cata');
-videoOlga.style.display = 'flex';
-} 
-function hideElements59() {        // OCULTA FOTOS MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-cata');
-  videoOlga.style.display = 'flex';
-}
-function hideElements63() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var audio = document.getElementById('dani');   
-  audio.currentTime = 0;
-  audio.volume = 0.3;
-  audio.play();
-
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-dani');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements64() {        // OCULTA FOTOS MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-dani');
-  videoOlga.style.display = 'flex';
-}
-function hideElements68() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-juan');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements69() {        // OCULTA FOTOS MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-juan');
-  videoOlga.style.display = 'flex';
-}
-function hideElements72() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-mario');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements73() {        // OCULTA FOTOS Y MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-mario');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements78() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-sebas');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements79() {        // OCULTA FOTOS Y MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-sebas');
-  videoOlga.style.display = 'flex';
-
-} 
-function hideElements82() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-isabel');
-  videoOlga.style.display = 'flex';
-
-} 
-function hideElements83() {        // OCULTA FOTOS Y MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-isabel');
-  videoOlga.style.display = 'flex';
-
-} 
-function hideElements86() {        // OCULTA VIDEOS Y MUESTRA FOTOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-daniela');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements87() {        // OCULTA FOTOS Y MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-daniela');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements89() {        // OCULTA VIDEOS Y MUESTRA FOTOS SARA 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-sara');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements90() {        // OCULTA FOTOS Y MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-sara');
-  videoOlga.style.display = 'flex';
-}
-function hideElements92() {        // OCULTA FOTOS Y MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-ney');
-  videoOlga.style.display = 'flex';
-
-} 
-function hideElements93() {        // OCULTA VIDEOS Y MUESTRA FOTOS SARA 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-ney');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements96() {        // OCULTA VIDEOS Y MUESTRA FOTOS SILVI 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-silvi');
-  videoOlga.style.display = 'flex';
-}   
-function hideElements97() {        // OCULTA FOTOS Y MUESTRA VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-silvi');
-  videoOlga.style.display = 'flex';
 } 
 function hideElements100() {    //  DSCRIPCION / FOTOS
   var elementsToHide = document.querySelectorAll('.descripciones');
@@ -928,32 +386,6 @@ function hideElements100() {    //  DSCRIPCION / FOTOS
   videoOlga.style.display = 'flex';
 
 } 
-function hideElements101() {     // VIDEOS / FOTOS
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-maritza');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements102() {     // FOTOS / VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-maritza');
-  videoOlga.style.display = 'flex';
-}
 function hideElements103() {    //  ESCUDOS / BOTONES 
   increaseSize6();
 
@@ -967,32 +399,6 @@ function hideElements103() {    //  ESCUDOS / BOTONES
     setTimeout(startImageTransition1, 200);
   }, 800); // 800ms = 0.3s
 }
-function hideElements107() {    // VIDEOS / FOTOS
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-andres');
-  videoOlga.style.display = 'flex';
-} 
-function hideElements110() {    // VIDEOS / FOTOS
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-fer');
-  videoOlga.style.display = 'flex';
-} 
 function hideElements111() {    // FOTOS / VIDEOS 
   var elementsToHide = document.querySelectorAll('.descripciones');
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
@@ -1022,88 +428,6 @@ for (var i = 0; i < contenedoresPadre.length; i++) {
 var videoOlga = document.getElementById('imagenes-manola');
 videoOlga.style.display = 'flex';
 } 
-function hideElements117() {    // FOTOS / VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-manola');
-  videoOlga.style.display = 'flex';
-}
-function hideElements118() {    // VIDEOS / FOTOS
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .video-v');
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('imagenes-manola');
-  videoOlga.style.display = 'flex';
-
-} 
-function vuelveaInicio() {
-  // Obtener todos los elementos de audio en la página
-  var audios = document.getElementsByTagName('audio');
-
-  // Recorrer todos los elementos de audio y detener su reproducción
-  for (var i = 0; i < audios.length; i++) {
-    audios[i].pause();
-    audios[i].currentTime = 0;
-  }
-
-  var elementsToHide = document.querySelectorAll('.video-v, .botones, .imagenes-i, .descripcion');   
-  for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-  }
- 
-  var elementsToShow = document.querySelectorAll(".image, .button, .etiqueta, .container-Ini");  
-  for (var i = 0; i < elementsToShow.length; i++) {
-    elementsToShow[i].style.display = "flex";
-  } 
-
-    enlargeImages()    
-    setTimeout(startImageTransition, 600);           
-  }
-function hideElements119() {    // FOTOS / VIDEOS 
-  var elementsToHide = document.querySelectorAll('.descripciones');
-  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');     
-  for (var i = 0; i < elementsToHide.length; i++) { 
-      elementsToHide[i].style.display = 'none';
-  }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
-  for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
-  }
-  var videoOlga = document.getElementById('video-andres');
-  videoOlga.style.display = 'flex';
-}
-function hideElements120() {
-  var elementsToHide = document.getElementsByClassName("descripcion");
-  for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = "none";
-  }
-  var imagenesToHide = document.getElementsByClassName("botones");
-  for (var i = 0; i < imagenesToHide.length; i++) {
-    imagenesToHide[i].style.display = "none";
-  }
-  var botonesToHide = document.getElementsByClassName("imagenes-i");
-  for (var i = 0; i < botonesToHide.length; i++) {
-    botonesToHide[i].style.display = "none";
-  }
-  var elementos = document.getElementsByClassName("video-v");
-  for (var i = 0; i < elementos.length; i++) {
-    elementos[i].style.display = "none";
-  }
-}
-
 buttons.forEach(button => {
   button.addEventListener('focus', () => {
     button.classList.add('button-focus');
@@ -1311,7 +635,6 @@ document.addEventListener('keydown', function(event) {
   }
 }
 );
-
 
 function validatePassword() {   //  BOTON PARA COMPROBAR LA CONTRASEÑA
   // Obtener el valor del campo de contraseña
