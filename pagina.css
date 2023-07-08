@@ -166,9 +166,6 @@
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<    BLUR PARA LASIMAGENES      <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
-
-
-
 .image-container1 {
   display: flex;
   justify-content: center;
@@ -263,29 +260,6 @@ h1 {
   justify-content: center;
   margin-top: -5px;
 }
-
-
-/*/////////////////////////////////////////////////////////////////////////////////////*/
-.contSeña {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contSeña button{
-border-radius: 7px;
-background-color: blue;      
-color: yellow;
-height: 37PX;
-font-size: 24PX;
-font-style: oblique;
-}
-
-.impEntrada {
-  height: 20px;width: 117px;
-  background-color: gray;
-}
-/*//////////////////////////////////////////////////////////////////////////////////////////*/ 
 
 .contenedor-secundario {  /* IMAGENES */      
   margin-top: 73px;
@@ -497,14 +471,6 @@ font-style: oblique;
   width: 300px;
   height: 250px;
 }
-.image-button button{
-  width: 200px; /* Tamaño deseado del botón */
-  height: 200px; /* Tamaño deseado del botón */
-  background-image: url('./assets/moni.png'); /* Ruta de la imagen */
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-right: 2px;
-}
 #button-mario {  
     background-image: url('./assets/cata.jpg');
     background-repeat: no-repeat;
@@ -538,16 +504,6 @@ font-style: oblique;
   font-size: 20px;
   font-weight: bold;
   padding: 10px;
-}
-.conVideos video{
-  margin-left: 12px;
-}
-.contBotones {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: 10px;
-  margin-left: 13px;
 }
 .fullscreenButton {
   background-color:orangered;
@@ -719,45 +675,6 @@ font-style: oblique;
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
-#password-overlay {
-  /*position: fixed;*/
-  top: 300;
-  left: 600;
-  /*width: 100%;*/
-  width: 77px;
-  height: 47px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.password-container {
-  background-color:aqua;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  position: absolute;
-  top: 37%;
-  left: 50%;
-  transform: translate(-50%, -37%);
-  z-index: 99999;
-}
-#error-message{
-  position: fixed;
-  text-align: center;
-  position: absolute;
-  top: 37%;
-  left: 50%;
-  transform: translate(-47%, -50%);
-  z-index: 99999;
-  color:white;
-  background-color:blue;
-  border-radius: 7px;
-  height: 77px;
-  width: 417px;
-}
-
 .descripcion {
   position: relative;
   z-index: 1;
@@ -773,3 +690,4 @@ font-style: oblique;
     transform: scale(20);
   }
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+

@@ -154,47 +154,82 @@ function hideInicBotonera(elmentID) {       // INICIALES / BOTONERA
     }
   }
 }
-buttons.forEach(button => {
-  button.addEventListener('focus', () => {
-    button.classList.add('button-focus');
-  });
 
-  button.addEventListener('blur', () => {
-    button.classList.remove('button-focus');
-  });
-});
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<TRANSICIONES AL INICIO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-
-function enlargeImages() { 
-  var elementsToHide = document.querySelectorAll('.descripcion');  
+function enlargeImages() {
+  // Seleccionar todos los elementos con la clase 'descripcion' y almacenarlos en la variable 'elementsToHide'
+  var elementsToHide = document.querySelectorAll('.descripcion');
+  // Recorrer cada elemento en 'elementsToHide' y ocultarlos estableciendo su propiedad de visualización en 'none'
   for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
+    elementsToHide[i].style.display = 'none';
   }
- 
+
+  // Obtener todos los elementos con la clase 'image' y almacenarlos en la variable 'images'
   var images = document.getElementsByClassName('image');
+  // Inicializar la variable de índice actual en 0
   var currentIndex = 0;
+
+  // Definir una función para ampliar la siguiente imagen
   function enlargeNextImage() {
-      if (currentIndex <= images.length) {
-          if (currentIndex > 0) {
-              images[currentIndex - 1].classList.remove('enlarged');
-          }
-          images[currentIndex].classList.add('enlarged');
-          currentIndex++;
-          setTimeout(enlargeNextImage, 197);
+    // Verificar si currentIndex es menor o igual al número de imágenes
+    if (currentIndex <= images.length) {
+      // Si currentIndex es mayor que 0, eliminar la clase 'enlarged' de la imagen anterior
+      if (currentIndex > 0) {
+        images[currentIndex - 1].classList.remove('enlarged');
       }
+      // Agregar la clase 'enlarged' a la imagen actual
+      images[currentIndex].classList.add('enlarged');
+      // Incrementar currentIndex
+      currentIndex++;
+      // Llamar a la función 'enlargeNextImage' después de un retraso de 197 milisegundos
+      setTimeout(enlargeNextImage, 197);
+    }
   }
+
+  // Obtener todos los elementos con la clase 'button' y almacenarlos en la variable 'buttons'
+  var buttons = document.getElementsByClassName('button');
+  // Obtener el elemento con la clase 'container-Ini' y almacenarlo en la variable 'container'
+  var container = document.querySelector('.container-Ini');
+  // Inicializar la variable de índice de botón en 0
+  var buttonIndex = 0;
+
+  // Definir una función para aplicar efectos a los botones
+  function applyButtonEffects() {
+    // Verificar si buttonIndex es menor que el número de botones
+    if (buttonIndex < buttons.length) {
+      // Llamar a la función 'toggleButton' con un retraso de buttonIndex * 200 milisegundos, pasando el botón actual como argumento
+      setTimeout(function(button) {
+        toggleButton(button);
+      }, buttonIndex * 200, buttons[buttonIndex]);
+      // Incrementar buttonIndex
+      buttonIndex++;
+      // Llamar a la función 'applyButtonEffects' después de un retraso de 200 milisegundos
+      setTimeout(applyButtonEffects, 200);
+    }
+  }
+  // Llamar a la función 'applyButtonEffects' para comenzar a aplicar los efectos a los botones
+  applyButtonEffects();
+  // Llamar a la función 'parpadeo' para hacer que los botones parpadeen
   parpadeo();
+  // Llamar a la función 'enlargeNextImage' para comenzar a ampliar las imágenes
   enlargeNextImage();
 }
 
 function parpadeo() {
-  var buttons = document.getElementsByClassName('button');  
-  for (var i = 0; i < buttons.length; i++) { 
+  var buttons = document.getElementsByClassName('button');
+  for (var i = 0; i < buttons.length; i++) {
     setTimeout(function(button) {
       toggleButton(button);
     }, i * 200, buttons[i]);
   }
-};
+}
+
+function toggleButton(button) {
+  button.classList.toggle('enlarged');
+}
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 function toggleFullscreenAndPlay(videoId) {
     // Obtener todos los elementos de audio en la página
@@ -227,4 +262,7 @@ function toggleFullscreenAndPlay(videoId) {
 function playVideo(video) {
   video.play();
 }
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
