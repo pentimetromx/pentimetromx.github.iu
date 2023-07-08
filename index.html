@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./pagina.css">        
 
     </head>
-    <body onload="enlargeImages(), togglePulsos();">       
+    <body onload="enlargeImages()">       
                
 
         <div class="slider">
@@ -24,27 +24,27 @@
             </div>
         </div>
 
-        <h1 class="etiqueta">Una historia magica y real</h1>      
+        <h1 class="etiqueta">Una historia magica y real</h1>       
     
         <div class="container-Ini">
-            <button id="buttonToScale" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements()">PINEDA</button>
-            <button id="buttonToScale1" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements12()">DUARTE - CARVAJAL</button>
-            <button id="buttonToScale2" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements25()">LONDOÑO</button>
-            <button id="buttonToScale3" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements28()" >TORO - PINEDA</button>
-            <button id="buttonToScale4" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements44()">MUÑOZ</button>
-            <button id="buttonToScale5" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements55()">MIRA - LONDOÑO</button>
-            <button id="buttonToScale6" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideElements103()">PINEDA - GARCIA</button>
+            <button id="buttonToScale" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideInicBotonera('botones-pinedas')">PINEDA</button>
+            <button id="buttonToScale1" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideInicBotonera('botones-duarte')">DUARTE - CARVAJAL</button>
+            <button id="buttonToScale2" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideInicBotonera('botones-londoño')">LONDOÑO</button>
+            <button id="buttonToScale3" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideInicBotonera('botones-toro')">TORO - PINEDA</button>
+            <button id="buttonToScale4" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideInicBotonera('botones-muñoz')">MUÑOZ</button>
+            <button id="buttonToScale5" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideInicBotonera('botones-mira')">MIRA - LONDOÑO</button>
+            <button id="buttonToScale6" class="button botonInicial" onmouseover="changeColor(this)" onmouseout="restoreColor(this)" onclick="hideInicBotonera('botones-garcia')">PINEDA - GARCIA</button>
         </div><br>
 
         <div class="container-Ini">
-            <img alt="imagen" class="image over" onclick="hideElements()" src="./assets/escudo-pineda.jpg">   
-            <img alt="imagen" class="image over" onclick="hideElements12()" src="./assets/duarte.png">
-            <img alt="imagen" class="image over" onclick="hideElements44()" src="./assets/muñoz.png">
-            <img alt="imagen" class="image over" onclick="hideElements25()" src="./assets/londoño.png">
-            <img alt="imagen" class="image over" onclick="hideElements28()" src="./assets/toro.png">
-            <img alt="imagen" class="image over" onclick="hideElements55()" src="./assets/mira.png">
+            <img alt="imagen" class="image over" onclick="hideInicBotonera('botones-pinedas')" src="./assets/escudo-pineda.jpg">   
+            <img alt="imagen" class="image over" onclick="hideInicBotonera('botones-duarte')" src="./assets/duarte.png">
+            <img alt="imagen" class="image over" onclick="hideInicBotonera('botones-muñoz')" src="./assets/muñoz.png">
+            <img alt="imagen" class="image over" onclick="hideInicBotonera('botones-londoño')" src="./assets/londoño.png">
+            <img alt="imagen" class="image over" onclick="hideInicBotonera('botones-toro')" src="./assets/toro.png">
+            <img alt="imagen" class="image over" onclick="hideInicBotonera('botones-mira')" src="./assets/mira.png">
         </div>
-
+º
         <div id="password-overlay" style="display: none;">
             <div class="password-container">
                 <input type="password" id="password-input" style="background-color: gray;color: yellow;"  placeholder="Contraseña">
@@ -222,9 +222,9 @@
                 <div id="descripcion" class="descripciones">
                     Maria Olga Pineda Alvarez es la menor de 4 hermanos (Marta, Juan, Cristina, Olga).<br>      
                     Olga es hija de : Juan de dios Pineda Arango Y Ana de la Luz Alvarez Velasquez. <br>                 
-                    Es la mamá de :<a href="#" onclick="hideElements13()">Ana Maria ,</a> <a href="#" onclick="hideElements20()">Olga Elena ,</a>
-                    <a href="#" onclick="hideElements22()">Fredy Hernando ,</a> <a href="#" onclick="hideElements70()">John Mario ,</a>
-                    <a href="#" onclick="hideElements65()">Juan Osvaldo</a><br>
+                    Es la mamá de :<a href="#" onclick="hideDescDesc('descripcion-many')">Ana Maria ,</a> <a href="#" onclick="hideDescDesc('descripcion-bomba')">Olga Elena ,</a>
+                    <a href="#" onclick="hideDescDesc('descripcion-ney')">Fredy Hernando ,</a> <a href="#" onclick="hideDescDesc('descripcion-mario')">John Mario ,</a>
+                    <a href="#" onclick="hideDescDesc('descripcion-yop')">Juan Osvaldo</a><br>
                     Sus nietos son : Sara, Daniela, Juliana, Sebastian, Daniel, Catalina.<br>
                     Sus Bisnietos : Jacobo, Simon, Maria isabel.<br>
                     Nació en el barrio aranjuez un 15 de junio del año 1943.  
@@ -244,7 +244,7 @@
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
                     Maria Cristina Pineda Alvarez es la segunda de 4 hermanos (Marta, Juan, Cristina, Olga).<br>
                     Cristina es hija de : Juan de dios Pineda Arango Y Ana de la Luz Alvarez Velasquez. <br>
-                    Es la mamá de : <a href="#" onclick="hideElements108()">Juan Fernando Pineda</a> <br>
+                    Es la mamá de : <a href="#" onclick="hideDescDesc('descripcion-fer')">Juan Fernando Pineda</a> <br>
                     Nació en el barrio aranjuez.
                 </div>
                 <div id="boton-tina" class="boton-">  
@@ -260,7 +260,7 @@
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
                     Silvia Amparo Londoño Bedoya es la tercera entre 9 hermanos  (Clara, Diana, Silvia, Gloria, Judith, Jhonsonn, Martha, Albeiro, El mono).<br>
                     Silvia es hija de Petronila Bedoya y Luis Londoño<br>
-                    Silvia y Juan son mamá y papá de <a href="#" onclick="hideElements56()">Diana Catalina</a> y <a href="#" onclick="hideElements60()">Daniel</a><br>
+                    Silvia y Juan son mamá y papá de <a href="#" onclick="hideDescDesc('descripcion-cata')">Diana Catalina</a> y <a href="#" onclick="hideDescDesc('descripcion-dani')">Daniel</a><br>
                     Nació en Santabarbara el 19 de septiembre de 1963<br>
                     Realizó estudios de belleza en la escuela Mariela            
                 </div>
@@ -279,7 +279,7 @@
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
                     Martha Elena (nena) es la mayor de los cuatro hermanos Pineda (Olga, Juan, Cristina, Nena)<br>
                     Martha (nena) es hija de : Juan de dios Pineda Arango Y Ana de la Luz Alvarez Velasquez. <br>
-                    Es la tia de <a href="#" onclick="hideElements108()">Juan Fernando , </a><a href="#" onclick="hideElements70()">John Mario y </a><a href="#" onclick="hideElements65()">Juan Osvaldo</a>
+                    Es la tia de <a href="#" onclick="hideDescDesc('descripcion-fer')">Juan Fernando , </a><a href="#" onclick="hideDescDesc('descripcion-mario')">John Mario y </a><a href="#" onclick="hideDescDesc('descripcion-yop')">Juan Osvaldo</a>
                     Es la mayor de las tres mujeres Pineda <br>
                     Nació el 21 de abril de 1940
                 </div>
@@ -312,7 +312,7 @@
                 <img src="./assets/DANIELA.png" class="imagenDecripcion" alt="Image" id="imagen-daniela" onclick="hideElements43()">
                 <div id="descripcion" class="descripciones" style="margin-left: -4px;">
                     Daniela es la segunda de tres hermanas ( Sara, Daniela, Juliana)<br>
-                    Daniela es hija de <a href="#" onclick="hideElements13()">Ana Maria Duarte y</a> <a href="#" onclick="hideElements29()"> Macario Toro </a><br>
+                    Daniela es hija de <a href="#" onclick="hideDescDesc('descripcion-daniela')">Ana Maria Duarte y</a> <a href="#" onclick="hideDescDesc('descripcion-maca')"> Macario Toro </a><br>
                     Es la mamá de Isaac<br>
                     Nieta de OLga Pineda, sobrina de Olga Elena, Mario y Juan  
                 </div>
@@ -327,7 +327,7 @@
                 <img src="./assets/SARA.png" class="imagenDecripcion" alt="Image" id="imagen-sara" onclick="hideElements38()">  
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
                     Sara es la tercera de tres hermanas ( Sara, Daniela, Juliana)<br>  
-                    Sara es hija de <a href="#" onclick="hideElements13()">Ana Maria Duarte y</a> <a href="#" onclick="hideElements29()"> Macario Toro </a><br>
+                    Sara es hija de <a href="#" onclick="hideDescDesc('descripcion-many')">Ana Maria Duarte y</a> <a href="#" onclick="hideDescDesc('descripcion-maca')"> Macario Toro </a><br>
                     Es la mamá de Jacobo<br>
                     Nieta de OLga Pineda, sobrina de Olga Elena, Mario y Juan  
                 </div>
@@ -344,7 +344,7 @@
 
                 <div id="descripcion" class="descripciones" style="margin-left: 100px;">    
                     Juliana es la primera de tres hermanas (Daniela, Sara, Juliana)<br>
-                    Juliana es hija de <a href="#" onclick="hideElements13()">Ana Maria Duarte y</a> <a href="#" onclick="hideElements29()"> Macario Toro </a><br> 
+                    Juliana es hija de <a href="#" onclick="hideDescDesc('descripcion-many')">Ana Maria Duarte y</a> <a href="#" onclick="hideDescDesc('descripcion-maca')"> Macario Toro </a><br> 
                     Es la mamá de Simón<br>
                     Nieta de OLga Pineda, sobrina de Olga Elena, Mario y Juan 
                 </div>
@@ -359,7 +359,7 @@
                 <div id="descripcion" class="descripciones">
                     Macario es el segundo hermano entre ...<br>
                     Macario es hijo de <br>
-                    Es el papá de <a href="#" onclick="hideElements31()">Juliana , </a><a href="#" onclick="hideElements39()">Daniela y</a><a href="#" onclick="hideElements37()"> Sara</a><br>  
+                    Es el papá de <a href="#" onclick="hideDescDesc('descripcion-juli')">Juliana , </a><a href="#" onclick="hideDescDesc('descripcion-daniela')">Daniela y</a><a href="#" onclick="hideDescDesc('descripcion-sara')"> Sara</a><br>  
                     Macario es abuelo de Simón y Jacobo además de otro nieto que viene encamino  
                 </div>
                 <div id="boton-maca" class="boton-">
@@ -373,7 +373,7 @@
             <div id="descripcion-isabel" class="descripcion">             
                 <img src="./assets/maria isabel.jpg" class="imagenDecripcion" alt="Image" id="imagen-isabel" onclick="hideElements84()">  
                 <div id="descripcion" class="descripciones"  style="margin-top: -4px;">
-                    Maria Isabel es hija de <a href="#" onclick="hideElements75()">Sebastian Carvajal Pineda</a> y ...<br>
+                    Maria Isabel es hija de <a href="#" onclick="hideDescDesc('descripcion-sebas')">Sebastian Carvajal Pineda</a> y ...<br>
                     Maria Isabel nació el ...<br>
                     Isabel ...
                 </div>
@@ -388,7 +388,7 @@
                 <img src="./assets/sebas1.jpg" class="imagenDecripcion" alt="Image" id="imagen-sebas" onclick="hideElements77()">
                 <div id="descripcion" class="descripciones" style="margin-left: 137px;">
                     Sebastian es hijo de Olga Elena Duarte Pineda y Alvaro Carvajal<br>
-                    Sebatian es el papá de <a href="#" onclick="hideElements80()">Maria Isabel Carvajal</a><br>
+                    Sebatian es el papá de <a href="#" onclick="hideDescDesc('descripcion-isabel')">Maria Isabel Carvajal</a><br>
                     Nació el 3 de junio de 1993 
                 </div>
                 <div id="boton-sebas" class="boton-"> 
@@ -404,7 +404,7 @@
 
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
                     Fredy Hernando Duarte Pineda es el menor de los hombres entre 5 hermanos  (Fredy, Mario, Juan, Ana, Olga).<br>
-                    Fredy es hijo de <a href="#" onclick="hideElements3()">Olga Pineda y Hernando Duarte </a><br>
+                    Fredy es hijo de <a href="#" onclick="hideDescDesc('descripcion-olga')">Olga Pineda y Hernando Duarte </a><br>
                     Fredy no tuvo hijos, es un gran recuerdo en la familia <br>
                     No era muy rumbero como el resto de los hemanos, había que pagarle solo para bailar. 
                 </div>
@@ -422,7 +422,7 @@
                 <div id="descripcion" class="descripciones">
                     Olga Elena Duarte Pineda es la mayor de las mujeres entre 5 hermanos  (Fredy, Mario, Juan, Ana, Olga).<br>  
                     Olga es hija de Olga Pineda y Hernando Duarte <br>
-                    Olga es la mamá de <a href="#" onclick="hideElements75()">Sebastián Carvajel Pineda</a> <br>
+                    Olga es la mamá de <a href="#" onclick="hideDescDesc('descripcion-sebas')">Sebastián Carvajel Pineda</a> <br>
                     Es abuela de Maria Isabel
                     Nació en el barrio aranjuez.
                 </div>
@@ -439,7 +439,7 @@
                 <div id="descripcion" class="descripciones">
                     Ana María Duarte Pineda es la menor de 5 hermanos  (Fredy, Olga, Mario, Juan, Ana).<br> 
                     Ana es hija de Olga Pineda y Hernando Duarte <br>
-                    Ana es la mamá de <a href="#" onclick="hideElements31()">Juliana , </a><a href="#" onclick="hideElements39()">Daniela y</a><a href="#" onclick="hideElements37()"> Sara</a> <br>
+                    Ana es la mamá de <a href="#" onclick="hideDescDesc('descripcion-juli')">Juliana , </a><a href="#" onclick="hideDescDesc('descripcion-daniela')">Daniela y</a><a href="#" onclick="hideDescDesc('descripcion-sara')"> Sara</a> <br>
                     Nació en el barrio aranjuez.
                 </div>
                 <div id="boton-many" class="boton-">
@@ -473,7 +473,7 @@
                 <img src="./assets/cata .jpg" class="imagenDecripcion" alt="Image" id="imagen-cata" onclick="hideElements58()">  
                 <div id="descripcion" class="descripciones">
                     Diana Catalina es la mayor de los dos hermanos Mira Londoño (Daniel, Catalina)<br>
-                    Catalina es hija de <a href="#" onclick="hideElements26()">Silvia Amparo Londoño Bedoya</a> y <a href="#" onclick="hideElements65()">Juan Osvaldo Mira Pineda</a><br>  
+                    Catalina es hija de <a href="#" onclick="hideDescDesc('descripcion-silvi')">Silvia Amparo Londoño Bedoya</a> y <a href="#" onclick="hideDescDesc('descripcion-yop')">Juan Osvaldo Mira Pineda</a><br>  
                     Nació el 3 de febrero de 1987 en medellin <br>
                     Ama a su mascota Sandy <br>
                     Realizò sus estudios en el Tecnológico Antioqueño<br>
@@ -490,7 +490,7 @@
                 <img src="./assets/dani.png" class="imagenDecripcion" alt="Image" id="imagen-dani"onclick="hideElements62()">
                 <div id="descripcion" class="descripciones">
                     Daniel es el menor de los hermanos Mira Londoño (Catalina, Daniel)<br>
-                    Daniel  es hijo de <a href="#" onclick="hideElements26()">Silvia Amparo Londoño Bedoya</a> y <a href="#" onclick="hideElements65()">Juan Osvaldo Mira Pineda</a><br>   
+                    Daniel  es hijo de <a href="#" onclick="hideDescDesc('descripcion-silvi')">Silvia Amparo Londoño Bedoya</a> y <a href="#" onclick="hideDescDesc('descripcion-yop')">Juan Osvaldo Mira Pineda</a><br>   
                     Nació el 8 de julio de 1993 <br>
                     Ingeniero electrónico de la Universidad de Antioquia<br>
                     buen papá con las mascotas<br>
@@ -499,7 +499,7 @@
                 <div id="boton-dani" class="boton-">
                     <button class="btnI" onclick="hideDescripVideos('video-dani')">Videos de Daniel </button><br>
                     <button class="btnI" onclick="hideDescripFotos('imagenes-dani')">Fotos de Daniel</button> 
-                    <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button> 
+                    <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>        
                     <audio id="dani" src="./assets/Sweet Child O Mine.mp3"></audio>  
                 </div> <br>
 
@@ -508,8 +508,8 @@
                 <img style="background-image: url('./assets/yopp.jpg'); margin-left: 0px; height: 287px; background-size: cover; background-repeat: no-repeat;background-position: -60px 0;" class="imagenDecripcion" alt="" id="imagen-yop" onclick="hideElements67()">
                 <div id="descripcion" class="descripciones">
                     Juan es el mayor de 5 hermanos (Ana Maria, Olga Elena, Fredy, Mario y Juan)<br>
-                    Juan es hijo de <a href="#" onclick="hideElements3()">Maria Olga Pineda Alvarez y Jose Daniel Mira Sanchez</a><br>
-                    Juan y Silvia son papás de <a href="#" onclick="hideElements56()">Diana Catalina</a> y <a href="#" onclick="hideElements60()">Daniel</a><br>
+                    Juan es hijo de <a href="#" onclick="hideDescDesc('descripcion-olga')">Maria Olga Pineda Alvarez y Jose Daniel Mira Sanchez</a><br>
+                    Juan y Silvia son papás de <a href="#" onclick="hideDescDesc('descripcion-cata')">Diana Catalina</a> y <a href="#" onclick="hideDescDesc('descripcion-dani')">Daniel</a><br>
                     Abuelo de Sandy
                     Nació el 31 de mayo de 1966 <br>
                 </div>
@@ -523,7 +523,7 @@
                 <img src="./assets/mario.jpg" class="imagenDecripcion" alt="Image" id="imagen-mario" style="margin-right: 33px;height:277PX;" onclick="hideElements74()">
                 <div id="descripcion" class="descripciones">
                     Mario es el segundo de 5 hermanos (Ana Maria, Olga Elena, Fredy, Mario y Juan)<br>
-                    Mario es hijo de <a href="#" onclick="hideElements3()">Maria Olga Pineda Alvarez y Jose Daniel Mira Sanchez</a><br>
+                    Mario es hijo de <a href="#" onclick="hideDescDesc('descripcion-olga')">Maria Olga Pineda Alvarez y Jose Daniel Mira Sanchez</a><br>
                     Es el tio de Diana Catalina , Daniel, Sara , Daniela , Juliana , Sebastian , Andres Camilo<br>
                     Tio-Abuelo de Simon , Jacobo y Maria Isabel 
                     Nació el 10 de mayo de 1968 <br>
@@ -541,7 +541,7 @@
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
                     Juan Fenando es hijo de Maria Cristina Pineda y Emilio Arroyave<br>
                     Juan Fernando nació el 16 de octubre de 1972 <br>
-                    Es el papá de <a href="#" onclick="hideElements105()">Andrés Camilo y peluza</a><br>
+                    Es el papá de <a href="#" onclick="hideDescDesc('descripcion-andres')">Andrés Camilo y peluza</a><br>
                     Juan es un profesional del volante de carga pesada  
                 </div>
                 <div id="boton-isabel" class="boton-">
@@ -555,7 +555,7 @@
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
                     Maritza es hija de<br>
                     Maritza nació el 25 de julio de 1974<br>       
-                    Es la mamá de <a href="#" onclick="hideElements105()">Andres Camilo</a> y Peluza<br>         
+                    Es la mamá de <a href="#" onclick="hideDescDesc('descripcion-andres')">Andres Camilo</a> y Peluza<br>         
                     Se dedica al arte de la estética femenina    
                 </div>
                 <div id="boton-maritza" class="boton-">
@@ -567,7 +567,7 @@
             <div id="descripcion-andres" class="descripcion">                
                 <img src="./assets/andres.jpg" class="imagenDecripcion" alt="Image" id="imagen-andres" onclick="hideElements112()">          
                 <div id="descripcion" class="descripciones" style="margin-top: -4px;">
-                    Andrés Camilo es hijo de <a href="#" onclick="hideElements104()">Maritza García y </a><a href="#" onclick="hideElements108()">Juan Fernando Pineda</a><br>
+                    Andrés Camilo es hijo de <a href="#" onclick="hideDescDesc('descripcion-maritza')">Maritza García y </a><a href="#" onclick="hideDescDesc('descripcion-fer')">Juan Fernando Pineda</a><br>
                     Andrés nació el ...<br>
                     Es el papá de peluza<br>
                     Un activo lider social  
@@ -683,7 +683,7 @@
                             <button class="fullscreenButton" onclick="toggleFullscreenAndPlay('video16')"><span>&#9658;</span> REPRODUCIR VIDEO 4</button>
                             <video id="video16" class="video-item1" src="./assets/reunion macario hijas2.mp4"></video>
                         </div>
-                        <div class="video-container">
+                        <div class="video-container"> 
                             <button class="fullscreenButton" onclick="toggleFullscreenAndPlay('video17')"><span>&#9658;</span> REPRODUCIR VIDEO 5</button>
                             <video id="video17" class="video-item1" src="./assets/reunion macario hijas3.mp4"></video>
                         </div>
@@ -693,7 +693,7 @@
                         </div>
                         <div class="video-container">
                             <button class="fullscreenButton" onclick="toggleFullscreenAndPlay('video18')"><span>&#9658;</span> REPRODUCIR VIDEO 7</button>
-                            <video id="video18" class="video-item1" src="./assets/empanadasTias.mp4"></video>
+                            <video id="video18" class="video-item1" src="./assets/empanadas Tias.mp4"></video>
                         </div>
                     </div>
                 </div>
@@ -1338,7 +1338,7 @@
            
             <div id="imagenes-mama" class="imagenes-i" style="display: none;">    
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideVidImagen('video-mama')">Videos de Olga</button>               
+                    <button class="btn" onclick="hideImagVideo('video-mama')">Videos de Olga</button>               
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>     
                 </div>
                 <div class="contVideosWrapper">
@@ -1401,7 +1401,7 @@
 
             <div id="imagenes-tina" class="imagenes-i" style="display: none;">  
                 <div class="button-containerVid">  
-                    <button class="btn" onclick='hideElements11()'>Videos de Cristina</button>               
+                    <button class="btn" onclick="hideImagVideo('video-tina')">Videos de Cristina</button>               
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1423,7 +1423,7 @@
 
             <div id="imagenes-many" class="imagenes-i" style="display: none;"> 
                 <div class="button-containerVid">
-                    <button class="btn" onclick='hideElements16()'>Videos de Ana Maria</button>              
+                    <button class="btn" onclick="hideImagVideo('video-many')">Videos de Ana Maria</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1460,7 +1460,7 @@
 
             <div id="imagenes-bomba" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick='hideElements24()'>Videos de Olga Elena</button>              
+                    <button class="btn" onclick="hideImagVideo('video-bomba')">Videos de Olga Elena</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1488,7 +1488,7 @@
 
             <div id="imagenes-ney" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid"> 
-                    <button class="btn" onclick="hideElements92()">Videos de Fredy Hernando</button>              
+                    <button class="btn" onclick="hideImagVideo('video-ney')">Videos de Fredy Hernando</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1507,7 +1507,7 @@
 
             <div id="imagenes-silvi" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements97()">Videos de Silvia Amparo</button>              
+                    <button class="btn" onclick="hideImagVideo('video-silvi')">Videos de Silvia Amparo</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1532,7 +1532,7 @@
 
             <div id="imagenes-maca" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">  
-                    <button class="btn" onclick="hideElements41()">Videos de Macario</button>              
+                    <button class="btn" onclick="hideImagVideo('video-maca')">Videos de Macario</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1548,7 +1548,7 @@
             
             <div id="imagenes-juli" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements34()">Videos de Juliana</button>              
+                    <button class="btn" onclick="hideImagVideo('video-juli')">Videos de Juliana</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1583,7 +1583,7 @@
             </div>  
             <div id="imagenes-sara" class="imagenes-i" style="display: none;">    
                 <div class="button-container" class="contBotImag" >
-                    <button class="btn" onclick="hideElements90()">Videos de Sara</button>              
+                    <button class="btn" onclick="hideImagVideo('video-sara')">Videos de Sara</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>   
                 </div>
                 <div class="contVideosWrapper">
@@ -1610,7 +1610,7 @@
             </div> 
             <div id="imagenes-daniela" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements87()" >Videos de Daniela</button>              
+                    <button class="btn" onclick="hideImagVideo('video-daniela')">Videos de Daniela</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1638,7 +1638,7 @@
             </div>
             <div id="imagenes-moni" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements49()">Videos de Monica</button>              
+                    <button class="btn" onclick="hideImagVideo('video-moni')">Videos de Monica</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1678,7 +1678,7 @@
             </div> 
             <div id="imagenes-nena" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements54()">Videos de Nena</button>              
+                    <button class="btn" onclick="hideImagVideo('video-nena')">Videos de Nena</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1699,7 +1699,7 @@
             </div>
             <div id="imagenes-cata" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements59()">Videos de Cata</button>             
+                    <button class="btn" onclick="hideImagVideo('video-cata')">Videos de Cata</button>             
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1735,7 +1735,7 @@
             </div>
             <div id="imagenes-dani" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements64()">Videos de Daniel</button>              
+                    <button class="btn" onclick="hideImagVideo('video-dani')">Videos de Daniel</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1764,7 +1764,7 @@
             </div>
             <div id="imagenes-juan" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements69()">Videos de Juan</button>              
+                    <button class="btn" onclick="hideImagVideo('video-juan')">Videos de Juan</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1796,7 +1796,7 @@
             </div>
             <div id="imagenes-mario" class="imagenes-i" style="display: none;">    
                 <div class="button-containerVid">   
-                    <button class="btn" onclick="hideElements73()">Videos de Mario</button>              
+                    <button class="btn" onclick="hideImagVideo('video-mario')">Videos de Mario</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1839,7 +1839,7 @@
             </div>
             <div id="imagenes-sebas" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements79()">Videos de Sebastian</button>              
+                    <button class="btn" onclick="hideImagVideo('video-sebas')">Videos de Sebastian</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1866,7 +1866,7 @@
             </div>
             <div id="imagenes-isabel" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements83()">Videos de Maria Isabel</button>              
+                    <button class="btn" onclick="hideImagVideo('video-isabel')">Videos de Maria Isabel</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1884,7 +1884,7 @@
             </div>
             <div id="imagenes-fer" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements111()">Videos de Juan</button>              
+                    <button class="btn" onclick="hideImagVideo('video-fer')">Videos de Juan</button>              
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1903,7 +1903,7 @@
             </div>
             <div id="imagenes-maritza" class="imagenes-i" style="display: none;"> 
                 <div class="button-containerVid">
-                    <button class="btn" onclick="hideElements102()">Videos de Maritza</button>             
+                    <button class="btn" onclick="hideImagVideo('video-maritza')">Videos de Maritza</button>             
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1928,7 +1928,7 @@
             </div>
             <div id="imagenes-andres" class="imagenes-i" style="display: none;">
                 <div class="button-containerVid">   
-                    <button class="btn" onclick="hideElements119()">Videos de Andrés</button>                
+                    <button class="btn" onclick="hideImagVideo('video-andres')">Videos de Andrés</button>                
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
@@ -1956,7 +1956,7 @@
             </div>
             <div id="imagenes-manola" class="imagenes-i" style="display: none;">  
                 <div class="button-containerVid">    
-                    <button class="btn" onclick="hideElements117()">Videos de Manola</button>                
+                    <button class="btn" onclick="hideImagVideo('video-manola')">Videos de Manola</button>                
                     <button class="btn" onclick="vuelveaInicio()">Volver a Inicio</button>
                 </div>
                 <div class="contVideosWrapper">
