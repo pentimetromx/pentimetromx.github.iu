@@ -15,19 +15,6 @@
  const imagenes = document.querySelectorAll('imagenes-i')
 
 
-function hideElements() {
-  increaseSize();
-
-  setTimeout(function() {
-    var elementsToHide = document.querySelectorAll('.etiqueta, .button, .image');   
-
-    for (var i = 0; i < elementsToHide.length; i++) {
-      elementsToHide[i].style.display = 'none';
-    }
-    botonesMama.style.display = 'flex';
-    setTimeout(startImageTransition, 200);
-  }, 800); // 800ms = 0.3s
-}
 function vuelveaInicio() {
   // Obtener todos los elementos de audio en la página
   var audios = document.getElementsByTagName('audio');
@@ -51,7 +38,32 @@ function vuelveaInicio() {
     enlargeImages()    
     setTimeout(startImageTransition, 600);           
 }
-function hideBotDescrip(elementId, buttonId) {// BOTONES / DESCRIPCION 
+
+const olgaDescripcion = createDescripcionElement('olga', './assets/mama.jpg', 'hideBotDescrip()');
+const tinaDescripcion = createDescripcionElement('tina', './assets/tina.jpg', 'hideBotDescrip()');
+const silviDescripcion = createDescripcionElement('silvi', './assets/Silvi.png', 'hideBotDescrip()');
+const nenaDescripcion = createDescripcionElement('nena', './assets/nenan.jpeg', 'hideBotDescrip()');
+
+function createDescripcionElement(id, imagenSrc, hideFunction) {
+  return `
+    <div id="descripcion-${id}" class="descripcion">
+      <img src="${imagenSrc}" class="imagenDecripcion" alt="Image" id="imagen-${id}" onclick="${hideFunction}">
+
+      <div id="descripcion" class="descripciones">
+        <!-- Contenido específico de cada descripción -->
+      </div>
+      <div id="boton-${id}" class="boton-"> 
+        <button class="btnI" onclick="hideDescripVideos('video-${id}')">Videos de ${id}</button> 
+        <button class="btnI" onclick="hideDescripFotos('imagenes-${id}')">Fotos de ${id}</button>   
+        <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>     
+      </div> <br>
+      <audio id="${id}" src="./assets/${id}.mp3"></audio>  
+    </div>
+  `;
+}
+
+function hideBotDescrip(elementId, buttonId) {
+
   var img = document.getElementById(buttonId);
   img.classList.add('pixelate');
 
@@ -62,16 +74,18 @@ function hideBotDescrip(elementId, buttonId) {// BOTONES / DESCRIPCION
     for (var i = 0; i < elementsToHide.length; i++) { 
       elementsToHide[i].style.display = 'none';
     }
-    var descript = document.getElementById(elementId);
-    descript.style.display = 'flex';  
-  }, 500);
 
-  var descript = document.getElementById(elementId);
-  var audio = descript.querySelector("audio");   
-  audio.currentTime = 0;
-  audio.volume = 0.5;
-  audio.play();
+    var botDescrip = document.getElementById(elementId);
+    botDescrip.style.display = 'flex';  
+
+    var sonido = document.getElementById(elementId);
+    var audio = sonido.querySelector("audio");   
+    audio.currentTime = 0;
+    audio.volume = 0.5;
+    audio.play();
+  }, 500);  
 }
+
 function hideDescripVideos(elementId) {       // DESCRIPCION / VIDEOS
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
   for (var i = 0; i < elementsToHide.length; i++) { 
@@ -215,7 +229,6 @@ function enlargeImages() {
   // Llamar a la función 'enlargeNextImage' para comenzar a ampliar las imágenes
   enlargeNextImage();
 }
-
 function parpadeo() {
   var buttons = document.getElementsByClassName('button');
   for (var i = 0; i < buttons.length; i++) {
@@ -224,7 +237,6 @@ function parpadeo() {
     }, i * 200, buttons[i]);
   }
 }
-
 function toggleButton(button) {
   button.classList.toggle('enlarged');
 }
@@ -264,5 +276,4 @@ function playVideo(video) {
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 
