@@ -275,5 +275,27 @@ function playVideo(video) {
   video.play();
 }
 
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FULL SCREEN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+document.addEventListener('DOMContentLoaded', function () {
+  const imagenesFullscreen = document.querySelectorAll('.imagen-fullscreen');
+  const fullscreenContainer = document.getElementById('imagen-fullscreen-container');
 
+  imagenesFullscreen.forEach(function (imagen) {
+    imagen.addEventListener('click', function () {
+      // Clonar la imagen seleccionada para mostrarla en pantalla completa
+      const imagenClonada = imagen.cloneNode(true);
+      imagenClonada.classList.add('imagen-fullscreen-full');
+      fullscreenContainer.innerHTML = ''; // Limpiar el contenedor antes de agregar la imagen
+      fullscreenContainer.appendChild(imagenClonada);
+
+      // Mostrar el contenedor de imagen en pantalla completa
+      fullscreenContainer.style.display = 'block';
+    });
+  });
+
+  // Agregar evento de clic al contenedor de imagen en pantalla completa para cerrarlo
+  fullscreenContainer.addEventListener('click', function () {
+    // Ocultar el contenedor de imagen en pantalla completa
+    fullscreenContainer.style.display = 'none';
+  });
+});
