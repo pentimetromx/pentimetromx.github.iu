@@ -609,8 +609,8 @@ h1 {
 
 /* Estilos para las imágenes en pantalla completa */
 .imagen-fullscreen-container img {
-  max-height: 90%;
-  max-width: 90%;
+  max-height: 100%;
+  max-width: 100%;
   margin: auto;
   display: block;
 }
