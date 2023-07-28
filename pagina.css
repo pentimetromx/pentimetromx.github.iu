@@ -40,13 +40,13 @@
   height:110px;
   margin-bottom: 20px;  
   }
-  .fullscreenButton {
+/*   .fullscreenButton {
   background-color:orangered;    
   color:whitesmoke;
   border-radius: 6px;
   width: 257px;
   height: 60px;
-  }
+  } */
   .contVideosWrapper {
     overflow-y: auto;
     max-height: calc(100% - 127px); /* Ajusta la altura máxima del contenedor para mostrar una cantidad específica de videos sin desbordar */
@@ -505,14 +505,14 @@ h1 {
   font-weight: bold;
   padding: 10px;
 }
-.fullscreenButton {
+/* .fullscreenButton {
   background-color:orangered;
   color:whitesmoke;
   border-radius: 6px;
   width: 190px;  
   height: 40px;
   margin-bottom: 7px;
-}
+} */
 .button-containerVid{  /* HIJO BOTONES VIDEOS */
   display: flex;
   justify-content: center;

@@ -313,7 +313,7 @@ function toggleFullscreenAndPlay(videoId) {
           }
       }
   }
-}
+}  
 
 // Obtener todos los videos y agregar el evento de clic a cada uno
 const videoElements = document.getElementsByClassName('video-item1');
