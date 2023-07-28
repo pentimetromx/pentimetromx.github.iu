@@ -273,24 +273,22 @@ function toggleFullscreenAndPlay(videoId) {
 
   if (videoElement) {
       if (videoElement.paused) {
-          // Si el video está pausado, lo reproducimos y lo ponemos en pantalla completa
           videoElement.play();
-          if (videoElement.requestFullscreen) {
-              videoElement.requestFullscreen();
+          // Modo de pantalla completa en dispositivos móviles (iOS Safari)
+          if (videoElement.webkitEnterFullscreen) {
+              videoElement.webkitEnterFullscreen();
+          } else if (videoElement.webkitRequestFullscreen) {
+              videoElement.webkitRequestFullscreen(); // Safari < 12
           } else if (videoElement.mozRequestFullScreen) {
               videoElement.mozRequestFullScreen(); // Firefox
-          } else if (videoElement.webkitRequestFullscreen) {
-              videoElement.webkitRequestFullscreen(); // Chrome, Safari, Opera
           } else if (videoElement.msRequestFullscreen) {
-              videoElement.msRequestFullscreen(); // Internet Explorer
+              videoElement.msRequestFullscreen(); // Internet Explorer / Edge
           }
       } else {
-          // Si el video está reproduciéndose, pausamos y salimos de pantalla completa si está en modo de pantalla completa
-          if ((document.fullscreenElement && document.fullscreenElement === videoElement) ||
-              (document.webkitFullscreenElement && document.webkitFullscreenElement === videoElement) ||
-              (document.mozFullScreenElement && document.mozFullScreenElement === videoElement) ||
-              (document.msFullscreenElement && document.msFullscreenElement === videoElement)) {
-
+          if (document.fullscreenElement ||
+              document.webkitFullscreenElement ||
+              document.mozFullScreenElement ||
+              document.msFullscreenElement) {
               if (document.exitFullscreen) {
                   document.exitFullscreen().then(() => {
                       videoElement.pause();
@@ -298,18 +296,17 @@ function toggleFullscreenAndPlay(videoId) {
               } else if (document.webkitExitFullscreen) {
                   document.webkitExitFullscreen().then(() => {
                       videoElement.pause();
-                  }); // Chrome, Safari, Opera
+                  });
               } else if (document.mozCancelFullScreen) {
                   document.mozCancelFullScreen().then(() => {
                       videoElement.pause();
-                  }); // Firefox
+                  });
               } else if (document.msExitFullscreen) {
                   document.msExitFullscreen().then(() => {
                       videoElement.pause();
-                  }); // Internet Explorer
+                  });
               }
           } else {
-              // Si el video está reproduciéndose pero no en pantalla completa, simplemente lo pausamos
               videoElement.pause();
           }
       }
@@ -319,13 +316,13 @@ function toggleFullscreenAndPlay(videoId) {
 // Obtener todos los videos y agregar el evento de clic a cada uno
 const videoElements = document.getElementsByClassName('video-item1');
 for (let i = 0; i < videoElements.length; i++) {
-  videoElements[i].addEventListener('click', function (event) {
+  videoElements[i].addEventListener('touchend', function (event) {
       if ((document.fullscreenElement && document.fullscreenElement === this) ||
           (document.webkitFullscreenElement && document.webkitFullscreenElement === this) ||
           (document.mozFullScreenElement && document.mozFullScreenElement === this) ||
           (document.msFullscreenElement && document.msFullscreenElement === this)) {
 
-          event.preventDefault(); // Evita el comportamiento predeterminado de hacer clic en el video mientras está en pantalla completa
+          event.preventDefault(); // Evita el comportamiento predeterminado de tocar el video mientras está en pantalla completa
           toggleFullscreenAndPlay(this.id);
       }
   });
