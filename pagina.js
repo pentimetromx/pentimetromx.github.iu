@@ -241,41 +241,7 @@ function toggleButton(button) {
   button.classList.toggle('enlarged');
 }
 
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-function toggleFullscreenAndPlay(videoId) {
-    // Obtener todos los elementos de audio en la página
-    var audios = document.getElementsByTagName('audio');
-    // Recorrer todos los elementos de audio y detener su reproducción
-    for (var i = 0; i < audios.length; i++) {
-      audios[i].pause();
-      audios[i].currentTime = 0;
-    }
-  var video = document.getElementById(videoId);
-  if (video.requestFullscreen) {
-    video.requestFullscreen().then(function() {
-      playVideo(video);
-    });
-  } else if (video.mozRequestFullScreen) {
-    video.mozRequestFullScreen().then(function() {
-      playVideo(video);
-    });
-  } else if (video.webkitRequestFullscreen) {
-    video.webkitRequestFullscreen().then(function() {
-      playVideo(video);
-    });
-  } else if (video.msRequestFullscreen) {
-    video.msRequestFullscreen().then(function() {
-      playVideo(video);
-    });
-  }
-}
-
-function playVideo(video) {
-  video.play();
-}
-
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FULL SCREEN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FULL SCREEN IMAGENES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 document.addEventListener('DOMContentLoaded', function () {
   const imagenesFullscreen = document.querySelectorAll('.imagen-fullscreen');
   const fullscreenContainer = document.getElementById('imagen-fullscreen-container');
@@ -299,3 +265,68 @@ document.addEventListener('DOMContentLoaded', function () {
     fullscreenContainer.style.display = 'none';
   });
 });
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FULL SCREEN VIDEOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+function toggleFullscreenAndPlay(videoId) {
+  const videoElement = document.getElementById(videoId);
+
+  if (videoElement) {
+      if (videoElement.paused) {
+          // Si el video está pausado, lo reproducimos y lo ponemos en pantalla completa
+          videoElement.play();
+          if (videoElement.requestFullscreen) {
+              videoElement.requestFullscreen();
+          } else if (videoElement.mozRequestFullScreen) {
+              videoElement.mozRequestFullScreen(); // Firefox
+          } else if (videoElement.webkitRequestFullscreen) {
+              videoElement.webkitRequestFullscreen(); // Chrome, Safari, Opera
+          } else if (videoElement.msRequestFullscreen) {
+              videoElement.msRequestFullscreen(); // Internet Explorer
+          }
+      } else {
+          // Si el video está reproduciéndose, pausamos y salimos de pantalla completa si está en modo de pantalla completa
+          if ((document.fullscreenElement && document.fullscreenElement === videoElement) ||
+              (document.webkitFullscreenElement && document.webkitFullscreenElement === videoElement) ||
+              (document.mozFullScreenElement && document.mozFullScreenElement === videoElement) ||
+              (document.msFullscreenElement && document.msFullscreenElement === videoElement)) {
+
+              if (document.exitFullscreen) {
+                  document.exitFullscreen().then(() => {
+                      videoElement.pause();
+                  });
+              } else if (document.webkitExitFullscreen) {
+                  document.webkitExitFullscreen().then(() => {
+                      videoElement.pause();
+                  }); // Chrome, Safari, Opera
+              } else if (document.mozCancelFullScreen) {
+                  document.mozCancelFullScreen().then(() => {
+                      videoElement.pause();
+                  }); // Firefox
+              } else if (document.msExitFullscreen) {
+                  document.msExitFullscreen().then(() => {
+                      videoElement.pause();
+                  }); // Internet Explorer
+              }
+          } else {
+              // Si el video está reproduciéndose pero no en pantalla completa, simplemente lo pausamos
+              videoElement.pause();
+          }
+      }
+  }
+}
+
+// Obtener todos los videos y agregar el evento de clic a cada uno
+const videoElements = document.getElementsByClassName('video-item1');
+for (let i = 0; i < videoElements.length; i++) {
+  videoElements[i].addEventListener('click', function (event) {
+      if ((document.fullscreenElement && document.fullscreenElement === this) ||
+          (document.webkitFullscreenElement && document.webkitFullscreenElement === this) ||
+          (document.mozFullScreenElement && document.mozFullScreenElement === this) ||
+          (document.msFullscreenElement && document.msFullscreenElement === this)) {
+
+          event.preventDefault(); // Evita el comportamiento predeterminado de hacer clic en el video mientras está en pantalla completa
+          toggleFullscreenAndPlay(this.id);
+      }
+  });
+}

@@ -552,7 +552,7 @@ h1 {
 .contVideos {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: -1px; /* Ajusta el espacio entre los contenedores de video según sea necesario */
+  grid-gap: -1px; /* Ajusta el espacio entre los contenedores de video según sea necesario */  
   margin-top: 27px;
 }
 .video-container {
@@ -584,7 +584,7 @@ h1 {
   animation-name: slide-left;
 }
 
-/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FULL SCREEN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FULL SCREEN IMAGENES<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 /* Estilos para las imágenes en su estado normal */
 .imagen-fullscreen {
   cursor: pointer;
