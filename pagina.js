@@ -343,3 +343,15 @@ for (let i = 0; i < videoElements.length; i++) {
       }
   });
 }
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CIRCULO DE CARGA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    // Mostrar el círculo giratorio al cargar la página
+    document.onreadystatechange = function () {
+      var loader = document.getElementById("loader");
+      if (document.readyState === "loading") {
+        loader.style.display = "block";
+      } else {
+        loader.style.display = "none";
+      }
+    };
