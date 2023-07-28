@@ -120,8 +120,8 @@ function hideVidImagen(elementId) {           // VIDEOS / FOTOS
   for (var i = 0; i < contenedoresPadre.length; i++) {
     contenedoresPadre[i].style.display = 'none';
   }
-  var contImagen = document.getElementById(elementId);
-  contImagen.style.display = 'flex';
+/*   var contImagen = document.getElementById(elementId);
+  contImagen.style.display = 'flex'; */
 } 
 
 function hideImagVideo(elementId) {           // FOTOS / VIDEOS  
