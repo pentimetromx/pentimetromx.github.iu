@@ -269,10 +269,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FULL SCREEN VIDEOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-let pausedAudios = []; // Array to store paused audio elements
+let pausedAudios = []; // Arreglo para almacenar los elementos de audio en pausa
 
 function toggleFullscreenAndPlay(videoId) {
-  // Pause all audios except the ones already paused
+  // Pausar todos los audios excepto aquellos que ya estén en pausa
   const audioElements = document.getElementsByTagName('audio');
   for (const audio of audioElements) {
     if (!audio.paused && !pausedAudios.includes(audio)) {
@@ -302,7 +302,7 @@ function toggleFullscreenAndPlay(videoId) {
         document.msFullscreenElement) {
         if (document.exitFullscreen) {
           document.exitFullscreen().then(() => {
-            // Resume all paused audios
+            // Reanudar todos los audios en pausa.
             for (const audio of pausedAudios) {
               audio.play();
             }
@@ -311,7 +311,7 @@ function toggleFullscreenAndPlay(videoId) {
           });
         } else if (document.webkitExitFullscreen) {
           document.webkitExitFullscreen().then(() => {
-            // Resume all paused audios
+            // Reanudar todos los audios en pausa.
             for (const audio of pausedAudios) {
               audio.play();
             }
@@ -320,7 +320,7 @@ function toggleFullscreenAndPlay(videoId) {
           });
         } else if (document.mozCancelFullScreen) {
           document.mozCancelFullScreen().then(() => {
-            // Resume all paused audios
+            // Reanudar todos los audios en pausa.
             for (const audio of pausedAudios) {
               audio.play();
             }
@@ -329,7 +329,7 @@ function toggleFullscreenAndPlay(videoId) {
           });
         } else if (document.msExitFullscreen) {
           document.msExitFullscreen().then(() => {
-            // Resume all paused audios
+            // Reanudar todos los audios en pausa.
             for (const audio of pausedAudios) {
               audio.play();
             }
@@ -338,7 +338,7 @@ function toggleFullscreenAndPlay(videoId) {
           });
         }
       } else {
-        // Resume all paused audios
+        // Reanudar todos los audios en pausa.
         for (const audio of pausedAudios) {
           audio.play();
         }
@@ -349,7 +349,7 @@ function toggleFullscreenAndPlay(videoId) {
   }
 }
 
-/* for (let i = 0; i < videoElements.length; i++) {
+for (let i = 0; i < videoElements.length; i++) {
   videoElements[i].addEventListener('touchend', function (event) {
       if ((document.fullscreenElement && document.fullscreenElement === this) ||
           (document.webkitFullscreenElement && document.webkitFullscreenElement === this) ||
@@ -360,7 +360,7 @@ function toggleFullscreenAndPlay(videoId) {
           toggleFullscreenAndPlay(this.id);
       }
   });
-} */
+}
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CIRCULO DE CARGA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
