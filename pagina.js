@@ -103,7 +103,7 @@ function hideDescripFotos(elementId) {        // DESCRIPCION / FOTOS
   for (var i = 0; i < elementsToHide.length; i++) { 
     elementsToHide[i].style.display = 'none';
   }
-  var contenedoresPadre = document.getElementsByClassName('descripcion');
+  var contenedoresPadre = document.getElementsByClassName('descripcion');  
   for (var i = 0; i < contenedoresPadre.length; i++) {
     contenedoresPadre[i].style.display = 'none';
   }
@@ -120,8 +120,8 @@ function hideVidImagen(elementId) {           // VIDEOS / FOTOS
   for (var i = 0; i < contenedoresPadre.length; i++) {
     contenedoresPadre[i].style.display = 'none';
   }
-/*   var contImagen = document.getElementById(elementId);
-  contImagen.style.display = 'flex'; */
+     var contImagen = document.getElementById(elementId);
+    contImagen.style.display = 'flex'; 
 } 
 
 function hideImagVideo(elementId) {           // FOTOS / VIDEOS  
