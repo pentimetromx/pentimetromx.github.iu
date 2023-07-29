@@ -162,6 +162,19 @@
     display: flex;
     margin-top: 7px;   
   }
+
+  .botonBotonera{   
+    width: 400px;
+    height: 87px;
+    margin-right: 10px;
+    font-size: 26px;
+    background-color: blue; 
+    color: yellow;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
 }
 
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<    BLUR PARA LASIMAGENES      <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
