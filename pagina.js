@@ -352,8 +352,8 @@ function toggleFullscreenAndPlay(videoId) {
 // Recorre todos los elementos de video presentes en la página
 const videoElements = document.getElementsByTagName('video');
 for (let i = 0; i < videoElements.length; i++) {
-  // Agrega un evento de escucha ('click') a cada video
-  videoElements[i].addEventListener('click', function (event) {
+  // Agrega un evento de escucha ('touchend') a cada video
+  videoElements[i].addEventListener('touchend', function (event) {
     // Comprueba si el video actual está en modo de pantalla completa
     if (
       (document.fullscreenElement && document.fullscreenElement === this) || // Comprobación para navegadores estándar
@@ -361,12 +361,15 @@ for (let i = 0; i < videoElements.length; i++) {
       (document.mozFullScreenElement && document.mozFullScreenElement === this) || // Comprobación para navegadores Firefox (anterior a versión 64)
       (document.msFullscreenElement && document.msFullscreenElement === this) // Comprobación para navegadores Microsoft Edge
     ) {
-      // Previene el comportamiento predeterminado del evento click
+      // Previene el comportamiento predeterminado del evento touchend
       event.preventDefault();
       // Llama a la función toggleFullscreenAndPlay, pasando como argumento el ID del video actual
       toggleFullscreenAndPlay(this.id);
     }
   });
 }
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CIRCULO DE CARGA EN ESPERA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+
+
 
