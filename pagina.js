@@ -349,16 +349,22 @@ function toggleFullscreenAndPlay(videoId) {
   }
 }
 
+// Recorre todos los elementos de video presentes en la página
 for (let i = 0; i < videoElements.length; i++) {
+  // Agrega un evento de escucha ('touchend') a cada video
   videoElements[i].addEventListener('touchend', function (event) {
-      if ((document.fullscreenElement && document.fullscreenElement === this) ||
-          (document.webkitFullscreenElement && document.webkitFullscreenElement === this) ||
-          (document.mozFullScreenElement && document.mozFullScreenElement === this) ||
-          (document.msFullscreenElement && document.msFullscreenElement === this)) {
-
-          event.preventDefault(); 
-          toggleFullscreenAndPlay(this.id);
-      }
+    // Comprueba si el video actual está en modo de pantalla completa
+    if (
+      (document.fullscreenElement && document.fullscreenElement === this) || // Comprobación para navegadores estándar
+      (document.webkitFullscreenElement && document.webkitFullscreenElement === this) || // Comprobación para navegadores WebKit (como Safari y Chrome)
+      (document.mozFullScreenElement && document.mozFullScreenElement === this) || // Comprobación para navegadores Firefox (anterior a versión 64)
+      (document.msFullscreenElement && document.msFullscreenElement === this) // Comprobación para navegadores Microsoft Edge
+    ) {
+      // Previene el comportamiento predeterminado del evento touchend
+      event.preventDefault();
+      // Llama a la función toggleFullscreenAndPlay, pasando como argumento el ID del video actual
+      toggleFullscreenAndPlay(this.id);
+    }
   });
 }
 
