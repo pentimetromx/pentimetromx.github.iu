@@ -269,62 +269,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<FULL SCREEN VIDEOS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
-/* function toggleFullscreenAndPlay(videoId) {
-  const videoElement = document.getElementById(videoId);
-
-  if (videoElement) {
-      if (videoElement.paused) {
-          videoElement.play();
-          if (videoElement.requestFullscreen) {
-              videoElement.requestFullscreen();
-          } else if (videoElement.mozRequestFullScreen) {
-              videoElement.mozRequestFullScreen(); 
-          } else if (videoElement.webkitRequestFullscreen) {
-              videoElement.webkitRequestFullscreen(); 
-          } else if (videoElement.msRequestFullscreen) {
-              videoElement.msRequestFullscreen(); 
-          }
-      } else {
-          if (document.fullscreenElement ||
-              document.webkitFullscreenElement ||
-              document.mozFullScreenElement ||
-              document.msFullscreenElement) {
-              if (document.exitFullscreen) {
-                  document.exitFullscreen().then(() => {
-                      videoElement.pause();
-                  });
-              } else if (document.webkitExitFullscreen) {
-                  document.webkitExitFullscreen().then(() => {
-                      videoElement.pause();
-                  }); 
-              } else if (document.mozCancelFullScreen) {
-                  document.mozCancelFullScreen().then(() => {
-                      videoElement.pause();
-                  }); 
-              } else if (document.msExitFullscreen) {
-                  document.msExitFullscreen().then(() => {
-                      videoElement.pause();
-                  }); 
-              }
-          } else {
-              videoElement.pause();
-          }
-      }
-  }
-}  */
-
-
-
-
-function pauseAllAudios() {
-  const audioElements = document.querySelectorAll("audio");
-  audioElements.forEach((audio) => {
-    audio.pause();
-  });
-}
+let pausedAudios = []; // Array to store paused audio elements
 
 function toggleFullscreenAndPlay(videoId) {
-  pauseAllAudios(); 
+  // Pause all audios except the ones already paused
+  const audioElements = document.getElementsByTagName('audio');
+  for (const audio of audioElements) {
+    if (!audio.paused && !pausedAudios.includes(audio)) {
+      audio.pause();
+      pausedAudios.push(audio);
+    }
+  }
 
   const videoElement = document.getElementById(videoId);
 
@@ -332,78 +287,80 @@ function toggleFullscreenAndPlay(videoId) {
     if (videoElement.paused) {
       videoElement.play();
       if (videoElement.requestFullscreen) {
-          videoElement.requestFullscreen();
+        videoElement.requestFullscreen();
       } else if (videoElement.mozRequestFullScreen) {
-          videoElement.mozRequestFullScreen(); 
+        videoElement.mozRequestFullScreen();
       } else if (videoElement.webkitRequestFullscreen) {
-          videoElement.webkitRequestFullscreen(); 
+        videoElement.webkitRequestFullscreen();
       } else if (videoElement.msRequestFullscreen) {
-          videoElement.msRequestFullscreen(); 
+        videoElement.msRequestFullscreen();
       }
-  } else {
+    } else {
       if (document.fullscreenElement ||
-          document.webkitFullscreenElement ||
-          document.mozFullScreenElement ||
-          document.msFullscreenElement) {
-          if (document.exitFullscreen) {
-              document.exitFullscreen().then(() => {
-                  videoElement.pause();
-              });
-          } else if (document.webkitExitFullscreen) {
-              document.webkitExitFullscreen().then(() => {
-                  videoElement.pause();
-              }); 
-          } else if (document.mozCancelFullScreen) {
-              document.mozCancelFullScreen().then(() => {
-                  videoElement.pause();
-              }); 
-          } else if (document.msExitFullscreen) {
-              document.msExitFullscreen().then(() => {
-                  videoElement.pause();
-              }); 
-          }
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement) {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().then(() => {
+            // Resume all paused audios
+            for (const audio of pausedAudios) {
+              audio.play();
+            }
+            pausedAudios = [];
+            videoElement.pause();
+          });
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen().then(() => {
+            // Resume all paused audios
+            for (const audio of pausedAudios) {
+              audio.play();
+            }
+            pausedAudios = [];
+            videoElement.pause();
+          });
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen().then(() => {
+            // Resume all paused audios
+            for (const audio of pausedAudios) {
+              audio.play();
+            }
+            pausedAudios = [];
+            videoElement.pause();
+          });
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen().then(() => {
+            // Resume all paused audios
+            for (const audio of pausedAudios) {
+              audio.play();
+            }
+            pausedAudios = [];
+            videoElement.pause();
+          });
+        }
       } else {
-          videoElement.pause();
+        // Resume all paused audios
+        for (const audio of pausedAudios) {
+          audio.play();
+        }
+        pausedAudios = [];
+        videoElement.pause();
       }
-  }
-
+    }
   }
 }
 
-
-
-
-
-
-
-// Obtener todos los videos y agregar el evento de clic a cada uno
-const videoElements = document.getElementsByClassName('video-item1');
-for (let i = 0; i < videoElements.length; i++) {
-  videoElements[i].addEventListener('click', function (event) {
-      if ((document.fullscreenElement && document.fullscreenElement === this) ||
-          (document.webkitFullscreenElement && document.webkitFullscreenElement === this) ||
-          (document.mozFullScreenElement && document.mozFullScreenElement === this) ||
-          (document.msFullscreenElement && document.msFullscreenElement === this)) {
-
-          event.preventDefault(); // Evita el comportamiento predeterminado de hacer clic en el video mientras está en pantalla completa
-          toggleFullscreenAndPlay(this.id);
-      }
-  });
-}
-
-// Agregar el evento 'touchend' para dispositivos móviles
-for (let i = 0; i < videoElements.length; i++) {
+/* for (let i = 0; i < videoElements.length; i++) {
   videoElements[i].addEventListener('touchend', function (event) {
       if ((document.fullscreenElement && document.fullscreenElement === this) ||
           (document.webkitFullscreenElement && document.webkitFullscreenElement === this) ||
           (document.mozFullScreenElement && document.mozFullScreenElement === this) ||
           (document.msFullscreenElement && document.msFullscreenElement === this)) {
 
-          event.preventDefault(); // Evita el comportamiento predeterminado de tocar el video mientras está en pantalla completa
+          event.preventDefault(); 
           toggleFullscreenAndPlay(this.id);
       }
   });
-}
+} */
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CIRCULO DE CARGA<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
