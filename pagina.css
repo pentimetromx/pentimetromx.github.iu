@@ -605,6 +605,10 @@ h1 {
   cursor: pointer;
 }
 
+.custom-link .btnI {
+  cursor: pointer;
+}
+
 @keyframes slide-right {
   0% {
     transform: translateX(-100%);
@@ -713,3 +717,6 @@ h1 {
   }
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<DIVISION<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
+.contenedor {
+  display: none;
+}

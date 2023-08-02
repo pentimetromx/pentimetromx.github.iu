@@ -1,4 +1,4 @@
- const botonesMama = document.getElementById('botones-pinedas')
+const botonesMama = document.getElementById('botones-pinedas')
  const botonesDuarte = document.getElementById('botones-duarte')
  const botonesLondoño = document.getElementById('botones-londoño')
  const botonesToro = document.getElementById('botones-toro')
@@ -36,7 +36,7 @@ function vuelveaInicio() {
   } 
 
     enlargeImages()    
-    setTimeout(startImageTransition, 600);           
+    /* setTimeout(startImageTransition, 600);  */          
 }
 
 const olgaDescripcion = createDescripcionElement('olga', './assets/mama.jpg', 'hideBotDescrip()');
@@ -80,7 +80,7 @@ function hideBotDescrip(elementId, buttonId) {
 
     var sonido = document.getElementById(elementId);
     var audio = sonido.querySelector("audio");   
-    audio.currentTime = 0;
+    /* audio.currentTime = 0; */
     audio.volume = 0.5;
     audio.play();
   }, 500);  
@@ -185,22 +185,8 @@ function enlargeImages() {
   // Inicializar la variable de índice actual en 0
   var currentIndex = 0;
 
-  // Definir una función para ampliar la siguiente imagen
-  function enlargeNextImage() {
-    // Verificar si currentIndex es menor o igual al número de imágenes
-    if (currentIndex <= images.length) {
-      // Si currentIndex es mayor que 0, eliminar la clase 'enlarged' de la imagen anterior
-      if (currentIndex > 0) {
-        images[currentIndex - 1].classList.remove('enlarged');
-      }
-      // Agregar la clase 'enlarged' a la imagen actual
-      images[currentIndex].classList.add('enlarged');
-      // Incrementar currentIndex
-      currentIndex++;
-      // Llamar a la función 'enlargeNextImage' después de un retraso de 197 milisegundos
-      setTimeout(enlargeNextImage, 197);
-    }
-  }
+
+
 
   // Obtener todos los elementos con la clase 'button' y almacenarlos en la variable 'buttons'
   var buttons = document.getElementsByClassName('button');
@@ -227,8 +213,7 @@ function enlargeImages() {
   applyButtonEffects();
   // Llamar a la función 'parpadeo' para hacer que los botones parpadeen
   parpadeo();
-  // Llamar a la función 'enlargeNextImage' para comenzar a ampliar las imágenes
-  enlargeNextImage();
+  // Llamar a la función 'enlargeNextImage' para comenzar a ampliar las imágenes  
 }
 function parpadeo() {
   var buttons = document.getElementsByClassName('button');
@@ -364,12 +349,86 @@ for (let i = 0; i < videoElements.length; i++) {
       // Previene el comportamiento predeterminado del evento touchend
       event.preventDefault();
       // Llama a la función toggleFullscreenAndPlay, pasando como argumento el ID del video actual
-      toggleFullscreenAndPlay(this.id);
+      toggleFullscreenAndPlay(this.id);    
     }
   });
 }
 
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<BACK<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
+// Array para almacenar los identificadores de los contenedores
+const ARRAY_CONTENEDORES = [];
 
+// Función para agregar el identificador del contenedor al array sin duplicados
+function agregarAlArray(contenedorId) {
+  // Verificar si el identificador ya existe en el array
+  if (!ARRAY_CONTENEDORES.includes(contenedorId)) {
+    ARRAY_CONTENEDORES.push(contenedorId);
+    console.log(ARRAY_CONTENEDORES);
+  }
+}
 
+function mostrarUltimoContenedor() {
+  if (ARRAY_CONTENEDORES.length < 2) {
+    // Si hay 0 o 1 elemento en el array, no hay contenedores para mostrar
+    return;
+  }
+
+  const contenedorActualId = ARRAY_CONTENEDORES.pop();
+  const contenedorActual = document.getElementById(contenedorActualId);
+
+  // Ocultar el contenedor actual
+  if (contenedorActual) {
+    contenedorActual.style.display = "none";
+  }
+
+  const contenedorAnteriorId = ARRAY_CONTENEDORES[ARRAY_CONTENEDORES.length - 1];
+  const contenedorAnterior = document.getElementById(contenedorAnteriorId);
+
+  // Mostrar el contenedor anterior
+  if (contenedorAnterior) {
+    contenedorAnterior.style.display = "flex";
+  }
+}
+
+// Ejemplo de cómo agregar el evento onclick a los botones para cambiar de contenedor
+document.getElementById("button-tina").onclick = function() {
+    document.getElementById("botones-pinedas").style.display = "none";
+    document.getElementById("descripcion-tina").style.display = "flex";
+    agregarAlArray("botones-pinedas");
+    agregarAlArray("descripcion-tina");
+};
+
+document.getElementById("mi-boton3").onclick = function() {
+    document.getElementById("botones-pinedas").style.display = "none";
+    document.getElementById("descripcion-nena").style.display = "flex";
+    agregarAlArray("botones-pinedas");
+    agregarAlArray("descripcion-nena");
+};
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+document.getElementById("mi-boton0").onclick = function() {
+  document.getElementById("botones-pinedas").style.display = "none";
+  document.getElementById("descripcion-olga").style.display = "flex";
+  agregarAlArray("botones-pinedas");
+  agregarAlArray("descripcion-olga");
+};
+document.getElementById("btnDesMama").onclick = function() {
+  document.getElementById("descripcion-olga").style.display = "none";
+  document.getElementById("video-mama").style.display = "flex";
+  agregarAlArray("descripcion-olga");
+  agregarAlArray("video-mama");
+};
+
+document.getElementById("botVidMama").onclick = function() {
+    document.getElementById("video-mama").style.display = "none";
+    document.getElementById("imagenes-mama").style.display = "flex";
+    agregarAlArray("video-mama");
+    agregarAlArray("imagenes-mama");
+};
+document.getElementById("botImMama").onclick = function() {
+    document.getElementById("imagenes-mama").style.display = "none";
+    document.getElementById("video-mama").style.display = "flex";
+    agregarAlArray("imagenes-mama");
+    agregarAlArray("video-mama");
+};
