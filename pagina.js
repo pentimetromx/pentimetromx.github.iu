@@ -1,4 +1,5 @@
-const botonesMama = document.getElementById('botones-pinedas')
+ var idsArray = [];
+ const botonesMama = document.getElementById('botones-pinedas')
  const botonesDuarte = document.getElementById('botones-duarte')
  const botonesLondoño = document.getElementById('botones-londoño')
  const botonesToro = document.getElementById('botones-toro')
@@ -36,52 +37,44 @@ function vuelveaInicio() {
   } 
 
     enlargeImages()    
-    /* setTimeout(startImageTransition, 600);  */          
+    /* setTimeout(startImageTransition, 600); */          
 }
 
-const olgaDescripcion = createDescripcionElement('olga', './assets/mama.jpg', 'hideBotDescrip()');
-const tinaDescripcion = createDescripcionElement('tina', './assets/tina.jpg', 'hideBotDescrip()');
-const silviDescripcion = createDescripcionElement('silvi', './assets/Silvi.png', 'hideBotDescrip()');
-const nenaDescripcion = createDescripcionElement('nena', './assets/nenan.jpeg', 'hideBotDescrip()');
+    // Función para ir al contenedor anterior
+    function irContenedorAnterior() {
+      if (idsArray.length > 1) {
+        // Obtener el ID del contenedor actual
+        var currentElementID = idsArray.pop();
+        var contenedorActual = document.getElementById(currentElementID);
+        contenedorActual.style.display = 'none';
 
-function createDescripcionElement(id, imagenSrc, hideFunction) {
-  return `
-    <div id="descripcion-${id}" class="descripcion">
-      <img src="${imagenSrc}" class="imagenDecripcion" alt="Image" id="imagen-${id}" onclick="${hideFunction}">
+        // Obtener el ID del contenedor anterior
+        var previousElementID = idsArray[idsArray.length - 1];
+        var contenedorAnterior = document.getElementById(previousElementID);
+        contenedorAnterior.style.display = 'flex';
 
-      <div id="descripcion" class="descripciones">
-        <!-- Contenido específico de cada descripción -->
-      </div>
-      <div id="boton-${id}" class="boton-"> 
-        <button class="btnI" onclick="hideDescripVideos('video-${id}')">Videos de ${id}</button> 
-        <button class="btnI" onclick="hideDescripFotos('imagenes-${id}')">Fotos de ${id}</button>   
-        <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Volver a inicio</button>     
-      </div> <br>
-      <audio id="${id}" src="./assets/${id}.mp3"></audio>  
-    </div>
-  `;
-}
+        // Mostrar los IDs almacenados en el array mediante console.log()
+        console.log("IDs almacenados en el array: ", idsArray);
+      }
+    }
 
 function hideBotDescrip(elementId, buttonId) {
-
-  var img = document.getElementById(buttonId);
+  var img = document.getElementById(buttonId);  
   img.classList.add('pixelate');
-
+  idsArray.push(elementId);
+  console.log("IDs almacenados en el array: ", idsArray);
   setTimeout(function() {
     img.classList.remove('pixelate');
-
-    var elementsToHide = document.querySelectorAll('.botones');
+    var elementsToHide = document.querySelectorAll('.botones');  
     for (var i = 0; i < elementsToHide.length; i++) { 
       elementsToHide[i].style.display = 'none';
     }
-
     var botDescrip = document.getElementById(elementId);
-    botDescrip.style.display = 'flex';  
-
+    botDescrip.style.display = 'flex'; 
     var sonido = document.getElementById(elementId);
     var audio = sonido.querySelector("audio");   
-    /* audio.currentTime = 0; */
-    audio.volume = 0.5;
+    audio.currentTime = 0;
+    audio.volume = 0.5; 
     audio.play();
   }, 500);  
 }
@@ -97,6 +90,8 @@ function hideDescripVideos(elementId) {       // DESCRIPCION / VIDEOS
   }
   var videoOlga = document.getElementById(elementId);
   videoOlga.style.display = 'flex';
+  idsArray.push(elementId);
+  console.log("IDs almacenados en el array: ", idsArray);
 }
 function hideDescripFotos(elementId) {        // DESCRIPCION / FOTOS     
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
@@ -109,56 +104,76 @@ function hideDescripFotos(elementId) {        // DESCRIPCION / FOTOS
   }
   var videoOlga = document.getElementById(elementId);
   videoOlga.style.display = 'flex';
+  idsArray.push(elementId);
+  console.log("IDs almacenados en el array: ", idsArray);
 }
 
 function hideVidImagen(elementId) {           // VIDEOS / FOTOS
   var elementsToHide = document.querySelectorAll('.botones, .video-v');
   for (var i = 0; i < elementsToHide.length; i++) { 
-    elementsToHide[i].style.display = 'none';
+  elementsToHide[i].style.display = 'none';
   }
   var contenedoresPadre = document.getElementsByClassName('descripcion');
   for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
+  contenedoresPadre[i].style.display = 'none';
   }
-     var contImagen = document.getElementById(elementId);
-    contImagen.style.display = 'flex'; 
+  var contImagen = document.getElementById(elementId);
+  contImagen.style.display = 'flex'; 
+  idsArray.push(elementId);
+  console.log("IDs almacenados en el array: ", idsArray);  
 } 
 
 function hideImagVideo(elementId) {           // FOTOS / VIDEOS  
   var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');  
   for (var i = 0; i < elementsToHide.length; i++) { 
-    elementsToHide[i].style.display = 'none';
+  elementsToHide[i].style.display = 'none';
   }
   var contenedoresPadre = document.getElementsByClassName('descripcion');
   for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
+  contenedoresPadre[i].style.display = 'none';
   }
   var contiVideo = document.getElementById(elementId);
   contiVideo.style.display = 'flex';
+  idsArray.push(elementId);
+  console.log("IDs almacenados en el array: ", idsArray);
+
 } 
 function hideDescDesc(elementId) {            // DESCRIPCION / DESCRIPCION
   var contenedoresPadre = document.getElementsByClassName('descripcion');
   for (var i = 0; i < contenedoresPadre.length; i++) {
-    contenedoresPadre[i].style.display = 'none';
+  contenedoresPadre[i].style.display = 'none';
   }
   var videoOlga = document.getElementById(elementId);
   videoOlga.style.display = 'flex';
+
+  idsArray.push(elementId);
+  console.log("IDs almacenados en el array: ", idsArray);
 }
-function hideInicBotonera(elmentID) {       // INICIALES / BOTONERA
-  var elementsToHide = document.querySelectorAll('.etiqueta, .button, .image');   
+
+
+function hideInicBotonera(elementID) {
+  // INICIALES / BOTONERA
+  var elementsToHide = document.querySelectorAll('.etiqueta, .button, .image');
 
   for (var i = 0; i < elementsToHide.length; i++) {
     elementsToHide[i].style.display = 'none';
   }
+
   // Hacer visible el contenedor
-  var contenedor = document.getElementById(elmentID);
+  var contenedor = document.getElementById(elementID);
   contenedor.style.display = 'flex';
+
+  // Agregar el ID al array
+  idsArray.push(elementID);
+
   // Obtener todas las imágenes dentro del contenedor
   var imagenes = contenedor.getElementsByTagName("img");
+
   // Aplicar los estilos de animación a cada imagen
   for (var i = 0; i < imagenes.length; i++) {
     var imagen = imagenes[i];
     imagen.style.animation = "zoomEffect1 1s";
+
     // Aplicar diferentes duraciones de animación
     if (i == 1) {
       imagen.style.animation = "zoomEffect1 0.8s";
@@ -168,6 +183,9 @@ function hideInicBotonera(elmentID) {       // INICIALES / BOTONERA
       imagen.style.animation = "zoomEffect1 0.4s";
     }
   }
+
+  // Mostrar los IDs almacenados en el array mediante console.log()
+  console.log("IDs almacenados en el array: ", idsArray);
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<TRANSICIONES AL INICIO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -355,5 +373,3 @@ for (let i = 0; i < videoElements.length; i++) {
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<BACK<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-

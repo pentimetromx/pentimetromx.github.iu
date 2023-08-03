@@ -63,7 +63,7 @@
             </div><br>
             <div class="contBotBotonera">
               <button type="button" id="mi-botonB" class="botonBotonera" onclick="vuelveaInicio()">Ir a Inicio</button> 
-            </div>
+            </div>            
         </div>
 
         <div id="botones-duarte" class="botones" style="margin-top: -47px; display: none;">   
@@ -196,13 +196,13 @@
                 <a href="#" class="custom-link" onclick="hideDescDesc('descripcion-yop')">Juan Osvaldo</a><br>
                 Sus nietos son : Sara, Daniela, Juliana, Sebastian, Daniel, Catalina.<br>
                 Sus Bisnietos : Jacobo, Simon, Maria isabel.<br>
-                Nació en el barrio aranjuez un 15 de junio del año 1943.  
+                Nació en el barrio aranjuez un 15 de junio del año 1943.   
             </div>
             <div id="boton-olga" class="boton-"> 
                 <button id="btnDesMama" data-target="descripcion-olga" class="btnI" onclick="hideDescripVideos('video-mama')">Videos de Olga</button> 
                 <button id="btnDesMama2" class="btnI" onclick="hideDescripFotos('imagenes-mama')">Fotos de Olga</button>    
                 <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Ir a Inicio</button> 
-                <button type="button" class="botonBotonera" id="botonAtras" onclick="mostrarUltimoContenedor()">ATRAS</button> 
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('descripcion-olga')" >ATRAS</button> 
             </div> <br>
             <audio id="mama" src="./assets/La Luna Me Engaño  Antonio Gonzalez.mp3"></audio>  
         </div>
@@ -221,7 +221,7 @@
                 <button id="btnDesTina" class="btnI" onclick="hideDescripVideos('video-tina')">Videos de tina</button><br>  
                 <button id="btnDesTina2" class="btnI" onclick="hideDescripFotos('imagenes-tina')">Fotos de tina</button> 
                 <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Ir a Inicio</button>
-                <button type="button" class="btnI" id="botonAtras" onclick="mostrarUltimoContenedor()">ATRAS</button> 
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('descripcion-tina')" >ATRAS</button> 
             </div> <br>
         </div>
         <div id="descripcion-silvi" class="descripcion">        
@@ -239,6 +239,7 @@
                 <button class="btnI" onclick="hideDescripVideos('video-silvi')">Videos de Silvia </button><br>   
                 <button class="btnI" onclick="hideDescripFotos('imagenes-silvi')">Fotos de Sivia</button> 
                 <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Ir a Inicio</button> 
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('descripcion-silvi')" >ATRAS</button> 
                 <audio id="silvi" src="./assets/Ghost.mp3"></audio>
             </div> <br>
         </div>         
@@ -258,6 +259,7 @@
                 <button class="btnI" onclick="hideDescripVideos('video-nena')">Videos de Nena </button><br>   
                 <button class="btnI" onclick="hideDescripFotos('imagenes-nena')">Fotos de Nena</button> 
                 <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Ir a Inicio</button>
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('descripcion-nena')" >ATRAS</button> 
                 <audio id="nena" src="./assets/Volver.mp3"></audio>  
             </div> <br>
         </div>
@@ -274,7 +276,8 @@
             <div id="boton-moni" class="boton-">
                 <button class="btnI" onclick="hideDescripVideos('video-moni')">Videos de Monica </button><br>   
                 <button class="btnI" onclick="hideDescripFotos('imagenes-moni')">Fotos de Monica</button> 
-                <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Ir a Inicio</button>  
+                <button type="button" id="mi-boton" class="btnI" onclick="vuelveaInicio()">Ir a Inicio</button> 
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('descripcion-moni')" >ATRAS</button> 
             </div> 
             <audio id="moni" src="./assets/Julio Iglesias  Me olvidé de vivir.mp3"></audio>
         </div>  
@@ -558,9 +561,9 @@
             <div id="boton-olga-v" class="button-containerVid">       
                 <button id="botVidMama" data-target="video-mama" class="btn" onclick="hideVidImagen('imagenes-mama')">Ver Las Fotos de Olga Aqui</button>              
                 <button class="btn" onclick="vuelveaInicio()">Ir a Inicio</button>  
-                <button type="button" class="btn" id="botonAtras" onclick="mostrarUltimoContenedor()">ATRAS</button>
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('video-mama')" >ATRAS</button> 
             </div> 
-            <div class="contVideosWrapper">
+            <div class="contVideosWrapper">  
                 <div class="contVideos">
                     <div class="video-container">
                         <video onclick="toggleFullscreenAndPlay('video1')" id="video1" class="fullscreenButton video-item1" src="./assets/video1.mp4"></video>  
@@ -595,7 +598,7 @@
             <div id="boton-nena-v" class="button-containerVid">
                 <button class="btn" onclick="hideVidImagen('imagenes-nena')">Ver Las Fotos de Nena Aqui</button>     
                 <button class="btn" onclick="vuelveaInicio()">Ir a Inicio</button>  
-                <button type="button" class="btn" id="botonAtras" onclick="mostrarUltimoContenedor()">ATRAS</button>
+                <button type="button" class="btn" id="botonAtras" onclick="irContenedorAnterior('video-nena')">ATRAS</button>
             </div>
             <div class="contVideosWrapper">
                 <div class="contVideos">
@@ -623,7 +626,7 @@
             <div id="boton-tina-v" class="button-containerVid">  
                 <button class="btn" onclick="hideVidImagen('imagenes-tina')">Ver Las Fotos de Cristina Aqui</button>
                 <button class="btn" onclick="vuelveaInicio()">Ir a Inicio</button> 
-                <button type="button" class="btn" id="botonAtras" onclick="mostrarUltimoContenedor()">ATRAS</button>
+                <button type="button" class="btn" id="botonAtras" onclick="irContenedorAnterior('video-tina')" >ATRAS</button>
             </div>
             <div class="contVideosWrapper">
                 <div class="contVideos">  
@@ -1063,7 +1066,7 @@
             <div class="button-containerVid">
                 <button id="botImMama" data-target="imagenes-mama" class="btn" onclick="hideImagVideo('video-mama')">Videos de Olga</button>               
                 <button class="btn" onclick="vuelveaInicio()">Ir a Inicio</button> 
-                <button type="button" class="btn" id="botonAtras" onclick="mostrarUltimoContenedor()">ATRAS</button>
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('imagenes-mama')" >ATRAS</button> 
             </div>
             <div class="contVideosWrapper">  
                 <div class="contenedor-secundario">               
@@ -1115,7 +1118,7 @@
                     <img class="imagen-fullscreen" src="./assets/mama.png" >
                     <img class="imagen-fullscreen" src="./assets/las tres2.png" >
                     <img class="imagen-fullscreen" src="./assets/las tres.jpg" >
-                    <img class="imagen-fullscreen" src="./assets/las tres1.jpg" > 
+                    <img class="imagen-fullscreen" src="./assets/las tres1.jpg" >  
                     <img class="imagen-fullscreen" src="./assets/julia1.jpg" >
                     <img class="imagen-fullscreen" src="./assets/julia2.jpg" >           
     
@@ -1127,7 +1130,7 @@
             <div class="button-containerVid">  
                 <button class="btn" onclick="hideImagVideo('video-tina')">Videos de Cristina</button>               
                 <button class="btn" onclick="vuelveaInicio()">Ir a Inicio</button>
-                <button type="btn" class="botonBotonera" id="botonAtras" onclick="mostrarUltimoContenedor()">ATRAS</button>
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('imagenes-tina')" >ATRAS</button> 
             </div>
             <div class="contVideosWrapper">
 
@@ -1136,7 +1139,7 @@
                     <img class="imagen-fullscreen" src="./assets/tina.jpg">
                     <img class="imagen-fullscreen" src="./assets/tina1.jpg">
                     <img class="imagen-fullscreen" src="./assets/las tres2.png">
-                    <img class="imagen-fullscreen" src="./assets/tina juan mar.jpg">
+                    <img class="imagen-fullscreen" src="./assets/tina juan mar.jpg"> 
                     <img class="imagen-fullscreen" src="./assets/andres-tina.png">
                     <img class="imagen-fullscreen" src="./assets/tina-fer.png">
                     <img class="imagen-fullscreen" src="./assets/julia1.jpg" >
@@ -1149,7 +1152,7 @@
             <div class="button-containerVid">
                 <button class="btn" onclick="hideImagVideo('video-nena')">Videos de Nena</button>              
                 <button class="btn" onclick="vuelveaInicio()">Ir a Inicio</button>
-                <button type="btn" class="btn" id="botonAtras" onclick="mostrarUltimoContenedor()">ATRAS</button>
+                <button type="button" class="botonBotonera" id="botonAtras" onclick="irContenedorAnterior('imagenes-nena')" >ATRAS</button> 
             </div>
             <div class="contVideosWrapper">
                 <div class="contenedor-secundario">
