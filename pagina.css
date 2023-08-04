@@ -5,7 +5,7 @@
 
 @media screen and (max-width: 650px)
 {
-  /* Estilos específicos para dispositivos móviles con ancho máximo de 600px */     
+  /* Estilos específicos para dispositivos móviles con ancho máximo de 600px */      
   .slider-text {
   margin-left: 10px;  
   margin-right: 10px;
@@ -209,8 +209,8 @@
 
 body {
   font-family: 'Audiowide', cursive;  
-  background-image: url(./assets/degradadoMulicolor1.jfif);  
-  /* background-image: url(./assets/indigo\ corrosivo.jpg); */          
+  /* background-image: url(./assets/degradadoMulicolor1.jfif);  */ 
+  background-image: url(./assets/indigo\ corrosivo.jpg);         
   background-repeat: no-repeat;
   background-size: cover;
   width: -100vw;
