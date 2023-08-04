@@ -79,26 +79,32 @@ function irContenedorAnterior() {
   }
 }
 
-function hideBotDescrip(elementId, buttonId) {  
- var img = document.getElementById(buttonId);  
- img.classList.add('pixelate');
- idsArray.push(elementId);
- console.log(idsArray);
- setTimeout(function() {
-   img.classList.remove('pixelate');
-   var elementsToHide = document.querySelectorAll('.botones');  
-   for (var i = 0; i < elementsToHide.length; i++) { 
-     elementsToHide[i].style.display = 'none';
-   }
-   var botDescrip = document.getElementById(elementId);
-   botDescrip.style.display = 'flex'; 
-   var sonido = document.getElementById(elementId);
-   var audio = sonido.querySelector("audio");   
-   audio.currentTime = 0;
-   audio.volume = 0.5; 
-   audio.play();
- }, 500);  
+function hideBotDescrip(elementId, buttonId) {
+  var img = document.getElementById(buttonId);
+  img.classList.add('pixelate');
+
+  // Verificar si el elementoId ya está presente en el array
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+  }
+  console.log(idsArray);
+
+  setTimeout(function() {
+    img.classList.remove('pixelate');
+    var elementsToHide = document.querySelectorAll('.botones');
+    for (var i = 0; i < elementsToHide.length; i++) {
+      elementsToHide[i].style.display = 'none';
+    }
+    var botDescrip = document.getElementById(elementId);
+    botDescrip.style.display = 'flex';
+    var sonido = document.getElementById(elementId);
+    var audio = sonido.querySelector('audio');
+    audio.currentTime = 0;
+    audio.volume = 0.5;
+    audio.play();
+  }, 500);
 }
+
 
 function hideDescripVideos(elementId) {       // DESCRIPCION / VIDEOS
  var elementsToHide = document.querySelectorAll('.botones, .imagenes-i');
@@ -111,9 +117,14 @@ function hideDescripVideos(elementId) {       // DESCRIPCION / VIDEOS
  }
  var videoOlga = document.getElementById(elementId);
  videoOlga.style.display = 'flex';
- idsArray.push(elementId);
- console.log(idsArray);
+
+  // Verificar si el elementoId ya está presente en el array
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+  }
+  console.log(idsArray);
 }
+
 function hideDescripFotos(elementId) {        // DESCRIPCION / FOTOS     
  var elementsToHide = document.querySelectorAll('.botones, .video-v');
  for (var i = 0; i < elementsToHide.length; i++) { 
@@ -125,8 +136,12 @@ function hideDescripFotos(elementId) {        // DESCRIPCION / FOTOS
  }
  var videoOlga = document.getElementById(elementId);
  videoOlga.style.display = 'flex';
- idsArray.push(elementId);
- console.log(idsArray);
+
+  // Verificar si el elementoId ya está presente en el array
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+  }
+  console.log(idsArray);
 }
 
 function hideVidImagen(elementId) {           // VIDEOS / FOTOS
@@ -140,8 +155,12 @@ function hideVidImagen(elementId) {           // VIDEOS / FOTOS
  }
  var contImagen = document.getElementById(elementId);
  contImagen.style.display = 'flex'; 
- idsArray.push(elementId);
- console.log(idsArray);  
+
+  // Verificar si el elementoId ya está presente en el array
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+  }
+  console.log(idsArray);  
 } 
 
 function hideImagVideo(elementId) {           // FOTOS / VIDEOS  
@@ -155,8 +174,12 @@ function hideImagVideo(elementId) {           // FOTOS / VIDEOS
  }
  var contiVideo = document.getElementById(elementId);
  contiVideo.style.display = 'flex';
- idsArray.push(elementId);
- console.log(idsArray);
+
+  // Verificar si el elementoId ya está presente en el array
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+  }
+  console.log(idsArray);
 
 } 
 function hideDescDesc(elementId) {            // DESCRIPCION / DESCRIPCION
@@ -167,8 +190,11 @@ function hideDescDesc(elementId) {            // DESCRIPCION / DESCRIPCION
  var videoOlga = document.getElementById(elementId);
  videoOlga.style.display = 'flex';
 
- idsArray.push(elementId);
- console.log(idsArray);
+  // Verificar si el elementoId ya está presente en el array
+  if (!idsArray.includes(elementId)) {
+    idsArray.push(elementId);
+  }
+  console.log(idsArray);
 }
 
 
