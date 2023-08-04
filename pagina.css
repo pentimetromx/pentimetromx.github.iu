@@ -427,7 +427,9 @@ h1 {
 }
 .contManola{
   display: flex;
+  align-items: flex-start;
 }
+
 .btnI {
   width: 300px;
   height: 57px;
