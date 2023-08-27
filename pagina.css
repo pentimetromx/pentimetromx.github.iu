@@ -210,14 +210,15 @@
 body {
   font-family: 'Audiowide', cursive;  
   /* background-image: url(./assets/degradadoMulicolor1.jfif);  */ 
-  background-image: url(./assets/indigo\ corrosivo.jpg);         
-  background-repeat: no-repeat;
+  background-image: url(./assets/indigo%20corrosivo.jpg);        
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: -100vw;
-  height: 100vh;
-  overflow: hidden;
-  top: 0;
-  left: 0;
+  height: -100vh;
+  margin: 0; /* Elimina los márgenes predeterminados del body */
+  padding: 0; /* Elimina los rellenos predeterminados del body */
+  /* overflow: hidden; */
 }
 .slider {
   background-color: gray;  /* Establece el color de fondo del slider en negro */
@@ -722,3 +723,4 @@ h1 {
 .contenedor {
   display: none;
 }
+

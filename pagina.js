@@ -1,6 +1,5 @@
 var idsArray = [];
 var currentID = null;
-
 const botonesMama = document.getElementById('botones-pinedas')
 const botonesDuarte = document.getElementById('botones-duarte')
 const botonesLondoño = document.getElementById('botones-londoño')
@@ -8,13 +7,10 @@ const botonesToro = document.getElementById('botones-toro')
 const botonesMuñoz = document.getElementById('botones-muñoz')
 const botonesMira = document.getElementById('botones-mira')
 const botonesGarcia = document.getElementById('botones-garcia') 
-
 const descripciones = document.getElementById('descripciones')
 const descripcion = document.getElementsByClassName('descripcion')
 const descripcionOlga = document.getElementById('descripcion-olga') 
-
 const videosContenedor = document.getElementById('video-v')
-
 const imagenes = document.querySelectorAll('imagenes-i')
 
 
@@ -71,8 +67,6 @@ function irContenedorAnterior() {
   // Actualizar la variable currentID con el nuevo ID
   currentID = previousElementID;
 
-  // Mostrar los IDs almacenados en el array mediante console.log()
-  console.log("IDs almacenados en el array: ", idsArray);
   if (idsArray.length === 1) {
     // Si solo existe un elemento en el array, detener los audios
     detenerReproduccionAudios();
@@ -87,7 +81,6 @@ function hideBotDescrip(elementId, buttonId) {
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
   }
-  console.log(idsArray);
 
   setTimeout(function() {
     img.classList.remove('pixelate');
@@ -122,7 +115,6 @@ function hideDescripVideos(elementId) {       // DESCRIPCION / VIDEOS
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
   }
-  console.log(idsArray);
 }
 
 function hideDescripFotos(elementId) {        // DESCRIPCION / FOTOS     
@@ -141,7 +133,6 @@ function hideDescripFotos(elementId) {        // DESCRIPCION / FOTOS
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
   }
-  console.log(idsArray);
 }
 
 function hideVidImagen(elementId) {           // VIDEOS / FOTOS
@@ -160,7 +151,6 @@ function hideVidImagen(elementId) {           // VIDEOS / FOTOS
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
   }
-  console.log(idsArray);  
 } 
 
 function hideImagVideo(elementId) {           // FOTOS / VIDEOS  
@@ -179,7 +169,6 @@ function hideImagVideo(elementId) {           // FOTOS / VIDEOS
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
   }
-  console.log(idsArray);
 
 } 
 function hideDescDesc(elementId) {            // DESCRIPCION / DESCRIPCION
@@ -194,7 +183,6 @@ function hideDescDesc(elementId) {            // DESCRIPCION / DESCRIPCION
   if (!idsArray.includes(elementId)) {
     idsArray.push(elementId);
   }
-  console.log(idsArray);
 }
 
 
@@ -230,9 +218,6 @@ function hideInicBotonera(elementID) {
      imagen.style.animation = "zoomEffect1 0.4s";
    }
  }
-
- // Mostrar los IDs almacenados en el array mediante console.log()
- console.log(idsArray);
 }
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<TRANSICIONES AL INICIO<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -249,9 +234,6 @@ function enlargeImages() {
  var images = document.getElementsByClassName('image');
  // Inicializar la variable de índice actual en 0
  var currentIndex = 0;
-
-
-
 
  // Obtener todos los elementos con la clase 'button' y almacenarlos en la variable 'buttons'
  var buttons = document.getElementsByClassName('button');
@@ -288,6 +270,7 @@ function parpadeo() {
    }, i * 200, buttons[i]);
  }
 }
+
 function toggleButton(button) {
  button.classList.toggle('enlarged');
 }
@@ -418,5 +401,3 @@ for (let i = 0; i < videoElements.length; i++) {
    }
  });
 }
-
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<BACK<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
